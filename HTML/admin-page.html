@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+    <head>
 
-    <title>Crazy Plant Lady Blog</title>
+        <title>Crazy Plant Lady Blog</title>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Weronika Vik">
-    <meta name="description" content="">
-
-    <link rel="stylesheet" href="/CSS/footer.css">
-    <link rel="stylesheet" href="/CSS/header.css">
-    <link rel="stylesheet" href="/CSS/admin-page.css">
-
-    <script src="https://kit.fontawesome.com/2ef99fbf3a.js" crossorigin="anonymous"></script>
-    <script src="/JS/auth-page.js"></script>
-
-</head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Weronika Vik">
+        <meta name="description" content="">
+      
+       <link rel="stylesheet" href="/CSS/footer.css">
+       <link rel="stylesheet" href="/CSS/header.css">
+       <link rel="stylesheet" href="/CSS/admin-page.css">
+      
+       <script src="https://kit.fontawesome.com/2ef99fbf3a.js" crossorigin="anonymous"></script>
+      
+    </head>
 
 <body>
+
+    <script src="/JS/admin-page.js"></script>
 
     <header>
         <nav>
@@ -36,40 +37,64 @@
             </li>
         </nav>
     </header>
+    
+    <main>   
 
-    <main>
+        <section class="main-content">
 
-        <section class="welcome-logo">
+            <div class="scroll-content">
 
-            <div class="welcome-background">
+                <h1>All Posts</h1>
 
-                <div class="framed-logo">
+                <div class="all-blogs">
 
-                    <img src="/MEDIA/background/decorativeborder2.png" alt="" class="frame">
+                </div>
 
-                    <div class="logo-inside-frame">
+            </div>
 
-                        <div class="inside">
-                            <h1>Please Select an Option, Mr. Admin</h1>
+            <div class="un-scroll-content">
 
-                            <a href="/HTML/admin-all.html">View All Posts</a>
-                            <a href="/HTML/admin-update.html">Update a Post</a>
-                            <a href="/HTML/admin-create.html">Create New Post</a>
-                            <a href="/HTML/admin-delete.html">Delete a Post</a>
+                <div class="right-s-content">
+
+                    <div class="right-s-background">
+
+                        <div class="right-s-box">
+
+                            <div class="right-s-text">
+
+                                <h2>Welcome Back,<br>Admin</h2>
+
+                                <a href="admin-login.html">
+                                    <img src="/MEDIA/logo/crazyplantladyprofile-left.png" alt="">
+                                </a>
+                                
+                                <a href="/HTML/admin-create.html" class="admin-button" id="create-button">Create Post</a>
+                                <a href="/HTML/admin-update.html" class="admin-button" id="update-button">Update Post</a>
+                                <a href="/HTML/admin-delete.html" class="admin-button" id="delete-button">Delete</a>
+                                <a href="/HTML/admin-login.html" class="admin-button" id="loggout-button">Logg Out</a>
+    
+                                <div class="right-s-info">
+                                    <p><span>Total Posts:</span> <span id="totalPosts"></span></p>
+                                    <p><span>Last Posted:</span> <span id="lastPosted"></span></p>
+                                </div>
+
+                            </div>
+
                         </div>
 
                     </div>
 
                 </div>
-            </div>
 
+            </div>
+    
         </section>
 
     </main>
-
+      
     <footer>
     </footer>
 
 </body>
 
-</html>
+</html> 

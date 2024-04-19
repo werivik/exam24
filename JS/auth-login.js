@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("password: ", password);
 
         if (username && password) {
-            console.log("Heading out to get Token, One sec")
+            console.log("Heading out to get Token, One sec");
             getToken(username, password);
         } else {
             console.error("Username and password are required dude.");
@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 localStorage.setItem("token", data.data.accessToken);
 
                 window.location.href = "/HTML/admin-page.html";
+                
             } else {
                 throw new Error(response.statusText);
             }

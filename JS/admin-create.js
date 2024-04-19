@@ -4,11 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
     newBlogForm.addEventListener("submit", async (event) => {
         event.preventDefault();
 
-        const title = document.getElementById("title").value.trim();
-        const body = document.getElementById("body").value.trim();
+        const mainTitle = document.getElementById("mainTitle").value.trim();
+        const secondTitle = document.getElementById("secondTitle").value.trim();
+        const blogText = document.getElementById("blogText").value.trim();
         const tags = document.getElementById("tags").value.trim().split(",");
-        const mediaUrl = document.getElementById("mediaUrl").value.trim();
-        const mediaAlt = document.getElementById("mediaAlt").value.trim();
+        const pictureUrl = document.getElementById("pictureUrl").value.trim();
+        const pictureAlt = document.getElementById("pictureAlt").value.trim();
 
         try {
             const token = localStorage.getItem("token");
@@ -18,12 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const postData = {
-                title: title,
-                body: body,
+                mainTitle: mainTitle,
+                secondTitle: secondTitle,
+                blogText: blogText,
                 tags: tags,
                 media: {
-                    url: mediaUrl,
-                    alt: mediaAlt
+                    url: pictureUrl,
+                    alt: pictureAlt
                 }
             };
 
