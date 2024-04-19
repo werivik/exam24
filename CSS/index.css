@@ -2,6 +2,8 @@ body {
     background-color: #F2FFEA;
     width: 100%;
     overflow-x: hidden;
+
+    color: #162D06;
 }
 
 body::before, body::after {
@@ -73,8 +75,6 @@ body::before, body::after {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-
-    color: #162D06;
 
     .un-scroll-content {
 
@@ -151,41 +151,44 @@ body::before, body::after {
             }
         }
     }
+
 }
 
 
+@media (max-width: 1000px) {
 
+    .main-content {
+    
+        .un-scroll-content {
+            min-width: 250px;
+        
+            .right-s-content {
+        
+                .right-s-background {
+                    width: 250px;
 
-/*
-#wrapper, #carousel {
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-#wrapper {
-    display: flex;
-    flex-direction: row;
-    max-width: 1200px;
-    align-items: center;
-
-    i {
-        background-color: pink;
-        height: 35px;
-        width: 35px;
-        text-align: center;
-        line-height: 35px;
-        border-radius: 99px;
-        cursor: pointer;
-        font-size: 25px;
-        color: #162D06;
+                    .right-s-box {
+        
+                        .right-s-text {
+                            width: 200px;
+        
+                            img {
+                                width: 100px;
+                                height: 125px;
+                                object-fit: contain;
+                                background-color: white;
+                                border-radius: 99px;
+                            }
+        
+                            p {
+                                font-size: 13.7px;
+                            }
+    
+                        }
+                    }
+                }
+            }
+        }
+    
     }
 }
-
-#wrapper i:first-child{
-    margin-left: 20px;
-}
-#wrapper i:last-child{
-    margin-right: 20px;
-}
-
-*/
