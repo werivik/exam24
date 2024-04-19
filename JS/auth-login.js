@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (username && password) {
             console.log("Heading out to get Token, One sec")
             getToken(username, password);
+        } else {
+            console.error("Username and password are required dude.");
         }
     });
 
@@ -40,12 +42,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log(data);
                 localStorage.setItem("username", data.data.name);
                 localStorage.setItem("token", data.data.accessToken);
-                window.location = "/HTML/admin-page.html";
+
+                window.location.href = "/HTML/admin-page.html";
             } else {
                 throw new Error(response.statusText);
             }
         } catch (error) {
-            console.error(error.message);
+            console.error("Error:", error.message);
         }
     }
 });
