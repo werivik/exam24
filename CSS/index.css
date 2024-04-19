@@ -57,6 +57,8 @@ body::before, body::after {
 
 .scroll-content {
 
+    color: #162D06;
+
     display: flex;
     flex-direction: row;
     
@@ -75,12 +77,13 @@ body::before, body::after {
         top: 0;
         right: 0;
         left: 100%;
-        width: 330px;
 
         .right-s-background {
             background-image: linear-gradient(to bottom, rgba(228, 244, 217, 0.65), rgba(228, 244, 217, 0.65)),url(/MEDIA/background/backgroundleafes.png);
             background-size: 40%;
             padding-bottom: 70px;
+            width: 300px;
+            margin-right: -8px;
 
             .right-s-box {
                 display: flex;
@@ -95,7 +98,7 @@ body::before, body::after {
                     flex-direction: column;
                     align-items: center;
                     border-radius: 10px;
-                    width: 280px;
+                    width: 250px;
 
                     img {
                         width: 129px;
@@ -133,5 +136,25 @@ body::before, body::after {
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        .new-posts-content {
+
+            h2 {
+                font-size: 65px;
+            }
+
+            .new-posts {
+
+                .post-block {
+
+                    .post-block-textbox {
+                        
+                        h2 {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
