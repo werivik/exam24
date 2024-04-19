@@ -1,0 +1,58 @@
+body {
+    background-color: #F2FFEA;
+    width: 100%;
+    overflow: hidden;
+
+    color: #162D06;
+}
+
+.welcome-logo {
+
+    background-image: linear-gradient(to bottom, rgba(242, 255, 234, 0.75), rgba(242, 255, 234, 0.75)),url(/MEDIA/background/backgroundleafes.png);
+    background-size: 22%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .welcome-background {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .framed-logo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .frame {
+            position: absolute;
+            width: 1000px;
+            height: 685px;
+        }
+
+        .logo-inside-frame {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #F7FFF2;
+            width: 875px;
+            height: 575px;
+            border-radius: 10px;
+
+            .login-form {
+                display: flex;
+                flex-direction: column;
+                gap: 50px;
+                position: absolute;
+            }
+    
+        }
+    }
+
+}

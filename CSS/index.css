@@ -172,12 +172,18 @@ body::before, body::after {
                         .right-s-text {
                             width: 200px;
         
-                            img {
-                                width: 100px;
-                                height: 125px;
-                                object-fit: contain;
-                                background-color: white;
-                                border-radius: 99px;
+                            a {
+                                text-decoration: none;
+                                cursor: help;
+
+                                img {
+                                    cursor: help;
+                                    width: 100px;
+                                    height: 125px;
+                                    object-fit: contain;
+                                    background-color: white;
+                                    border-radius: 99px;
+                                }
                             }
         
                             p {
