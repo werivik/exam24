@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
     const newBlogForm = document.getElementById("newBlogForm");
 
     newBlogForm.addEventListener("submit", async (event) => {
@@ -12,6 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const mediaAlt = document.getElementById("mediaAlt").value.trim();
 
         try {
+            const token = localStorage.getItem("token");
+
+            if (!token) {
+                throw new Error("No access token found. Please login again.");
+            }
+
             const postData = {
                 title: title,
                 body: body,
@@ -23,9 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
             };
 
             const options = {
-                method: "POST", 
+                method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
                 },
                 body: JSON.stringify(postData)
             };
@@ -33,18 +39,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const response = await fetch("https://v2.api.noroff.dev/blog/posts/wervik", options);
 
             if (response.ok) {
-                alert("Blog Post Created Successfully <3")
+                alert("Blog Post Created Successfully <3");
                 window.location.href = "/HTML/admin-all.html";
+            } else {
+                const errorData = await response.json();
+                throw new Error(errorData.errors[0].message);
             }
-
-            else {
-                throw new Error("Failed to Create New Post, try again");
-            }
-        }
-
-        catch (error) {
+        } catch (error) {
             console.error(error.message);
-            alert("Failed to Create Blog Post, Please never try again");
+            alert("Failed to Create Blog Post. Please try again.");
         }
     });
 });
