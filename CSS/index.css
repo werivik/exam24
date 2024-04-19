@@ -1,0 +1,50 @@
+body {
+    background-color: #F2FFEA;
+}
+
+.welcome-logo {
+    height: 99vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom, rgba(242, 255, 234, 0.75), rgba(242, 255, 234, 0.75)),url(/MEDIA/background/backgroundleafes.png);
+    background-size: 22%;
+
+    .framed-logo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .frame {
+            position: absolute;
+            width: 1000px;
+            height: 685px;
+        }
+
+        .logo-inside-frame {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #F7FFF2;
+            width: 875px;
+            height: 575px;
+            border-radius: 10px;
+    
+            img {
+                width: 594px;
+                height: 246px;
+                object-fit: cover;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+            h1 {
+                font-size: 55px;
+            }
+        }
+    }
+}
