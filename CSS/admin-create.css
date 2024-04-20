@@ -8,7 +8,7 @@ body {
 
 .welcome-logo {
 
-    background-image: linear-gradient(to bottom, rgba(242, 255, 234, 0.75), rgba(242, 255, 234, 0.75)),url(/MEDIA/background/backgroundleafes.png);
+    background-image: linear-gradient(to bottom, rgba(228, 244, 217, 0.65), rgba(228, 244, 217, 0.65)),url(/MEDIA/background/backgroundleafes.png);
     background-size: 22%;
     width: 100%;
     height: 100vh;
@@ -31,8 +31,8 @@ body {
 
         .frame {
             position: absolute;
-            width: 1000px;
-            height: 685px;
+            width: 1100px;
+            height: 700px;
         }
 
         .logo-inside-frame {
@@ -41,9 +41,10 @@ body {
             justify-content: center;
             align-items: center;
             background-color: #F7FFF2;
-            width: 875px;
-            height: 575px;
+            width: 100vh;
+            height: 100vh;
             border-radius: 10px;
+            padding: 25px;
 
             .inside {
                 position: absolute;
@@ -55,4 +56,26 @@ body {
         }
     }
 
+}
+
+.gobackbutton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: #162D06;
+    i {
+        margin-right: 10px;
+        background-color: #BEE6C6;
+        border-radius: 99px;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.main-title, .snd-title, .blog-p, .blog-tags, .picture-upload, .picture-alt {
+    font-size: 20px;
 }

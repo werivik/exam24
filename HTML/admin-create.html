@@ -45,31 +45,36 @@
 
                 <div class="framed-logo">
 
+                    <!-- 
                     <img src="/MEDIA/background/decorativeborder2.png" alt="" class="frame">
+                    -->
 
                     <div class="logo-inside-frame">
 
-                            <form id="newBlogForm" class="inside">
-                                <label for="mainTitle">Main Blog Title:</label>
-                                <input type="text" id="mainTitle" name="mainTitle" required>
-                                
-                                <label for="secondTitle">Second Blog Title:</label>
-                                <input type="text" id="secondTitle" name="secondTitle">
-                                
-                                <label for="blogText">Blog Text:</label>
-                                <textarea id="blogText" name="blogText"></textarea>
-                                
-                                <label for="tags">Tags (comma-separated):</label>
-                                <input type="text" id="tags" name="tags">
-                                
-                                <label for="pictureUrl">Picture URL:</label>
-                                <input type="text" id="pictureUrl" name="pictureUrl">
-                                
-                                <label for="pictureAlt">Picture Alt Text:</label>
-                                <input type="text" id="pictureAlt" name="pictureAlt">
+                        <form id="newBlogForm" class="inside">
+
+                            <a href="/HTML/admin-page.html" class="gobackbutton"><i class="fa-solid fa-arrow-left"></i>Go back to Admin Page</a>
+
+                            <label for="mainTitle" class="main-title">Main Blog Title:</label>
+                            <input type="text" id="mainTitle" name="mainTitle" required>
                             
-                                <button type="submit">Post New Blog</button>
-                            </form>
+                            <label for="secondTitle" class="snd-title">Second Blog Title:</label>
+                            <input type="text" id="secondTitle" name="secondTitle">
+                            
+                            <label for="blogText" class="blog-p">Blog Text:</label>
+                            <textarea id="blogText" name="blogText"></textarea>
+                            
+                            <label for="tags" class="blog-tags">Tags (comma-separated):</label>
+                            <input type="text" id="tags" name="tags">
+                            
+                            <label for="pictureUrl" class="picture-upload">Picture URL:</label>
+                            <input type="text" id="pictureUrl" name="pictureUrl">
+                            
+                            <label for="pictureAlt" class="picture-alt">Picture Alt Text:</label>
+                            <input type="text" id="pictureAlt" name="pictureAlt">
+                        
+                            <button type="submit" class="postnewblog">Post New Blog</button>
+                        </form>
 
                     </div>
 
