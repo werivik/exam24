@@ -1,6 +1,11 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const newlyPostedContainer = document.querySelector(".newly-posted");
 
+    if (!newlyPostedContainer) {
+        console.error("Element with class 'newly-posted' not found.");
+        return;
+    }
+
     const fetchBlogData = async () => {
         try {
             const response = await fetch("https://v2.api.noroff.dev/blog/posts/wervik");

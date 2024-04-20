@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     const allBlogsContainer = document.querySelector(".all-blogs");
+    if (!allBlogsContainer) {
+        console.error("Element with class 'all-blogs' not found.");
+        return;
+    }
 
     const fetchBlogData = async () => {
         try {
@@ -20,8 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const totalPosts = data.data.length;
             const lastPosted = data.data[0].created;
 
-            document.getElementById("totalPosts").textContent = totalPosts;
-            document.getElementById("lastPosted").textContent = formatDate(lastPosted);
+            const totalPostsElement = document.getElementById("totalPosts");
+            const lastPostedElement = document.getElementById("lastPosted");
+
+            if(totalPostsElement && lastPostedElement) {
+                totalPostsElement.textContent = totalPosts;
+                lastPostedElement.textContent = formatDate(lastPosted);
+            } else {
+                console.error("Elements with IDs 'totalPosts' and 'lastPosted' not found.");
+            }
         }
     };
 
@@ -30,10 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const day = date.getDate();
         const month = date.getMonth() + 1;
         const year = date.getFullYear();
-
         const formattedDay = day < 10 ? `0${day}` : day;
         const formattedMonth = month < 10 ? `0${month}` : month;
-
         return `${formattedDay}.${formattedMonth}.${year}`;
     };
 
@@ -47,15 +56,19 @@ document.addEventListener("DOMContentLoaded", () => {
                     const blogElement = document.createElement("div");
                     blogElement.classList.add("blog-post");
                     blogElement.innerHTML = `
-                    <a href="${blog.url}" class="blog-link">
-                    <img src="${blog.media.url}" alt="${blog.media.alt}">
-                    <div class="post-textbox">
-                        <h2 class="title"><span class="main-title">${blog.title}</span><span class="second-title">${blog.secondTitle}</span></h2>
-                        <p class="published">${formatDate(blog.created)}</p>
-                    </div>
-                </a>
+                        <a href="HTML/blog-post-detail.html?id=${blog.id}" class="blog-link">
+                            <img src="${blog.media.url}" alt="${blog.media.alt}">
+                            <div class="post-textbox">
+                                <h2 class="title"><span class="main-title">${blog.title}</span><span class="second-title">${blog.secondTitle}</span></h2>
+                                <p class="published">${formatDate(blog.created)}</p>
+                            </div>
+                        </a>
                     `;
-                    allBlogsContainer.appendChild(blogElement);
+                    if(allBlogsContainer) {
+                        allBlogsContainer.appendChild(blogElement);
+                    } else {
+                        console.error("Element with class 'all-blogs' not found.");
+                    }
                 });
             } else {
                 console.error("Invalid data Format received from API");
