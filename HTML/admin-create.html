@@ -51,29 +51,49 @@
 
                     <div class="logo-inside-frame">
 
+                        <a href="/HTML/admin-page.html" class="gobackbutton"><i class="fa-solid fa-arrow-left"></i>Go back to Admin Page</a>
+
                         <form id="newBlogForm" class="inside">
 
-                            <a href="/HTML/admin-page.html" class="gobackbutton"><i class="fa-solid fa-arrow-left"></i>Go back to Admin Page</a>
+                            <div class="inside-left">
+                                <div class="main-title-box">
+                                    <label for="mainTitle" class="main-title">Main Blog Title:</label>
+                                    <input type="text" id="mainTitle" name="mainTitle" required>
+                                </div>
+                                
+                                <div class="snd-title-box">
+                                    <label for="secondTitle" class="snd-title">Second Blog Title:</label>
+                                    <input type="text" id="secondTitle" name="secondTitle">
+                                </div>
+                                
+                                <div class="blog-tags-box">
+                                    <label for="tags" class="blog-tags">Tags (comma-separated):</label>
+                                    <input type="text" id="tags" name="tags">
+                                </div>
+                                
+                                <div class="picture-upload-box">
+                                    <label for="pictureUrl" class="picture-upload">Picture URL:</label>
+                                    <input type="text" id="pictureUrl" name="pictureUrl">
+                                </div>
+                                
+                                <div class="picture-alt-box">
+                                    <label for="pictureAlt" class="picture-alt">Picture Alt Text:</label>
+                                    <input type="text" id="pictureAlt" name="pictureAlt">
+                                </div>
+                            </div>
 
-                            <label for="mainTitle" class="main-title">Main Blog Title:</label>
-                            <input type="text" id="mainTitle" name="mainTitle" required>
+                            <div class="inside-right">
+
+                                <div class="blog-p-box">
+                                    <label for="blogText" class="blog-p">Blog Text:</label>
+                                    <textarea id="blogText" name="blogText" maxLenght="2000"></textarea>
+                                    <p id="blogTextCounter">2000 characters remaining</p>
+                                </div>
                             
-                            <label for="secondTitle" class="snd-title">Second Blog Title:</label>
-                            <input type="text" id="secondTitle" name="secondTitle">
-                            
-                            <label for="blogText" class="blog-p">Blog Text:</label>
-                            <textarea id="blogText" name="blogText"></textarea>
-                            
-                            <label for="tags" class="blog-tags">Tags (comma-separated):</label>
-                            <input type="text" id="tags" name="tags">
-                            
-                            <label for="pictureUrl" class="picture-upload">Picture URL:</label>
-                            <input type="text" id="pictureUrl" name="pictureUrl">
-                            
-                            <label for="pictureAlt" class="picture-alt">Picture Alt Text:</label>
-                            <input type="text" id="pictureAlt" name="pictureAlt">
-                        
-                            <button type="submit" class="postnewblog">Post New Blog</button>
+                                <button type="submit" class="postnewblog">Post New Blog</button>
+
+                            </div>
+
                         </form>
 
                     </div>

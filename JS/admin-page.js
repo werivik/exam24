@@ -47,13 +47,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     const blogElement = document.createElement("div");
                     blogElement.classList.add("blog-post");
                     blogElement.innerHTML = `
-                        <a href="${blog.url}" class="blog-link">
-                            <img src="${blog.media.url}" alt="${blog.media.alt}">
-                            <div class="post-textbox">
-                                <h2 class="title">${blog.title}</h2>
-                                <p class="published">${formatDate(blog.created)}</p>
-                            </div>
-                        </a>
+                    <a href="${blog.url}" class="blog-link">
+                    <img src="${blog.media.url}" alt="${blog.media.alt}">
+                    <div class="post-textbox">
+                        <h2 class="title"><span class="main-title">${blog.title}</span><span class="second-title">${blog.secondTitle}</span></h2>
+                        <p class="published">${formatDate(blog.created)}</p>
+                    </div>
+                </a>
                     `;
                     allBlogsContainer.appendChild(blogElement);
                 });

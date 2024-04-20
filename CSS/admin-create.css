@@ -47,10 +47,26 @@ body {
             padding: 25px;
 
             .inside {
+                width: 100vh;
                 position: absolute;
                 display: flex;
-                flex-direction: column;
-                gap: 25px;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .inside-left {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .inside-right {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .postnewblog {
+                        width: 200px;
+                    }
+                }
             }
     
         }
@@ -64,6 +80,9 @@ body {
     align-items: center;
     text-decoration: none;
     color: #162D06;
+    position: absolute;
+    top: 120px;
+    width: 100vh;
     i {
         margin-right: 10px;
         background-color: #BEE6C6;
@@ -78,4 +97,16 @@ body {
 
 .main-title, .snd-title, .blog-p, .blog-tags, .picture-upload, .picture-alt {
     font-size: 20px;
+    margin-top: 50px;
+}
+
+.main-title-box, .snd-title-box, .blog-p-box, .blog-tags-box, .picture-upload-box, .picture-alt-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.blog-p-box #blogText {
+    width: 500px;
+    height: 400px;
 }

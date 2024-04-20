@@ -1,6 +1,7 @@
 body {
     background-color: #F2FFEA;
     width: 100%;
+    min-height: 100vh;
     overflow-x: hidden;
 
     color: #162D06;
@@ -27,13 +28,14 @@ body::before, body::after {
         overflow-x: hidden;
         overflow-y: hidden;
     
-        min-height: 100vh;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         top: 0;
         right: 0;
         left: 100%;
         min-width: 300px;
+        width: 300px;
         margin-right: 0px;
         background-color: #d5eac7;
     
@@ -46,6 +48,9 @@ body::before, body::after {
             top: 0;
     
             .right-s-background {
+
+                position: sticky;
+
                 background-image: linear-gradient(to bottom, rgba(228, 244, 217, 0.65), rgba(228, 244, 217, 0.65)),url(/MEDIA/background/backgroundleafes.png);
                 background-size: 40%;
                 padding-bottom: 70px;
@@ -155,7 +160,11 @@ body::before, body::after {
 
         margin-top: 90px;
         margin-left: 7%;
-        margin-right: 3.5%;
+        margin-right: 25px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 25px;
 
         .blog-post {
             background-color: #F1F8F3;
@@ -179,6 +188,14 @@ body::before, body::after {
                 height: 190px;
                 margin-left: 5px;
                 margin-right: 5px;
+
+                .main-title {
+                    font-weight: bold;
+                }
+                
+                .second-title {
+                    font-weight: 400;
+                }
 
                 .title {
                     font-size: 22px;

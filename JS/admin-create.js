@@ -19,14 +19,17 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const postData = {
-                mainTitle: mainTitle,
-                secondTitle: secondTitle,
-                blogText: blogText,
+                title: mainTitle,
+                body: blogText,
                 tags: tags,
                 media: {
                     url: pictureUrl,
                     alt: pictureAlt
                 }
+            };
+
+            if (secondTitle) {
+                postData.secondTitle = secondTitle
             };
 
             const options = {
@@ -42,14 +45,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (response.ok) {
                 alert("Blog Post Created Successfully <3");
-                window.location.href = "/HTML/admin-all.html";
-            } else {
+                window.location.href = "/HTML/admin-page.html";
+            } 
+
+            else {
                 const errorData = await response.json();
                 throw new Error(errorData.errors[0].message);
             }
+
         } catch (error) {
             console.error(error.message);
             alert("Failed to Create Blog Post. Please try again.");
         }
     });
+
+    DocumentTimeline.getElementById("blogText").addEventListener("input", function() {
+
+        const maxLength = 2000;
+        const currentLength = this.value.length;
+        const remaining = maxLength - currentLength;
+    
+        const counter = document.getElementById("blogTextCounter");
+        countertextContent = remaining + "characters remaining...";
+    
+        if (remaining < 0) {
+            counter.style.color = "red";
+        }
+    
+        else {
+            counter.style.color= "";
+        }
+    });
+
 });
