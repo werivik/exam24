@@ -1,0 +1,192 @@
+body {
+    background-color: #F2FFEA;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    color: #162D06;
+}
+
+body::before, body::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.main-content {
+    background-color: #F2FFEA;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    .un-scroll-content {
+
+        overflow-x: hidden;
+        overflow-y: hidden;
+    
+        height: 100vh;
+        position: sticky;
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        right: 0;
+        left: 100%;
+        min-width: 300px;
+        margin-right: 0px;
+        background-color: #d5eac7;
+    
+        .right-s-content {
+    
+            height: 100vh;
+            position: sticky;
+            display: flex;
+            flex-direction: column;
+            top: 0;
+    
+            .right-s-background {
+                background-image: linear-gradient(to bottom, rgba(228, 244, 217, 0.65), rgba(228, 244, 217, 0.65)),url(/MEDIA/background/backgroundleafes.png);
+                background-size: 40%;
+                padding-bottom: 70px;
+                width: 300px;
+    
+                .right-s-box {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 120px;
+    
+                    .right-s-text {
+                        background-color: #F2FFEA;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        border-radius: 10px;
+                        width: 250px;
+    
+                        img {
+                            width: 129px;
+                            height: 163px;
+                            object-fit: contain;
+                            background-color: white;
+                            border-radius: 99px;
+                        }
+    
+                        p {
+                            margin-bottom: 0px;
+                            margin-top: 10px;
+                            margin-left: 10px;
+                            margin-right: 5px;
+                            font-size: 15px;
+                        }
+    
+                        .right-s-info {
+                            width: 100%;
+                            padding-bottom: 25px;
+                            margin-top: 25px;
+    
+                            span {
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .scroll-content {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 130px;
+
+        .all-blogs {
+
+            margin-top: 90px;
+            margin-left: 7%;
+            margin-right: 25px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 25px;
+    
+            .blog-post {
+                background-color: #F1F8F3;
+                height: 590px;
+                width: 350px;
+                border-radius: 10px;
+                box-shadow: 2px 2px 7px 2px rgba(2, 57, 11, 0.306);
+    
+                img {
+                    height: 400px;
+                    width: 350px;
+                    object-fit: cover;
+                    border-radius: 10px 10px 0px 0px;
+                }
+    
+                .post-textbox {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 190px;
+                    margin-left: 5px;
+                    margin-right: 5px;
+    
+                    .main-title {
+                        font-weight: bold;
+                    }
+                    
+                    .second-title {
+                        font-weight: 400;
+                    }
+    
+                    .title {
+                        font-size: 22px;
+                    }
+    
+                    .published {
+                        opacity: 75%;
+                        font-size: 14px;
+                    }
+                }
+            }
+    
+            .blog-post:hover {
+                background-color: white;
+                transition: 0.25s;
+    
+                img {
+                    height: 475px;
+                    transition: ease-in-out 0.25s;
+                }
+    
+                .post-textbox {
+                    transition: 0.25s;
+    
+                    height: 115px;
+    
+                    .title {
+                        font-size: 26px;
+                    }
+    
+                    .published {
+                        display: none;
+                    }
+                }
+            }
+    
+            .blog-link {
+                text-decoration: none;
+                color: #162D06;
+            }
+    
+        }
+    }
+
+}
