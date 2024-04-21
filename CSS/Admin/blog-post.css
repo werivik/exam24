@@ -48,6 +48,7 @@ body::before, body::after {
                 background-image: linear-gradient(to bottom, rgba(228, 244, 217, 0.65), rgba(228, 244, 217, 0.65)),url(/MEDIA/background/backgroundleafes.png);
                 background-size: 40%;
                 padding-bottom: 70px;
+                height: 100vh;
                 width: 300px;
 
                 .gobackbutton {
@@ -102,8 +103,14 @@ body::before, body::after {
                         display: flex;
                         flex-direction: column;
                         align-items: center;
+                        justify-content: space-between;
                         border-radius: 10px;
                         width: 250px;
+                        min-height: 500px;
+
+                        h2 {
+                            margin-bottom: -50px;
+                        }
     
                         img {
                             width: 129px;
@@ -111,6 +118,7 @@ body::before, body::after {
                             object-fit: contain;
                             background-color: white;
                             border-radius: 99px;
+                            margin-top: 0px;
                         }
     
                         p {
