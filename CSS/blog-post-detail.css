@@ -86,6 +86,10 @@ body::before, body::after {
                             padding-bottom: 25px;
                             margin-top: 25px;
     
+                            #lastPosted, #totalPosts {
+                                font-weight: 400;
+                            }
+                            
                             span {
                                 font-weight: bold;
                             }

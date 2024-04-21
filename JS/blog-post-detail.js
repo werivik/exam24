@@ -65,7 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch((error) => {
                 console.error("Failed to fetch blog post:", error);
             });
-    } else {
+    } 
+    
+    else {
         console.error("Blog post ID not provided in the URL");
     }
 });

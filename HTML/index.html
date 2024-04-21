@@ -20,7 +20,9 @@
 
 <body>
 
-    <script src="/JS/newly-posted.js"></script>
+    <script src="/JS/newly-posted.js" defer></script>
+    <script src="/JS/updated-post-info.js" defer></script>
+    
 
     <header>
         <nav>
@@ -92,9 +94,9 @@
                                 <p>My journey began with a few humble succulents adorning my apartment windowsill, but it didn't take long for their leafy charms to capture my heart and ignite a passion within me.</p>
                                 <p>Join me on this journey of growth, resilience, and endless botanical wonders. Together, let's embrace the magic of plants and nurture our spirits as we cultivate a greener, more vibrant world. Whether you're a seasoned plant parent or a budding enthusiast, there's always room in my digital garden for you. So, grab your watering can and let's sow the seeds of joy and discovery together!</p>
     
-                                <div class="right-s-info">
-                                    <p><span>Total Posts:</span> 12</p>
-                                    <p><span>Last Posted:</span> 27.05.2024</p>
+                                <div class="right-s-info" id="rightSInfo">
+                                    <p><span>Total Posts:</span> <span id="totalPosts"></span></p>
+                                    <p><span>Last Posted:</span> <span id="lastPosted"></span></p>
                                 </div>
                             </div>
 

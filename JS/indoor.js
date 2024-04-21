@@ -53,21 +53,24 @@ document.addEventListener("DOMContentLoaded", () => {
         .then((data) => {
             if (data && Array.isArray(data.data)) {
                 data.data.forEach((blog) => {
-                    const blogElement = document.createElement("div");
-                    blogElement.classList.add("blog-post");
-                    blogElement.innerHTML = `
-                        <a href="/HTML/blog-post-detail.html?id=${blog.id}" class="blog-link">
-                            <img src="${blog.media.url}" alt="${blog.media.alt}">
-                            <div class="post-textbox">
-                                <h2 class="title"><span class="main-title">${blog.title}</span><span class="second-title">${blog.secondTitle}</span></h2>
-                                <p class="published">${formatDate(blog.created)}</p>
-                            </div>
-                        </a>
-                    `;
-                    if(allBlogsContainer) {
-                        allBlogsContainer.appendChild(blogElement);
-                    } else {
-                        console.error("Element with class 'all-blogs' not found.");
+                    
+                    if (blog.tags.includes("indoor")) {
+                        const blogElement = document.createElement("div");
+                        blogElement.classList.add("blog-post");
+                        blogElement.innerHTML = `
+                            <a href="HTML/blog-post-detail.html?id=${blog.id}" class="blog-link">
+                                <img src="${blog.media.url}" alt="${blog.media.alt}">
+                                <div class="post-textbox">
+                                    <h2 class="title"><span class="main-title">${blog.title}</span><span class="second-title">${blog.secondTitle}</span></h2>
+                                    <p class="published">${formatDate(blog.created)}</p>
+                                </div>
+                            </a>
+                        `;
+                        if(allBlogsContainer) {
+                            allBlogsContainer.appendChild(blogElement);
+                        } else {
+                            console.error("Element with class 'all-blogs' not found.");
+                        }
                     }
                 });
             } else {
