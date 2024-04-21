@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    const blogPostButtons = document.querySelector(".blog-post-buttons");
+
     const fetchBlogData = async (id) => {
         try {
             const response = await fetch(`https://v2.api.noroff.dev/blog/posts/wervik/${id}`);
@@ -64,16 +66,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
         saveButton.addEventListener("click", async () => {
             try {
-                // Your save button logic here
+
             } catch (error) {
                 console.error(error.message);
                 alert("Failed to Update Blog Post, sorry not sorry...");
             }
         });
 
-        appendElementsToContainer(blogDetailContainer, [titleHeader, titleInput, secondTitleHeader, secondTitleInput, bodyHeader, bodyTextArea, mediaURLHeader, mediaURLInput, imagePreview, mediaAltHeader, mediaAltInput, tagsHeader, tagsInput, editButton, saveButton, deleteButton]);
+        appendElementsToContainer(blogDetailContainer, [titleHeader, titleInput, secondTitleHeader, secondTitleInput, bodyHeader, bodyTextArea, mediaURLHeader, mediaURLInput, imagePreview, mediaAltHeader, mediaAltInput, tagsHeader, tagsInput]);
+        appendElementsToContainer(blogPostButtons, [editButton, saveButton, deleteButton]);
     };
 
+    const createInputElement = (type, value) => {
+        const input = document.createElement("input");
+        input.type = type;
+        input.value = value;
+        input.classList.add("edit-input");
+        return input;
+    };
+
+    const createTextAreaElement = (value) => {
+        const textarea = document.createElement("textarea");
+        textarea.value = value;
+        textarea.classList.add("edit-textarea");
+        return textarea;
+    };
+
+    const createButtonElement = (text) => {
+        const button = document.createElement("button");
+        button.textContent = text;
+        button.classList.add("edit-post-button");
+        return button;
+    };
+
+    const createHeaderElement = (text) => {
+        const header = document.createElement("h3");
+        header.textContent = text;
+        return header;
+    };
 
     const formatDate = (dateString) => {
         const date = new Date(dateString);
@@ -87,11 +117,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const deletePost = async (postId) => {
         try {
-            
+
         } catch (error) {
             console.error(error.message);
             alert("Failed to Delete Blog Post, sorry not sorry...");
         }
+    };
+
+    const appendElementsToContainer = (container, elements) => {
+        elements.forEach(element => container.appendChild(element));
+    };
+
+    const showElements = (elements) => {
+        elements.forEach(element => element.style.display = "block");
+    };
+
+    const hideElements = (elements) => {
+        elements.forEach(element => element.style.display = "none");
     };
 
     const urlParams = new URLSearchParams(window.location.search);

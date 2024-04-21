@@ -111,6 +111,12 @@ body::before, body::after {
                         h2 {
                             margin-bottom: -50px;
                         }
+
+                        .blog-post-buttons {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 15px;
+                        }
     
                         img {
                             width: 129px;
