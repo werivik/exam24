@@ -24,15 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Rendering Blog Post Detail:", blogPost);
         const { id, title, secondTitle, created, media, body } = blogPost.data;
         const formattedDate = formatDate(created);
-    
+
         const blogPostElement = document.createElement("div");
         blogPostElement.classList.add("blog-post-detail");
-    
+
         let mediaHTML = '';
         if (media && media.url && media.alt) {
             mediaHTML = `<img src="${media.url}" alt="${media.alt}">`;
         }
-    
+
         blogPostElement.innerHTML += `
             ${mediaHTML}
             <h2 class="title">${title}</h2>
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <p class="content">${body}</p>
             <span class="published">${formattedDate}</span>
         `;
-    
+
         blogDetailContainer.appendChild(blogPostElement);
     };
 
@@ -65,9 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch((error) => {
                 console.error("Failed to fetch blog post:", error);
             });
-    } 
-    
-    else {
+    } else {
         console.error("Blog post ID not provided in the URL");
     }
 });
