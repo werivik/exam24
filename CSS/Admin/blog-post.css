@@ -1,0 +1,174 @@
+body {
+    background-color: #F2FFEA;
+    width: 100%;
+    overflow-x: hidden;
+
+    color: #162D06;
+}
+
+body::before, body::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.main-content {
+
+    background-color: #F2FFEA;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    .un-scroll-content {
+
+        overflow-x: hidden;
+        overflow-y: hidden;
+    
+        height: 100vh;
+        position: sticky;
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        right: 0;
+        left: 100%;
+        min-width: 300px;
+        margin-right: 0px;
+        background-color: #d5eac7;
+    
+        .right-s-content {
+    
+            height: 100vh;
+            position: sticky;
+            display: flex;
+            flex-direction: column;
+            top: 0;
+    
+            .right-s-background {
+                background-image: linear-gradient(to bottom, rgba(228, 244, 217, 0.65), rgba(228, 244, 217, 0.65)),url(/MEDIA/background/backgroundleafes.png);
+                background-size: 40%;
+                padding-bottom: 70px;
+                width: 300px;
+
+                .gobackbutton {
+                    margin-top: 110px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 250px;
+                    margin-left: 25px;
+
+                    a {
+                        padding: 7px;
+                        padding-right: 10px; 
+                        padding-left: 10px;
+                        background-color: #162d06;
+                        border-radius: 10px;
+
+                        color: #F2FFEA;
+                        text-decoration: none;
+
+                        font-size: 14px;
+
+                        i {
+                            display: none;
+                            margin-right: 7px;
+                            font-size: 13px;
+                        }
+                    }
+
+                    &:hover {
+                        a {
+                            transform: scale(1.2);
+                            transition: 0.25s;
+                        } 
+
+                        i {
+                            transition: 0.25s;
+                            display: inline;
+                        }
+                    }
+                }
+    
+                .right-s-box {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 10px;
+    
+                    .right-s-text {
+                        background-color: #F2FFEA;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        border-radius: 10px;
+                        width: 250px;
+    
+                        img {
+                            width: 129px;
+                            height: 163px;
+                            object-fit: contain;
+                            background-color: white;
+                            border-radius: 99px;
+                        }
+    
+                        p {
+                            margin-bottom: 0px;
+                            margin-top: 10px;
+                            margin-left: 10px;
+                            margin-right: 5px;
+                            font-size: 15px;
+                        }
+    
+                        .right-s-info {
+                            width: 100%;
+                            padding-bottom: 25px;
+                            margin-top: 25px;
+    
+                            #lastPosted, #totalPosts {
+                                font-weight: 400;
+                            }
+                            
+                            span {
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .scroll-content {
+        width: 100%;
+        margin-top: 80px;
+        margin-left: -8px;
+
+        .admin-blog-detail {
+
+            width: 100%;
+            background-color: pink;
+
+            .blog-post-detail {
+
+                width: 100%;
+                img {
+                    width: 1400px;
+                    height: 500px;
+                    object-fit: cover;
+                }
+
+                .title, .second-title, .content, .published {
+                    margin-left: 7%;
+                    margin-right: 3.5%
+                }
+
+                .second-title {
+                    margin-bottom: 100px;
+                }
+            }
+        }
+    }
+
+}

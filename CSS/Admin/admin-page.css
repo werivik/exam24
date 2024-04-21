@@ -83,7 +83,7 @@ body::before, body::after {
                             object-fit: contain;
                             background-color: white;
                             border-radius: 99px;
-                            margin-bottom: 50px;
+                            margin-bottom: 25px;
                         }
 
                         .admin-button {
