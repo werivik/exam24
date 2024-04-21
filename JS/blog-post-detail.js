@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const fetchBlogData = async (id) => {
         try {
-            const response = await fetch (`https://v2.api.noroff.dev/blog/posts/wervik/${id}`);
+            const response = await fetch(`https://v2.api.noroff.dev/blog/posts/wervik/${id}`);
             if (!response.ok) {
                 throw new Error("Failed to Fetch Data from API, try again, loser");
             }
@@ -22,20 +22,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const renderBlogPostDetail = (blogPost) => {
         console.log("Rendering Blog Post Detail:", blogPost);
-        const { id, title, secondTitle, created, media } = blogPost;
+        const { id, title, secondTitle, created, media, body } = blogPost.data;
         const formattedDate = formatDate(created);
-
+    
         const blogPostElement = document.createElement("div");
         blogPostElement.classList.add("blog-post-detail");
-        blogPostElement.innerHTML = `
-            <img src="${media.url}" alt="${media.alt}">
-            <div class="post-textbox">
-                <h2 class="title">${title}</h2>
-                <h3 class="second-title">${secondTitle}</h3>
-                <p class="published">${formattedDate}</p>
-            </div>
+    
+        let mediaHTML = '';
+        if (media && media.url && media.alt) {
+            mediaHTML = `<img src="${media.url}" alt="${media.alt}">`;
+        }
+    
+        blogPostElement.innerHTML += `
+            ${mediaHTML}
+            <h2 class="title">${title}</h2>
+            <h3 class="second-title">${secondTitle}</h3>
+            <p class="content">${body}</p>
+            <span class="published">${formattedDate}</span>
         `;
-
+    
         blogDetailContainer.appendChild(blogPostElement);
     };
 
@@ -44,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const day = date.getDate();
         const month = date.getMonth() + 1;
         const year = date.getFullYear();
-        const formattedDay = day < 10 ?  `0${day}` : day;
+        const formattedDay = day < 10 ? `0${day}` : day;
         const formattedMonth = month < 10 ? `0${month}` : month;
         return `${formattedDay}.${formattedMonth}.${year}`;
     };

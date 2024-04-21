@@ -96,5 +96,14 @@ body::before, body::after {
         }
     }
 
+    .scroll-content {
+
+        margin-top: 130px;
+        margin-left: 7%;
+
+        .blog-detail {
+
+        }
+    }
 
 }
