@@ -58,6 +58,7 @@ body::before, body::after {
                     align-items: center;
                     width: 250px;
                     margin-left: 25px;
+                    margin-bottom: 30px;
 
                     a {
                         padding: 7px;
@@ -162,7 +163,7 @@ body::before, body::after {
         .admin-blog-detail {
 
             margin-top: 75px;
-            margin-left: 7%;
+            margin-left: 9%;
             margin-right: 3.5%;
             display: flex;
             flex-direction: column;
@@ -170,7 +171,6 @@ body::before, body::after {
             margin-bottom: 100px;
 
             .title-container, .body-container, .media-container, .tags-container {
-                background-color: pink;
 
                 input {
                     width: 700px;
