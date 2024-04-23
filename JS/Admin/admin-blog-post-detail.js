@@ -117,18 +117,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const deletePost = async (postId) => {
         try {
-            const apiKey = 'https://v2.api.noroff.dev/blog/posts/wervik';
             const response = await fetch(`https://v2.api.noroff.dev/blog/posts/wervik/${postId}`, {
-                method: 'DELETE',
+                method: "DELETE",
                 headers: {
-                    'Authorization': `Bearer ${apiKey}`
-                }
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                },
             });
             if (!response.ok) {
                 throw new Error("Failed to delete post");
             }
             alert("Post deleted successfully");
-            window.location.href = "/HTML/index.html";
+            window.location.href = "/HTML/Admin/admin-page.html";
         } catch (error) {
             console.error(error.message);
             alert("Failed to Delete Blog Post, sorry not sorry...");
@@ -161,4 +161,5 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         console.error("Blog post ID not provided in the URL");
     }
+
 });
