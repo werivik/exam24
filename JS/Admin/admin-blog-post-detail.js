@@ -24,11 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const renderBlogPostDetail = (blogPost) => {
         console.log("Rendering Blog Post Detail:", blogPost);
-        const { id, title, secondTitle, created, media, body, tags } = blogPost.data;
+        const { id, title, created, media, body, tags } = blogPost.data;
         const formattedDate = formatDate(created);
 
         const titleInput = createInputElement("text", title);
-        const secondTitleInput = createInputElement("text", secondTitle);
         const bodyTextArea = createTextAreaElement(body);
         const mediaURLInput = createInputElement("text", media.url || '');
         const mediaAltInput = createInputElement("text", media.alt || '');
@@ -39,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const deleteButton = createButtonElement("Delete Post");
 
         const titleHeader = createHeaderElement("Title");
-        const secondTitleHeader = createHeaderElement("Second Title");
         const bodyHeader = createHeaderElement("Body");
         const mediaURLHeader = createHeaderElement("Media URL");
         const mediaAltHeader = createHeaderElement("Media Alt");
@@ -61,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         editButton.addEventListener("click", () => {
-            showElements([titleHeader, titleInput, secondTitleHeader, secondTitleInput, bodyHeader, bodyTextArea, mediaURLHeader, mediaURLInput, imagePreview, mediaAltHeader, mediaAltInput, tagsHeader, tagsInput, saveButton, deleteButton]);
+            showElements([titleHeader, titleInput, bodyHeader, bodyTextArea, mediaURLHeader, mediaURLInput, imagePreview, mediaAltHeader, mediaAltInput, tagsHeader, tagsInput, saveButton, deleteButton]);
             hideElements([editButton]);
         });
 
@@ -74,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        appendElementsToContainer(blogDetailContainer, [titleHeader, titleInput, secondTitleHeader, secondTitleInput, bodyHeader, bodyTextArea, mediaURLHeader, mediaURLInput, imagePreview, mediaAltHeader, mediaAltInput, tagsHeader, tagsInput]);
+        appendElementsToContainer(blogDetailContainer, [titleHeader, titleInput, bodyHeader, bodyTextArea, mediaURLHeader, mediaURLInput, imagePreview, mediaAltHeader, mediaAltInput, tagsHeader, tagsInput]);
         appendElementsToContainer(blogPostButtons, [editButton, saveButton, deleteButton]);
     };
 
