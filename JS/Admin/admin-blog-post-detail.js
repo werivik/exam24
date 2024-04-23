@@ -65,7 +65,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
         saveButton.addEventListener("click", async () => {
             try {
+                const token = localStorage.getItem("token");
+                const updatedData = {
+                    title: titleInput.value,
+                    body: bodyTextArea.value,
+                    media: {
+                        url: mediaURLInput.value,
+                        alt: mediaAltInput.value
+                    },
+                    tags: tagsInput.value.split(',')
+                };
 
+                const response = await fetch(`https://v2.api.noroff.dev/blog/posts/wervik/${id}`, {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    },
+                    body: JSON.stringify(updatedData)
+                });
+
+                if (!response.ok) {
+                    throw new Error("Failed to update post");
+                }
+                
+                alert("Post updated successfully");
+                window.location.reload();
             } catch (error) {
                 console.error(error.message);
                 alert("Failed to Update Blog Post, sorry not sorry...");

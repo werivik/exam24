@@ -59,8 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         <a href="admin-blog-post.html?id=${blog.id}" class="blog-link">
                             <img src="${blog.media.url}" alt="${blog.media.alt}">
                             <div class="post-textbox">
-                                <h2 class="title"><span class="main-title">${blog.title}</span><span class="second-title">${blog.secondTitle}</span></h2>
-                                <p class="published">${formatDate(blog.created)}</p>
+                                <h2 class="title"><span class="main-title">${blog.title}</span></h2>
+                                <p class="published">Published: ${formatDate(blog.created)}</p>
                             </div>
                         </a>
                     `;
