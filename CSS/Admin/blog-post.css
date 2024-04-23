@@ -167,23 +167,26 @@ body::before, body::after {
             margin-right: 3.5%;
             display: flex;
             flex-direction: column;
+            width: 1200px;
+            margin-bottom: 100px;
 
             .blog-post-detail {
 
                 width: 100%;
-                img {
-                    width: 1400px;
-                    height: 500px;
-                    object-fit: cover;
-                }
 
-                .title, .second-title, .content, .published {
+                .title, .second-title, .body, .published {
                     margin-left: 7%;
                     margin-right: 3.5%
                 }
 
+
+
                 .second-title {
                     margin-bottom: 100px;
+                }
+
+                .body {
+                    height: 500px;
                 }
             }
         }

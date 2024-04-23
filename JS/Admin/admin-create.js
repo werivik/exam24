@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const mainTitleInput = document.getElementById("mainTitle");
         const mainTitleValue = mainTitleInput.value.trim();
-        const [boldPart, normalPart] = mainTitleValue.split(":");
+
+        const blogTitle = mainTitleValue;
 
         const blogText = document.getElementById("blogText").value.trim();
         const tags = document.getElementById("tags").value.trim().split(",");
@@ -21,10 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const postData = {
-                title: {
-                    bold: boldPart,
-                    normal: normalPart
-                },
+                title: blogTitle,
                 body: blogText,
                 tags: tags,
                 media: {
@@ -46,20 +44,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (response.ok) {
                 alert("Blog Post Created Successfully <3");
-                window.location.href = "HTML/Admin/admin-page.html";
-            } else {
+
+                window.location.href = "/HTML/Admin/admin-page.html";
+            } 
+            
+            else {
                 const errorData = await response.json();
                 throw new Error(errorData.errors[0].message);
             }
 
-        } catch (error) {
+        } 
+        
+        catch (error) {
             console.error(error.message);
             alert("Failed to Create Blog Post. Please try again.");
         }
+
     });
 
     document.getElementById("blogText").addEventListener("input", function() {
-        const maxLength = 2000;
+        const maxLength = 5000;
         const currentLength = this.value.length;
         const remaining = maxLength - currentLength;
     
@@ -68,8 +72,12 @@ document.addEventListener("DOMContentLoaded", () => {
     
         if (remaining < 0) {
             counter.style.color = "red";
-        } else {
+        } 
+        
+        else {
             counter.style.color = "";
         }
+
     });
+
 });

@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const tagsInput = createInputElement("text", tags.join(', '));
 
         const saveButton = createButtonElement("Save Changes");
-        const editButton = createButtonElement("Edit Post");
         const deleteButton = createButtonElement("Delete Post");
 
         const titleHeader = createHeaderElement("Title");
@@ -45,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const imagePreview = document.createElement("img");
         imagePreview.classList.add("image-preview");
+        imagePreview.src = mediaURLInput.value;
 
         mediaURLInput.addEventListener("input", () => {
             imagePreview.src = mediaURLInput.value;
@@ -56,11 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 const token = localStorage.getItem("token");
                 deletePost(id, token);
             }
-        });
-
-        editButton.addEventListener("click", () => {
-            showElements([titleHeader, titleInput, bodyHeader, bodyTextArea, mediaURLHeader, mediaURLInput, imagePreview, mediaAltHeader, mediaAltInput, tagsHeader, tagsInput, saveButton, deleteButton]);
-            hideElements([editButton]);
         });
 
         saveButton.addEventListener("click", async () => {
@@ -98,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         appendElementsToContainer(blogDetailContainer, [titleHeader, titleInput, bodyHeader, bodyTextArea, mediaURLHeader, mediaURLInput, imagePreview, mediaAltHeader, mediaAltInput, tagsHeader, tagsInput]);
-        appendElementsToContainer(blogPostButtons, [editButton, saveButton, deleteButton]);
+        appendElementsToContainer(blogPostButtons, [saveButton, deleteButton]);
     };
 
     const createInputElement = (type, value) => {
@@ -161,14 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const appendElementsToContainer = (container, elements) => {
         elements.forEach(element => container.appendChild(element));
-    };
-
-    const showElements = (elements) => {
-        elements.forEach(element => element.style.display = "block");
-    };
-
-    const hideElements = (elements) => {
-        elements.forEach(element => element.style.display = "none");
     };
 
     const urlParams = new URLSearchParams(window.location.search);

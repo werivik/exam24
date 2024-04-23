@@ -248,12 +248,14 @@ body::before, body::after {
                         h2 {
                             font-size: 20px;
                         }
+
+                        .published {
+                            opacity: 65%;
+                        }
                     }
 
                     .new-post:hover {
                         background-color: white;
-                        
-                        transform: scale(1.1);
                         transition: 0.45s;
 
                         .post-textbox {
@@ -262,7 +264,7 @@ body::before, body::after {
                         }
         
                         img {
-                            height: 450px;
+                            height: 475px;
                             transition: 0.35s;
                         }
     
