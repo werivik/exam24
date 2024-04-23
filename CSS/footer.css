@@ -9,6 +9,8 @@ footer {
     flex-direction: row;
     justify-content: space-between;
 
+    color: #162D06;
+
     .footer-logo {
         margin-top: 75px;
         width: 375px;
@@ -32,10 +34,36 @@ footer {
         .footer-blogs {
             margin-right: 100px;
             width: 100%;
+
+            h2 {
+                font-size: 35px;
+            }
+
+            a {
+                text-decoration: none;
+                color: #162D06;
+
+                h3 {
+                    font-size: 22px;
+                }
+            }
         }
 
         .footer-info {
             width: 100%;
+
+            h2 {
+                font-size: 35px;
+            }
+
+            a {
+                text-decoration: none;
+                color: #162D06;
+
+                h3 {
+                    font-size: 22px;
+                }
+            }
         }
     }
 }
