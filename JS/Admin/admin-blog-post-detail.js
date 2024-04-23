@@ -117,7 +117,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const deletePost = async (postId) => {
         try {
-
+            const apiKey = 'https://v2.api.noroff.dev/blog/posts/wervik';
+            const response = await fetch(`https://v2.api.noroff.dev/blog/posts/wervik/${postId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${apiKey}`
+                }
+            });
+            if (!response.ok) {
+                throw new Error("Failed to delete post");
+            }
+            alert("Post deleted successfully");
+            window.location.href = "/HTML/index.html";
         } catch (error) {
             console.error(error.message);
             alert("Failed to Delete Blog Post, sorry not sorry...");
