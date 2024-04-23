@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
         event.preventDefault();
 
         const mainTitle = document.getElementById("mainTitle").value.trim();
-        const secondTitle = document.getElementById("secondTitle").value.trim();
         const blogText = document.getElementById("blogText").value.trim();
         const tags = document.getElementById("tags").value.trim().split(",");
         const pictureUrl = document.getElementById("pictureUrl").value.trim();
@@ -26,10 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     url: pictureUrl,
                     alt: pictureAlt
                 }
-            };
-
-            if (secondTitle) {
-                postData.secondTitle = secondTitle
             };
 
             const options = {
@@ -59,22 +54,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    DocumentTimeline.getElementById("blogText").addEventListener("input", function() {
-
+    document.getElementById("blogText").addEventListener("input", function() {
         const maxLength = 2000;
         const currentLength = this.value.length;
         const remaining = maxLength - currentLength;
     
         const counter = document.getElementById("blogTextCounter");
-        countertextContent = remaining + "characters remaining...";
+        counter.textContent = remaining + " characters remaining...";
     
         if (remaining < 0) {
             counter.style.color = "red";
-        }
-    
-        else {
-            counter.style.color= "";
+        } else {
+            counter.style.color = "";
         }
     });
-
 });
