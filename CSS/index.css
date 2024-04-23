@@ -184,19 +184,36 @@ body::before, body::after {
                 .newly-posted {
 
                     width: 100%;
+                    height: 700px;
                     display: flex;
                     flex-direction: row;
+                    align-items: center;
                     gap: 25px;
     
                     .new-post {
-                        background-color: pink;
+
+                        background-color: #f6fef2;
                         border-radius: 10px;
                         height: 600px;
                         width: 315px;
+                        box-shadow: 5px 10px 10px 2px rgba(2, 101, 19, 0.154);
         
                         .blog-link {
                             text-decoration: none;
                             color: #162D06;
+                        }
+
+                        .post-textbox {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            align-items: center;
+                            text-align: center;
+
+                            margin-top: 10px;
+                            height: 170px;
+                            margin-left: 5px;
+                            margin-right: 5px;
                         }
         
                         img {
@@ -208,6 +225,31 @@ body::before, body::after {
     
                         h2 {
                             font-size: 20px;
+                        }
+                    }
+
+                    .new-post:hover {
+                        background-color: white;
+                        
+                        transform: scale(1.1);
+                        transition: 0.45s;
+
+                        .post-textbox {
+                            margin-top: 5px;
+                            height: 150px;
+                        }
+        
+                        img {
+                            height: 450px;
+                            transition: 0.35s;
+                        }
+    
+                        h2 {
+                            font-size: 22px;
+                        }
+
+                        .published {
+                            display: none;
                         }
                     }
                 }
@@ -260,49 +302,4 @@ body::before, body::after {
 
     }
 
-}
-
-
-@media (max-width: 1000px) {
-
-    .main-content {
-    
-        .un-scroll-content {
-            min-width: 250px;
-        
-            .right-s-content {
-        
-                .right-s-background {
-                    width: 250px;
-
-                    .right-s-box {
-        
-                        .right-s-text {
-                            width: 200px;
-        
-                            a {
-                                text-decoration: none;
-                                cursor: help;
-
-                                img {
-                                    cursor: help;
-                                    width: 100px;
-                                    height: 125px;
-                                    object-fit: contain;
-                                    background-color: white;
-                                    border-radius: 99px;
-                                }
-                            }
-        
-                            p {
-                                font-size: 13.7px;
-                            }
-    
-                        }
-                    }
-                }
-            }
-        }
-    
-    }
 }

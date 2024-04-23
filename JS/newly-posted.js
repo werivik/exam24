@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <img src="${post.media.url}" alt="${post.media.alt}">
                     <div class="post-textbox">
                         <h2 class="title">${post.title}</h2>
-                        <p class="published">${formatDate(post.created)}</p>
+                        <p class="published">Published: ${formatDate(post.created)}</p>
                     </div>
                 </a>
             `;
