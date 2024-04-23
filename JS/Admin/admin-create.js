@@ -4,7 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
     newBlogForm.addEventListener("submit", async (event) => {
         event.preventDefault();
 
-        const mainTitle = document.getElementById("mainTitle").value.trim();
+        const mainTitleInput = document.getElementById("mainTitle");
+        const mainTitleValue = mainTitleInput.value.trim();
+        const [boldPart, normalPart] = mainTitleValue.split(":");
+
         const blogText = document.getElementById("blogText").value.trim();
         const tags = document.getElementById("tags").value.trim().split(",");
         const pictureUrl = document.getElementById("pictureUrl").value.trim();
@@ -18,7 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const postData = {
-                title: mainTitle,
+                title: {
+                    bold: boldPart,
+                    normal: normalPart
+                },
                 body: blogText,
                 tags: tags,
                 media: {
@@ -41,9 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (response.ok) {
                 alert("Blog Post Created Successfully <3");
                 window.location.href = "HTML/Admin/admin-page.html";
-            } 
-
-            else {
+            } else {
                 const errorData = await response.json();
                 throw new Error(errorData.errors[0].message);
             }
