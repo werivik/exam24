@@ -28,6 +28,18 @@ body::before, body::after {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        .leafy-background {
+            position: absolute;
+            width: 100%;
+            margin-left: -15px;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
     }
 
     .framed-logo {
@@ -35,11 +47,12 @@ body::before, body::after {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-top: -90px;
 
         .frame {
             position: absolute;
             width: 1000px;
-            height: 685px;
+            height: 600px;
         }
 
         .logo-inside-frame {
@@ -49,20 +62,20 @@ body::before, body::after {
             align-items: center;
             background-color: #F7FFF2;
             width: 875px;
-            height: 575px;
+            height: 500px;
             border-radius: 10px;
     
             img {
                 width: 594px;
-                height: 246px;
-                object-fit: cover;
+                height: 175px;
+                object-fit: contain;
             }
 
             h2 {
-                font-size: 30px;
+                font-size: 25px;
             }
             h1 {
-                font-size: 55px;
+                font-size: 35px;
             }
         }
     }
