@@ -162,7 +162,6 @@ body::before, body::after {
         .admin-blog-detail {
 
             margin-top: 75px;
-            background-color: pink;
             margin-left: 7%;
             margin-right: 3.5%;
             display: flex;
@@ -170,25 +169,22 @@ body::before, body::after {
             width: 1200px;
             margin-bottom: 100px;
 
-            .blog-post-detail {
+            .title-container, .body-container, .media-container, .tags-container {
+                background-color: pink;
 
-                width: 100%;
-
-                .title, .second-title, .body, .published {
-                    margin-left: 7%;
-                    margin-right: 3.5%
+                input {
+                    width: 700px;
                 }
 
-
-
-                .second-title {
-                    margin-bottom: 100px;
-                }
-
-                .body {
-                    height: 500px;
+                img {
+                    width: 700px;
+                    object-fit: cover;
+                    height: 450px;
+                    border-radius: 10px;
+                    margin-top: 25px;
                 }
             }
+
         }
     }
 

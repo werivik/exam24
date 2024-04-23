@@ -27,6 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const { id, title, created, media, body, tags } = blogPost.data;
         const formattedDate = formatDate(created);
 
+        const titleContainer = createDivElement("title-container");
+        const bodyContainer = createDivElement("body-container");
+        const mediaContainer = createDivElement("media-container");
+        const tagsContainer = createDivElement("tags-container");
+
         const titleInput = createInputElement("text", title);
         const bodyTextArea = createTextAreaElement(body);
         const mediaURLInput = createInputElement("text", media.url || '');
@@ -92,7 +97,12 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        appendElementsToContainer(blogDetailContainer, [titleHeader, titleInput, bodyHeader, bodyTextArea, mediaURLHeader, mediaURLInput, imagePreview, mediaAltHeader, mediaAltInput, tagsHeader, tagsInput]);
+        appendElementsToContainer(titleContainer, [titleHeader, titleInput]);
+        appendElementsToContainer(bodyContainer, [bodyHeader, bodyTextArea]);
+        appendElementsToContainer(mediaContainer, [mediaURLHeader, mediaURLInput, imagePreview, mediaAltHeader, mediaAltInput]);
+        appendElementsToContainer(tagsContainer, [tagsHeader, tagsInput]);
+
+        appendElementsToContainer(blogDetailContainer, [titleContainer, bodyContainer, mediaContainer, tagsContainer]);
         appendElementsToContainer(blogPostButtons, [saveButton, deleteButton]);
     };
 
@@ -122,6 +132,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const header = document.createElement("h3");
         header.textContent = text;
         return header;
+    };
+
+    const createDivElement = (className) => {
+        const div = document.createElement("div");
+        div.classList.add(className);
+        return div;
     };
 
     const formatDate = (dateString) => {
