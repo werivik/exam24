@@ -55,7 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
         deleteButton.addEventListener("click", () => {
             const confirmDelete = confirm("Are you sure you want to delete this post?");
             if (confirmDelete) {
-                deletePost(id);
+                const token = localStorage.getItem("token");
+                deletePost(id, token);
             }
         });
 
@@ -115,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return `${formattedDay}.${formattedMonth}.${year}`;
     };
 
-    const deletePost = async (postId) => {
+    const deletePost = async (postId, token) => {
         try {
             const response = await fetch(`https://v2.api.noroff.dev/blog/posts/wervik/${postId}`, {
                 method: "DELETE",
