@@ -2,6 +2,7 @@ body {
     background-color: #F2FFEA;
     width: 100%;
     overflow-x: hidden;
+    overflow-y: scroll;
 
     color: #162D06;
 }
@@ -165,6 +166,7 @@ body::before, body::after {
         width: 75%;
         margin-left: 7%;
         margin-right: 3.5%;
+        margin-bottom: 150px;
 
         .newly-posted-container {
 

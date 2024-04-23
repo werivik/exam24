@@ -1,0 +1,41 @@
+footer {
+    background-color: #FFB9B9;
+    bottom: 0px;
+    margin-bottom: -50px;
+    margin-left: -8px;
+    height: 500px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .footer-logo {
+        margin-top: 75px;
+        width: 375px;
+        height: 272px;
+        margin-left: 7%;
+
+        img {
+            width: 375px;
+            height: 272px;
+            object-fit: contain;
+        }
+    }
+
+    .footer-content {
+        margin-top: 75px;
+        display: flex;
+        flex-direction: row;
+        margin-right: 14%;
+        margin-bottom: 100px;
+
+        .footer-blogs {
+            margin-right: 100px;
+            width: 100%;
+        }
+
+        .footer-info {
+            width: 100%;
+        }
+    }
+}
