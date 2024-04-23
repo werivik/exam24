@@ -38,8 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const mediaAltInput = createInputElement("text", media.alt || '');
         const tagsInput = createInputElement("text", tags.join(', '));
 
-        const saveButton = createButtonElement("Save Changes");
-        const deleteButton = createButtonElement("Delete Post");
+        const saveButtonContainer = createDivElement("save-button");
+        const deleteButtonContainer = createDivElement("delete-button");
+
+        const saveButton = createButtonElement("Save Changes", "save-button");
+        const deleteButton = createButtonElement("Delete Post", "delete-button");
 
         const titleHeader = createHeaderElement("Title");
         const bodyHeader = createHeaderElement("Body");
@@ -102,8 +105,11 @@ document.addEventListener("DOMContentLoaded", () => {
         appendElementsToContainer(mediaContainer, [mediaURLHeader, mediaURLInput, imagePreview, mediaAltHeader, mediaAltInput]);
         appendElementsToContainer(tagsContainer, [tagsHeader, tagsInput]);
 
+        appendElementsToContainer(saveButtonContainer, [saveButton]);
+        appendElementsToContainer(deleteButtonContainer, [deleteButton]);
+
         appendElementsToContainer(blogDetailContainer, [titleContainer, bodyContainer, mediaContainer, tagsContainer]);
-        appendElementsToContainer(blogPostButtons, [saveButton, deleteButton]);
+        appendElementsToContainer(blogPostButtons, [saveButtonContainer, deleteButtonContainer]);
     };
 
     const createInputElement = (type, value) => {
@@ -121,10 +127,11 @@ document.addEventListener("DOMContentLoaded", () => {
         return textarea;
     };
 
-    const createButtonElement = (text) => {
+    const createButtonElement = (text, className) => {
         const button = document.createElement("button");
         button.textContent = text;
-        button.classList.add("edit-post-button");
+        button.classList.add("save-delete-button");
+        button.classList.add(className);
         return button;
     };
 
