@@ -162,7 +162,9 @@ body::before, body::after {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 100%;
+        width: 75%;
+        margin-left: 7%;
+        margin-right: 3.5%;
 
         .newly-posted-container {
 
@@ -173,12 +175,63 @@ body::before, body::after {
                 font-size: 55px;
             }
 
-            .newly-posted {
+            .newly-posted-carousel {
+                width: 1200px;
+                overflow-x: scroll;
+
+                .newly-posted {
+
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 25px;
+    
+                    .new-post {
+                        background-color: pink;
+                        border-radius: 10px;
+                        height: 600px;
+                        width: 315px;
+        
+                        .blog-link {
+                            text-decoration: none;
+                            color: #162D06;
+                        }
+        
+                        img {
+                            width: 315px;
+                            height: 420px;
+                            object-fit: cover;
+                            border-radius: 10px 10px 0px 0px;
+                        }
+    
+                        h2 {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .all-posts-container {
+
+            color: #162D06;
+            margin-top: 130px;
+
+            width: 1200px;
+
+            h2 {
+                font-size: 55px;
+            }
+
+            .all-posts-index {
 
                 display: flex;
                 flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 25px;
 
-                .new-post {
+                .all-post-blog {
                     background-color: pink;
                     border-radius: 10px;
                     height: 600px;
