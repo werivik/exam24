@@ -165,6 +165,7 @@ body::before, body::after {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 25px;
+        margin-bottom: 100px;
 
         .blog-post {
             background-color: #F1F8F3;
@@ -185,6 +186,7 @@ body::before, body::after {
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: center;
+                text-align: center;
                 height: 190px;
                 margin-left: 5px;
                 margin-right: 5px;
@@ -192,13 +194,9 @@ body::before, body::after {
                 .main-title {
                     font-weight: bold;
                 }
-                
-                .second-title {
-                    font-weight: 400;
-                }
 
                 .title {
-                    font-size: 22px;
+                    font-size: 20px;
                 }
 
                 .published {
@@ -223,7 +221,7 @@ body::before, body::after {
                 height: 115px;
 
                 .title {
-                    font-size: 26px;
+                    font-size: 24px;
                 }
 
                 .published {
