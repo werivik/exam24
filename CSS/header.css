@@ -51,7 +51,38 @@ nav {
         a {
             width: 65px;
             padding: 20px;
+        }
 
+        .head-link1, .head-link2, .head-link3, .head-link4, .head-link5 {
+            display: block;
+        }
+
+        .head-icon1, .head-icon2,.head-icon3,.head-icon4,.head-icon5 {
+            display: none;
+
+            i {
+                font-size: 27px;
+            }
+        }
+    }
+
+    li:hover {
+
+        transition: 0.25s;
+
+        .head-link1, .head-link2, .head-link3, .head-link4, .head-link5 {
+            display: none;
+            transition: 0.25s;
+        }
+
+        .head-icon1, .head-icon2,.head-icon3,.head-icon4,.head-icon5 {
+
+            transition: 0.25s;
+            display: block;
+
+            i {
+                font-size: 27px;
+            }
         }
     }
 }
