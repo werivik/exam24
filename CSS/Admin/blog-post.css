@@ -209,7 +209,7 @@ body::before, body::after {
                 }
 
                 input {
-                    width: 700px;
+                    width: 100%;
                 }
             }
 
@@ -252,8 +252,8 @@ body::before, body::after {
                 margin-bottom: 50px;
 
                 .edit-textarea {
-                    width: 700px;
                     height: 600px;
+                    width: 100%;
                 }
             }
         }
