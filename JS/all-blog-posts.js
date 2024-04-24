@@ -56,10 +56,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     const blogElement = document.createElement("div");
                     blogElement.classList.add("blog-post");
                     blogElement.innerHTML = `
-                        <a href="/HTML/blog-post-detail.html?id=${blog.id}" class="blog-link">
+                        <a href="/blog-post-detail.html?id=${blog.id}" class="blog-link">
                             <img src="${blog.media.url}" alt="${blog.media.alt}">
                             <div class="post-textbox">
-                                <h2 class="title"><span class="main-title">${blog.title}</span><span class="second-title">${blog.secondTitle}</span></h2>
+                                <h2 class="title"><span class="main-title">${blog.title}</span></h2>
                                 <p class="published">${formatDate(blog.created)}</p>
                             </div>
                         </a>
