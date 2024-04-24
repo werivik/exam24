@@ -27,15 +27,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const { id, title, created, media, body, tags } = blogPost.data;
         const formattedDate = formatDate(created);
 
+        const mediaContainer = createDivElement("media-container");
         const titleContainer = createDivElement("title-container");
         const bodyContainer = createDivElement("body-container");
-        const mediaContainer = createDivElement("media-container");
         const tagsContainer = createDivElement("tags-container");
 
-        const titleInput = createInputElement("text", title);
-        const bodyTextArea = createTextAreaElement(body);
         const mediaURLInput = createInputElement("text", media.url || '');
         const mediaAltInput = createInputElement("text", media.alt || '');
+        const titleInput = createInputElement("text", title);
+        const bodyTextArea = createTextAreaElement(body);
         const tagsInput = createInputElement("text", tags.join(', '));
 
         const saveButtonContainer = createDivElement("save-button");
@@ -44,10 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const saveButton = createButtonElement("Save Changes", "save-button");
         const deleteButton = createButtonElement("Delete Post", "delete-button");
 
-        const titleHeader = createHeaderElement("Title");
-        const bodyHeader = createHeaderElement("Body");
         const mediaURLHeader = createHeaderElement("Media URL");
         const mediaAltHeader = createHeaderElement("Media Alt");
+        const titleHeader = createHeaderElement("Title");
+        const bodyHeader = createHeaderElement("Body");
         const tagsHeader = createHeaderElement("Tags");
 
         const imagePreview = document.createElement("img");
@@ -70,12 +70,12 @@ document.addEventListener("DOMContentLoaded", () => {
             try {
                 const token = localStorage.getItem("token");
                 const updatedData = {
-                    title: titleInput.value,
-                    body: bodyTextArea.value,
                     media: {
                         url: mediaURLInput.value,
                         alt: mediaAltInput.value
                     },
+                    title: titleInput.value,
+                    body: bodyTextArea.value,
                     tags: tagsInput.value.split(',')
                 };
 
@@ -91,24 +91,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (!response.ok) {
                     throw new Error("Failed to update post");
                 }
-                
+
                 alert("Post updated successfully");
                 window.location.reload();
-            } catch (error) {
+            } 
+            
+            catch (error) {
                 console.error(error.message);
                 alert("Failed to Update Blog Post, sorry not sorry...");
             }
         });
 
+        appendElementsToContainer(mediaContainer, [imagePreview, mediaURLHeader, mediaURLInput, mediaAltHeader, mediaAltInput]);
         appendElementsToContainer(titleContainer, [titleHeader, titleInput]);
         appendElementsToContainer(bodyContainer, [bodyHeader, bodyTextArea]);
-        appendElementsToContainer(mediaContainer, [mediaURLHeader, mediaURLInput, imagePreview, mediaAltHeader, mediaAltInput]);
         appendElementsToContainer(tagsContainer, [tagsHeader, tagsInput]);
 
         appendElementsToContainer(saveButtonContainer, [saveButton]);
         appendElementsToContainer(deleteButtonContainer, [deleteButton]);
 
-        appendElementsToContainer(blogDetailContainer, [titleContainer, bodyContainer, mediaContainer, tagsContainer]);
+        appendElementsToContainer(blogDetailContainer, [mediaContainer, titleContainer, bodyContainer, tagsContainer]);
         appendElementsToContainer(blogPostButtons, [saveButtonContainer, deleteButtonContainer]);
     };
 
@@ -166,12 +168,16 @@ document.addEventListener("DOMContentLoaded", () => {
                     "Authorization": `Bearer ${token}`
                 },
             });
+
             if (!response.ok) {
                 throw new Error("Failed to delete post");
             }
+
             alert("Post deleted successfully");
             window.location.href = "/HTML/Admin/admin-page.html";
-        } catch (error) {
+        } 
+        
+        catch (error) {
             console.error(error.message);
             alert("Failed to Delete Blog Post, sorry not sorry...");
         }
@@ -189,10 +195,14 @@ document.addEventListener("DOMContentLoaded", () => {
             .then((data) => {
                 renderBlogPostDetail(data);
             })
+
             .catch((error) => {
                 console.error("Failed to fetch blog post:", error);
             });
-    } else {
+
+    } 
+    
+    else {
         console.error("Blog post ID not provided in the URL");
     }
 

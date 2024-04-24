@@ -57,6 +57,7 @@ body::before, body::after {
                     align-items: center;
                     width: 250px;
                     margin-left: 25px;
+                    margin-bottom: 25px;
 
                     a {
                         padding: 7px;
@@ -130,6 +131,7 @@ body::before, body::after {
                             display: flex;
                             flex-direction: column;
                             gap: 5px;
+                            margin-top: 50px;
 
                             a {
                                 text-decoration: none;

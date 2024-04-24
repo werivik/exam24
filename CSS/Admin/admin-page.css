@@ -201,7 +201,8 @@ body::before, body::after {
                 height: 115px;
 
                 .title {
-                    font-size: 24px;
+                    font-size: 22px;
+                    margin-top: 0px;
                 }
 
                 .published {

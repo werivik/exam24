@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const blogTitle = mainTitleValue;
 
         const blogText = document.getElementById("blogText").value.trim();
-        const tags = document.getElementById("tags").value.trim().split(",");
+        const tags = document.getElementById("tags").value.trim().split(/\s*,\s*/);
         const pictureUrl = document.getElementById("pictureUrl").value.trim();
         const pictureAlt = document.getElementById("pictureAlt").value.trim();
 
