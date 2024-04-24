@@ -31,7 +31,6 @@ body::before, body::after {
         flex-direction: column;
         top: 0;
         right: 0;
-        left: 100%;
         min-width: 300px;
         margin-right: 0px;
         background-color: #d5eac7;
@@ -49,6 +48,7 @@ body::before, body::after {
                 background-size: 40%;
                 padding-bottom: 70px;
                 width: 300px;
+                height: 100%;
 
                 .gobackbutton {
                     margin-top: 110px;
@@ -104,6 +104,10 @@ body::before, body::after {
                         align-items: center;
                         border-radius: 10px;
                         width: 250px;
+
+                        h2 {
+                            text-align: center;
+                        }
     
                         img {
                             width: 129px;
@@ -114,17 +118,46 @@ body::before, body::after {
                         }
     
                         p {
-                            margin-bottom: 0px;
+                            margin-bottom: 25px;
                             margin-top: 10px;
                             margin-left: 10px;
                             margin-right: 5px;
                             font-size: 15px;
                         }
+
+                        .redirect-link {
+
+                            display: flex;
+                            flex-direction: column;
+                            gap: 5px;
+
+                            a {
+                                text-decoration: none;
+                                color: #162D06;
+                                font-weight: bold;
+
+                                margin-top: 10px;
+                                width: 165px;
+                                text-align: center;
+                                padding: 5px;
+                                border-radius: 10px;
+
+                                background-color: #9AE5B5;
+                                box-shadow: 2px 2px 7px 2px rgba(2, 57, 11, 0.306);
+
+                                &:hover {
+                                    transform: scale(1.1);
+                                    transition: 0.2s;
+                                    color: #F2FFEA;
+                                    background-color: #2c8a3f;
+                                }
+                            }
+                        }
     
                         .right-s-info {
                             width: 100%;
-                            padding-bottom: 25px;
-                            margin-top: 25px;
+                            padding-bottom: 5px;
+                            margin-top: 50px;
     
                             #lastPosted, #totalPosts {
                                 font-weight: 400;
@@ -141,31 +174,41 @@ body::before, body::after {
     }
 
     .scroll-content {
-        width: 100%;
+        width: 80%;
         margin-top: 80px;
         margin-left: -8px;
 
         .blog-detail {
 
             width: 100%;
-            background-color: pink;
+            margin-bottom: 150px;
 
             .blog-post-detail {
 
                 width: 100%;
                 img {
                     width: 1400px;
-                    height: 500px;
+                    height: 475px;
                     object-fit: cover;
                 }
 
-                .title, .second-title, .content, .published {
-                    margin-left: 7%;
-                    margin-right: 3.5%
+                .title, .content, .published {
+                    margin-left: 9%;
+                    margin-right: 15%
                 }
 
-                .second-title {
+                .title {
+                    font-size: 50px;
+                    margin-bottom: 75px;
+                }
+
+                .content {
+                    font-size: 22px;
                     margin-bottom: 100px;
+                }
+
+                .published {
+                    font-size: 20px;
                 }
             }
         }
