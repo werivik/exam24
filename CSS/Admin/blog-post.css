@@ -192,6 +192,7 @@ body::before, body::after {
     .scroll-content {
         width: 100%;
         margin-top: 80px;
+        margin-bottom: 100px;
         margin-left: -8px;
 
         .admin-blog-detail {
@@ -202,6 +203,10 @@ body::before, body::after {
             .title-container, .body-container, .tags-container {
                 margin-left: 9%;
                 margin-right: 3.5%;
+
+                h3 {
+                    font-size: 30px;
+                }
 
                 input {
                     width: 700px;
@@ -245,6 +250,11 @@ body::before, body::after {
             }
             .body-container {
                 margin-bottom: 50px;
+
+                .edit-textarea {
+                    width: 700px;
+                    height: 600px;
+                }
             }
         }
     }
