@@ -104,16 +104,20 @@ body::before, body::after {
         justify-content: center;
         align-items: center;
         width: 100%;
-        margin-top: 130px;
+        margin-top: 100px;
 
         h1 {
             font-size: 50px;
             margin-bottom: 0px;
+
+            span {
+                color: #F39994;
+            }
         }
 
         .all-blogs {
 
-            margin-top: 90px;
+            margin-top: 75px;
             margin-bottom: 150px;
             margin-left: 7%;
             margin-right: 25px;
@@ -175,10 +179,12 @@ body::before, body::after {
     
                 .post-textbox {
                     transition: 0.25s;
-                    height: 115px;
+                    height: 100px;
+                    margin-top: 0px;
     
                     .title {
                         font-size: 25px;
+                        margin-top: -1px;
                     }
     
                     .published {
