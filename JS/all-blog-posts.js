@@ -18,9 +18,35 @@ document.addEventListener("DOMContentLoaded", async () => {
         const selectedDateFilter = dateFilter.value;
         const selectedAlphabeticalFilter = alphabeticalFilter.value;
 
-        const dateSortedPosts = sortBlogPostsByDate(selectedDateFilter);
+        let sortedPosts = Array.from(document.querySelectorAll(".blog-post"));
 
-        const sortedPosts = sortBlogPostsAlphabetically(selectedAlphabeticalFilter, dateSortedPosts);
+        if (selectedDateFilter === "oldest") {
+            sortedPosts.sort((a, b) => {
+                const dateA = new Date(a.querySelector(".published").textContent);
+                const dateB = new Date(b.querySelector(".published").textContent);
+                return dateA - dateB;
+            });
+        } else if (selectedDateFilter === "latest") {
+            sortedPosts.sort((a, b) => {
+                const dateA = new Date(a.querySelector(".published").textContent);
+                const dateB = new Date(b.querySelector(".published").textContent);
+                return dateB - dateA;
+            });
+        }
+
+        if (selectedAlphabeticalFilter === "ascending") {
+            sortedPosts.sort((a, b) => {
+                const titleA = a.querySelector(".main-title").textContent.toLowerCase();
+                const titleB = b.querySelector(".main-title").textContent.toLowerCase();
+                return titleA.localeCompare(titleB);
+            });
+        } else if (selectedAlphabeticalFilter === "descending") {
+            sortedPosts.sort((a, b) => {
+                const titleA = a.querySelector(".main-title").textContent.toLowerCase();
+                const titleB = b.querySelector(".main-title").textContent.toLowerCase();
+                return titleB.localeCompare(titleA);
+            });
+        }
 
         renderSortedPosts(sortedPosts);
     };
@@ -81,23 +107,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         const formattedDay = day < 10 ? `0${day}` : day;
         const formattedMonth = month < 10 ? `0${month}` : month;
         return `${formattedDay}.${formattedMonth}.${year}`;
-    };
-
-    const sortBlogPostsByDate = (sortBy) => {
-        const blogPosts = Array.from(document.querySelectorAll(".blog-post"));
-        return blogPosts.sort((a, b) => {
-            const dateA = new Date(a.querySelector(".published").textContent);
-            const dateB = new Date(b.querySelector(".published").textContent);
-            return sortBy === "latest" ? dateB - dateA : dateA - dateB;
-        });
-    };
-
-    const sortBlogPostsAlphabetically = (sortBy, posts) => {
-        return posts.sort((a, b) => {
-            const titleA = a.querySelector(".main-title").textContent.toLowerCase();
-            const titleB = b.querySelector(".main-title").textContent.toLowerCase();
-            return sortBy === "ascending" ? titleA.localeCompare(titleB) : titleB.localeCompare(titleA);
-        });
     };
 
     const renderBlogPosts = (blogData) => {
