@@ -46,6 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
         return `${formattedDay}.${formattedMonth}.${year}`;
     };
 
+    const dateFilter = document.getElementById("dateFilter");
+    const alphabeticalFilter = document.getElementById("alphabeticalFilter");
+
     updateInfo();
 
     fetch("https://v2.api.noroff.dev/blog/posts/wervik")
@@ -77,4 +80,5 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch((error) => {
             console.error("Failed to fetch Blog Posts", error);
         });
+
 });

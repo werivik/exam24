@@ -155,7 +155,7 @@ body::before, body::after {
         left: 100%;
         min-width: 300px;
         margin-right: 0px;
-        background-color: #F3B0AC;
+        background-color: #d5eac7;
     
         .right-s-content {
     
@@ -166,21 +166,22 @@ body::before, body::after {
             top: 0;
     
             .right-s-background {
-                background-image: linear-gradient(to bottom, rgb(243, 176, 172, 0.250), rgba(243, 176, 172, 0.250)),url(/MEDIA/background/backgroundleafes-white.png);
+                background-image: linear-gradient(to bottom, rgba(228, 244, 217, 0.65), rgba(228, 244, 217, 0.65)),url(/MEDIA/background/backgroundleafes.png);
                 background-size: 40%;
                 padding-bottom: 70px;
                 width: 300px;
+                height: 100%;
     
                 .right-s-box {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    margin-top: 120px;
+                    margin-top: 0px;
     
                     .right-s-text {
-                        background-color: #ffecf0;
-                        border: 1px solid #F3B0AC;
+                        margin-top: 125px;
+                        background-color: #F2FFEA;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
@@ -188,12 +189,11 @@ body::before, body::after {
                         width: 250px;
     
                         img {
-                            width: 163px;
+                            width: 129px;
                             height: 163px;
                             object-fit: contain;
                             background-color: white;
                             border-radius: 99px;
-                            border: 1px solid #F3B0AC;
                         }
     
                         p {
@@ -209,10 +209,6 @@ body::before, body::after {
                             padding-bottom: 25px;
                             margin-top: 25px;
     
-                            #lastPosted, #totalPosts {
-                                font-weight: 400;
-                            }
-                            
                             span {
                                 font-weight: bold;
                             }
@@ -339,6 +335,9 @@ body::before, body::after {
 
             h2 {
                 font-size: 55px;
+                span {
+                    color: #F39994;
+                }
             }
 
             .all-posts-index {

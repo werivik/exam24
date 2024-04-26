@@ -52,23 +52,24 @@ body::before, body::after {
                 width: 300px;
 
                 .gobackbutton {
-                    margin-top: 110px;
+                    margin-top: 100px;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     width: 250px;
                     margin-left: 25px;
-                    margin-bottom: 30px;
+                    margin-bottom: 10px;
 
                     a {
                         padding: 7px;
                         padding-right: 10px; 
                         padding-left: 10px;
-                        background-color: #162d06;
+                        background-color: #F39994;
                         border-radius: 10px;
 
-                        color: #F2FFEA;
+                        color: #162D06;
                         text-decoration: none;
+                        font-weight: bold;
 
                         font-size: 14px;
 
