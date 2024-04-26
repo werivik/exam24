@@ -5,6 +5,31 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
 
+    const dateFilter = document.getElementById("dateFilter");
+    const alphabeticalFilter = document.getElementById("alphabeticalFilter");
+    const applyFiltersButton = document.getElementById("applyFiltersButton");
+
+    if (!dateFilter || !alphabeticalFilter || !applyFiltersButton) {
+        console.error("Date, alphabetical filter, or apply filters button element not found.");
+        return;
+    }
+
+    const applyFilters = () => {
+        const selectedDateFilter = dateFilter.value;
+        const selectedAlphabeticalFilter = alphabeticalFilter.value;
+
+        const dateSortedPosts = sortBlogPostsByDate(selectedDateFilter);
+
+        const sortedPosts = sortBlogPostsAlphabetically(selectedAlphabeticalFilter, dateSortedPosts);
+
+        renderSortedPosts(sortedPosts);
+    };
+
+    applyFiltersButton.addEventListener("click", applyFilters);
+
+    dateFilter.addEventListener("change", applyFilters);
+    alphabeticalFilter.addEventListener("change", applyFilters);
+
     const fetchAndRenderBlogData = async () => {
         try {
             const data = await fetchBlogData();
@@ -25,6 +50,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (!response.ok) {
                 throw new Error("Failed to Fetch Data from API, try again, loser");
             }
+
             const data = await response.json();
             return data;
         } catch (error) {
@@ -57,41 +83,21 @@ document.addEventListener("DOMContentLoaded", async () => {
         return `${formattedDay}.${formattedMonth}.${year}`;
     };
 
-    const dateFilter = document.getElementById("dateFilter");
-    const alphabeticalFilter = document.getElementById("alphabeticalFilter");
-
-    if (dateFilter && alphabeticalFilter) {
-        dateFilter.addEventListener("change", () => {
-            const value = dateFilter.value;
-            sortBlogPostsByDate(value);
-        });
-
-        alphabeticalFilter.addEventListener("change", () => {
-            const value = alphabeticalFilter.value;
-            sortBlogPostsAlphabetically(value);
-        });
-    } else {
-        console.error("Date or alphabetical filter element not found.");
-    }
-
     const sortBlogPostsByDate = (sortBy) => {
         const blogPosts = Array.from(document.querySelectorAll(".blog-post"));
-        const sortedPosts = blogPosts.sort((a, b) => {
+        return blogPosts.sort((a, b) => {
             const dateA = new Date(a.querySelector(".published").textContent);
             const dateB = new Date(b.querySelector(".published").textContent);
             return sortBy === "latest" ? dateB - dateA : dateA - dateB;
         });
-        renderSortedPosts(sortedPosts);
     };
 
-    const sortBlogPostsAlphabetically = (sortBy) => {
-        const blogPosts = Array.from(document.querySelectorAll(".blog-post"));
-        const sortedPosts = blogPosts.sort((a, b) => {
+    const sortBlogPostsAlphabetically = (sortBy, posts) => {
+        return posts.sort((a, b) => {
             const titleA = a.querySelector(".main-title").textContent.toLowerCase();
             const titleB = b.querySelector(".main-title").textContent.toLowerCase();
             return sortBy === "ascending" ? titleA.localeCompare(titleB) : titleB.localeCompare(titleA);
         });
-        renderSortedPosts(sortedPosts);
     };
 
     const renderBlogPosts = (blogData) => {
