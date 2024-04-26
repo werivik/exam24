@@ -157,6 +157,30 @@ body::before, body::after {
             }
         }
 
+        .filters {            
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+
+            .filter-date-abc {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .applyfilters {
+
+                border-radius: 10px;
+                padding: 5px;
+                background-color: #F39994;
+                border: hidden;
+                width: 75px;
+                font-weight: bold;
+            }
+        }
+
         .all-blogs {
 
             margin-top: 75px;

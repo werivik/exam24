@@ -67,19 +67,27 @@
 
                 <div class="filters">
 
-                    <label for="dateFilter">Sort by Date:</label>
-                    <select id="dateFilter">
-                        <option value="latest">Latest</option>
-                        <option value="oldest">Oldest</option>
-                    </select>
+                    <div class="filter-date-abc">
 
-                    <label for="alphabeticalFilter">Sort Alphabetically:</label>
-                    <select id="alphabeticalFilter">
-                        <option value="ascending">A to Z</option>
-                        <option value="descending">Z to A</option>
-                    </select>
+                        <div class="filter-date">
+                            <label for="dateFilter">Sort:</label>
+                            <select id="dateFilter">
+                                <option value="latest">Latest</option>
+                                <option value="oldest">Oldest</option>
+                            </select>
+                        </div>
+    
+                        <div class="filter-abc">
+                            <label for="alphabeticalFilter">Sort:</label>
+                            <select id="alphabeticalFilter">
+                                <option value="ascending">A to Z</option>
+                                <option value="descending">Z to A</option>
+                            </select>
+                        </div>
 
-                    <button id="applyFiltersButton">Filter</button>
+                    </div>
+
+                    <button id="applyFiltersButton" class="applyfilters">Filter</button>
 
                 </div>
 
