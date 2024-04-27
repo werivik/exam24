@@ -84,10 +84,16 @@ body::before, body::after {
                         a {
                             transform: scale(1.2);
                             transition: 0.25s;
+
+                            background-color: #a5eb77;
+
+                            background-image: linear-gradient(to bottom, rgba(75, 106, 55, 0.65), rgba(75, 106, 55, 0.65)),url(/MEDIA/background/backgroundleafes.png);
+                            background-size: 200%;
+
+                            color: white;
                         } 
 
                         i {
-                            transition: 0.25s;
                             display: inline;
                         }
                     }

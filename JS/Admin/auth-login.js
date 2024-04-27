@@ -2,22 +2,44 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Trying to sneak a peak?...");
 
     const loginForm = document.querySelector("form#login");
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password");
+    const loginButton = document.querySelector(".login-button");
+
+    const checkFormValidity = () => {
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
+        return username && password;
+    };
+
+    const updateLoginButtonOpacity = () => {
+        if (checkFormValidity()) {
+            loginButton.style.opacity = 1;
+        }
+        
+        else {
+            loginButton.style.opacity = 0.5;
+        }
+    };
+
+    usernameInput.addEventListener("input", updateLoginButtonOpacity);
+    passwordInput.addEventListener("input", updateLoginButtonOpacity);
 
     loginForm.addEventListener("submit", async (event) => {
         event.preventDefault();
-        console.log("Trying to Login, dont interrupt");
+        console.log("Trying to Login, don't interrupt");
 
-        const username = loginForm.username.value.trim();
-        const password = loginForm.password.value.trim();
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
 
         console.log("username: ", username);
         console.log("password: ", password);
 
-        if (username && password) {
+        if (checkFormValidity()) {
             console.log("Heading out to get Token, One sec");
             getToken(username, password);
         } else {
-            console.error("Username and password are required dude.");
+            console.error("Username and password are required.");
         }
     });
 
@@ -45,10 +67,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 window.location.href = "/HTML/Admin/admin-page.html";
                 
-            } else {
+            } 
+            
+            else {
                 throw new Error(response.statusText);
             }
-        } catch (error) {
+        } 
+        
+        catch (error) {
             console.error("Error:", error.message);
         }
     }
