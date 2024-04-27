@@ -1,38 +1,23 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const allBlogsContainer = document.querySelector(".all-blogs");
+    
     if (!allBlogsContainer) {
         console.error("Element with class 'all-blogs' not found.");
         return;
     }
 
-    const dateFilter = document.getElementById("dateFilter");
     const alphabeticalFilter = document.getElementById("alphabeticalFilter");
     const applyFiltersButton = document.getElementById("applyFiltersButton");
 
-    if (!dateFilter || !alphabeticalFilter || !applyFiltersButton) {
+    if (!alphabeticalFilter || !applyFiltersButton) {
         console.error("Date, alphabetical filter, or apply filters button element not found.");
         return;
     }
 
     const applyFilters = () => {
-        const selectedDateFilter = dateFilter.value;
         const selectedAlphabeticalFilter = alphabeticalFilter.value;
 
         let sortedPosts = Array.from(document.querySelectorAll(".blog-post"));
-
-        if (selectedDateFilter === "oldest") {
-            sortedPosts.sort((a, b) => {
-                const dateA = new Date(a.querySelector(".published").textContent);
-                const dateB = new Date(b.querySelector(".published").textContent);
-                return dateA - dateB;
-            });
-        } else if (selectedDateFilter === "latest") {
-            sortedPosts.sort((a, b) => {
-                const dateA = new Date(a.querySelector(".published").textContent);
-                const dateB = new Date(b.querySelector(".published").textContent);
-                return dateB - dateA;
-            });
-        }
 
         if (selectedAlphabeticalFilter === "ascending") {
             sortedPosts.sort((a, b) => {
@@ -53,7 +38,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     applyFiltersButton.addEventListener("click", applyFilters);
 
-    dateFilter.addEventListener("change", applyFilters);
     alphabeticalFilter.addEventListener("change", applyFilters);
 
     const fetchAndRenderBlogData = async () => {
