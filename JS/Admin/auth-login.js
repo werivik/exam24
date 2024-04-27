@@ -9,18 +9,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const checkFormValidity = () => {
         const username = usernameInput.value.trim();
         const password = passwordInput.value.trim();
+        
         return username && password;
     };
 
     const updateLoginButtonOpacity = () => {
         if (checkFormValidity()) {
-            loginButton.style.opacity = 1;
-        }
+            loginButton.style.opacity = 1; 
+        } 
         
         else {
-            loginButton.style.opacity = 0.5;
+            loginButton.style.opacity = 0.5; 
         }
     };
+
+    loginButton.style.opacity = 0.5;
 
     usernameInput.addEventListener("input", updateLoginButtonOpacity);
     passwordInput.addEventListener("input", updateLoginButtonOpacity);
@@ -38,7 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (checkFormValidity()) {
             console.log("Heading out to get Token, One sec");
             getToken(username, password);
-        } else {
+        } 
+        
+        else {
             console.error("Username and password are required.");
         }
     });
