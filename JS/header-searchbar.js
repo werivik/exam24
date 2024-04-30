@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         searchResults.innerHTML = "";
 
         posts.forEach(post => {
-            const option = document.createElement("div");
+            const option = document.createElement("h2");
             option.classList.add("search-result");
             option.textContent = post.title;
             option.addEventListener("click", () => {
@@ -53,7 +53,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             const data = await response.json();
 
             return data;
-        } catch (error) {
+        } 
+        
+        catch (error) {
             console.error("Error fetching data:", error);
         }
     }
@@ -61,4 +63,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     function navigateToPost(postId) {
         window.location.href = `/blog-post-detail.html?id=${postId}`;
     }
+
+    document.addEventListener("click", (event) => {
+        if (!event.target.closest(".searchbar-header")) {
+            searchResults.style.display = "none";
+        }
+    });
 });

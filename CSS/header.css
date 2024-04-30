@@ -34,53 +34,81 @@ nav {
         text-align: left;
         margin-right: 20px;
 
+        .searchbar-header-content {
+            display: flex;
+            flex-direction: row;
+
+            i {
+                background-color: white;
+                height: 27px;
+                width: 35px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                border-radius: 0px 25px 25px 0px;
+                z-index: 800;
+                margin-left: -0.5px;
+                color: #162D06;
+            }
+        }
+
         input {
-            width: 350px;
+            width: 315px;
             background-color: white;
-            border-radius: 25px;
+            border-radius: 25px 0px 0px 25px;
             border: hidden;
             height: 25px;
-            z-index: 999;
+            z-index: 800;
 
             box-shadow: 5px 1px 15px 5px rgba(2, 101, 19, 0.154);
         }
 
         .search-results {
             background-color: white;
-            border-radius: 0px 0px 10px 10px;
+            border-radius: 10px 10px 10px 10px;
             padding-bottom: 5px;
-            padding-top: 30px;
-            padding-left: 10px;
-            width: 344px;
-            font-size: 13px;
-
+            padding-top: 20px;
+            width: 361px;
+            max-height: 310px;
+            overflow-y: scroll;
             position: absolute;
             top: 100%;
-            margin-top: -25px;
+            margin-top: -32px;
             left: 0;
             z-index: 99;
-
             box-shadow: 5px 1px 15px 5px rgba(2, 101, 19, 0.154);
-
+        }
+        
+        .search-results h2 {
+            color: #162D06;
+            font-size: 12px;
+            padding-left: 10px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            height: 30px;
 
-            line-height: 3.5;
-
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-results h2:hover {
+            background-color: pink;
+            cursor: pointer;
+        }
+        
+        #searchInput::placeholder {
+            padding-left: 10px;
             color: #162D06;
         }
-    }
+        
+        #searchInput {
+            padding-left: 10px;
+            color: #162D06;
+        }
 
-    #searchInput::placeholder {
-        padding-left: 10px;
-        color: #162D06;
-    }
-
-    #searchInput {
-        padding-left: 10px;
-
-        color: #162D06;
     }
 
     a {
@@ -151,4 +179,5 @@ nav {
             }
         }
     }
+
 }
