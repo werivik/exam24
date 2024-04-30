@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <title>Crazy Plant Lady Blog</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Weronika Vik">
-    <meta name="description" content="">
-    <link rel="stylesheet" href="/CSS/footer.css">
-    <link rel="stylesheet" href="/CSS/header.css">
-    <link rel="stylesheet" href="/CSS/all-blog-posts.css">
-    <script src="https://kit.fontawesome.com/2ef99fbf3a.js" crossorigin="anonymous"></script>
-</head>
+    <head>
+
+        <title>Crazy Plant Lady Blog</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Weronika Vik">
+        <meta name="description" content="">
+      
+       <link rel="stylesheet" href="/CSS/footer.css">
+       <link rel="stylesheet" href="/CSS/header.css">
+       <link rel="stylesheet" href="/CSS/all-blog-posts.css">
+      
+       <script src="https://kit.fontawesome.com/2ef99fbf3a.js" crossorigin="anonymous"></script>
+      
+    </head>
 
 <body>
-    <script src="/JS/outdoor.js" defer></script>
-    <script src="/JS/updated-post-info.js" defer></script>
 
+    <script src="/JS/all-blog-posts.js" defer></script>
+    <script src="/JS/updated-post-info.js" defer></script>
+    
     <header>
         <nav>
 
-            <a href="/HTML/index.html" class="logo">
+            <a href="index.html" class="logo">
                 <img src="/MEDIA/logo/greenlogo.png" alt="">
             </a>
 
@@ -50,13 +56,33 @@
 
         </nav>
     </header>
+    
+    <main>   
 
-    <main>
         <section class="main-content">
 
             <div class="scroll-content">
-                <h1><span>Outdoor Plants</span> Blogs</h1>
-                <div class="all-blogs"></div>
+
+                <h1><span>All Blog</span> Posts</h1>
+
+                <div class="filters">
+
+                    <div class="filter-abc">
+                        <select id="alphabeticalFilter" class="filter-abc-box">
+                            <option value="">Sort By:</option>
+                            <option value="ascending">A to Z</option>
+                            <option value="descending">Z to A</option>
+                        </select>
+                    </div>
+
+                    <button id="applyFiltersButton" class="applyfilters">Filter</button>
+
+                </div>
+
+                <div class="all-blogs">
+
+                </div>
+
             </div>
 
             <div class="un-scroll-content">
@@ -74,7 +100,7 @@
                             <div class="right-s-text">
                                 <h2>About Me</h2>
 
-                                <a href="/HTML/Admin/admin-login.html">
+                                <a href="/Admin/admin-login.html">
                                     <img src="/MEDIA/logo/crazyplantladyprofile-left.png" alt="">
                                 </a>
                                 
@@ -95,10 +121,11 @@
                 </div>
 
             </div>
-            
+    
         </section>
-    </main>
 
+    </main>
+      
     <footer>
 
         <div class="footer-logo">
@@ -109,11 +136,11 @@
 
             <div class="footer-blogs">
                 <h2>BLOGS</h2>
-                <a href="/HTML/all-posts.html"><h3>All Posts</h3></a>
-                <a href="/HTML/indoor.html"><h3>Indoor Plants</h3></a>
-                <a href="/HTML/outdoor.html"><h3>Outdoor Plants</h3></a>
-                <a href="/HTML/edible.html"><h3>Edible Plants</h3></a>
-                <a href="/HTML/animal.html"><h3>Animal Friendly Plants</h3></a>
+                <a href="all-posts.html"><h3>All Posts</h3></a>
+                <a href="indoor.html"><h3>Indoor Plants</h3></a>
+                <a href="outdoor.html"><h3>Outdoor Plants</h3></a>
+                <a href="edible.html"><h3>Edible Plants</h3></a>
+                <a href="animal.html"><h3>Animal Friendly Plants</h3></a>
             </div>
 
             <div class="footer-info">
@@ -125,6 +152,7 @@
         </div>
 
     </footer>
+
 </body>
 
-</html>
+</html> 
