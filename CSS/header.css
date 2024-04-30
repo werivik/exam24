@@ -23,6 +23,65 @@ nav {
     margin-left: 7%;
     margin-right: 7%;
     font-family: "libre Bodoni", serif;
+    
+    .searchbar-header {
+
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        margin-right: 20px;
+
+        input {
+            width: 350px;
+            background-color: white;
+            border-radius: 25px;
+            border: hidden;
+            height: 25px;
+            z-index: 999;
+
+            box-shadow: 5px 1px 15px 5px rgba(2, 101, 19, 0.154);
+        }
+
+        .search-results {
+            background-color: white;
+            border-radius: 0px 0px 10px 10px;
+            padding-bottom: 5px;
+            padding-top: 30px;
+            padding-left: 10px;
+            width: 344px;
+            font-size: 13px;
+
+            position: absolute;
+            top: 100%;
+            margin-top: -25px;
+            left: 0;
+            z-index: 99;
+
+            box-shadow: 5px 1px 15px 5px rgba(2, 101, 19, 0.154);
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            line-height: 3.5;
+
+            color: #162D06;
+        }
+    }
+
+    #searchInput::placeholder {
+        padding-left: 10px;
+        color: #162D06;
+    }
+
+    #searchInput {
+        padding-left: 10px;
+
+        color: #162D06;
+    }
 
     a {
         text-decoration: none;

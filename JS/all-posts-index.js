@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
             postElement.classList.add("all-post-blog");
             
             postElement.innerHTML = `
-                <a href="/HTML/blog-post-detail.html?id=${post.id}" class="post-link">
+                <a href="/blog-post-detail.html?id=${post.id}" class="post-link">
                     <img src="${post.media.url}" alt="${post.media.alt}">
                     <div class="post-textbox">
                         <h2 class="title">${post.title}</h2>

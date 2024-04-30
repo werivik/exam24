@@ -23,8 +23,11 @@
     <script src="/JS/newly-posted.js" defer></script>
     <script src="/JS/updated-post-info.js" defer></script>
     <script src="/JS/all-posts-index.js" defer></script>
+    <script src="/JS/header-searchbar.js" defer></script>
+
 
     <header>
+
         <nav>
 
             <a href="index.html" class="logo">
@@ -32,6 +35,12 @@
             </a>
 
             <ul>
+
+                <div class="searchbar-header">
+                    <input type="text" id="searchInput" placeholder="Search post...">
+                    <div id="searchResults" class="search-results"></div>
+                </div>
+                
                 <li>
                     <a href="all-posts.html" class="head-link1">All Posts</a>
                     <a href="all-posts.html" class="head-icon1"><i class="fa-solid fa-book-open"></i></a>
@@ -56,6 +65,7 @@
             </ul>
 
         </nav>
+
     </header>
     
     <main>   
