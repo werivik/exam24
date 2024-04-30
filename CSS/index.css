@@ -161,7 +161,13 @@ body::before, body::after {
                         align-items: center;
                         border-radius: 10px;
                         width: 250px;
-    
+
+                        h2 {
+                            font-size: 25px;
+                            color: #162D06;
+
+                        }
+
                         img {
                             width: 129px;
                             height: 163px;
@@ -324,6 +330,25 @@ body::before, body::after {
                     1px -1px 0 #162D06,
                     -1px 1px 0 #162D06,
                     1px 1px 0 #162D06;
+                }
+            }
+
+            .searchbar {
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                margin-top: 25px;
+                margin-bottom: 50px;
+    
+                input {
+                    border-radius: 25px;
+                    width: 250px;
+                    height: 25px;
+                    border: hidden;
+                    background-color: white;
+                    box-shadow: 5px 1px 15px 5px rgba(2, 101, 19, 0.154);
                 }
             }
 

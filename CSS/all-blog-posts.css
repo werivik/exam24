@@ -65,7 +65,7 @@ body::before, body::after {
                         padding-right: 10px; 
                         padding-left: 10px;
                         background-color: #F39994;
-                        border-radius: 10px;
+                        border-radius: 25px;
 
                         color: #162D06;
                         text-decoration: none;
@@ -152,14 +152,20 @@ body::before, body::after {
         justify-content: center;
         align-items: center;
         width: 100%;
-        margin-top: 100px;
+        margin-top: 90px;
 
         h1 {
-            font-size: 50px;
-            margin-bottom: 0px;
+            font-size: 75px;
+            margin-bottom: 25px;
 
             span {
                 color: #F39994;
+
+                text-shadow:
+                -1px -1px 0 #162D06,
+                1px -1px 0 #162D06,
+                -1px 1px 0 #162D06,
+                1px 1px 0 #162D06;
             }
         }
 
@@ -177,7 +183,7 @@ body::before, body::after {
                     background-color: white;
                     padding: 5px;
                     width: 150px;
-                    border-radius: 5px;
+                    border-radius: 25px;
                     cursor: pointer;
                     box-shadow: 5px 1px 15px 5px rgba(2, 101, 19, 0.154);
 
@@ -196,7 +202,7 @@ body::before, body::after {
 
             .applyfilters {
 
-                border-radius: 5px;
+                border-radius: 25px;
                 padding: 5px;
                 background-color: #F39994;
                 border: hidden;
@@ -221,6 +227,20 @@ body::before, body::after {
             }
         }
 
+        .searchbar {
+
+            margin-top: 25px;
+
+            input {
+                border-radius: 25px;
+                width: 250px;
+                height: 25px;
+                border: hidden;
+                background-color: white;
+                box-shadow: 5px 1px 15px 5px rgba(2, 101, 19, 0.154);
+            }
+        }
+
         .all-blogs {
 
             margin-top: 75px;
@@ -234,14 +254,14 @@ body::before, body::after {
     
             .blog-post {
                 background-color: #F1F8F3;
-                height: 590px;
-                width: 350px;
+                height: 480px;
+                width: 275px;
                 border-radius: 10px;
                 box-shadow: 2px 2px 7px 2px rgba(2, 57, 11, 0.306);
     
                 img {
-                    height: 400px;
-                    width: 350px;
+                    height: 300px;
+                    width: 275px;
                     object-fit: cover;
                     border-radius: 10px 10px 0px 0px;
                 }
@@ -251,20 +271,17 @@ body::before, body::after {
                     flex-direction: column;
                     justify-content: space-between;
                     align-items: center;
-                    height: 190px;
+                    height: 180px;
                     margin-left: 5px;
                     margin-right: 5px;
     
                     .main-title {
                         font-weight: bold;
-                    }
-                    
-                    .second-title {
-                        font-weight: 400;
-                    }
-    
-                    .title {
                         font-size: 22px;
+                        display: flex;
+                        width: 260px;
+                        justify-content: center;
+                        align-items: center;
                     }
     
                     .published {
@@ -279,7 +296,7 @@ body::before, body::after {
                 transition: 0.25s;
     
                 img {
-                    height: 475px;
+                    height: 375px;
                     transition: ease-in-out 0.25s;
                 }
     
@@ -289,7 +306,7 @@ body::before, body::after {
                     margin-top: 0px;
     
                     .title {
-                        font-size: 25px;
+                        font-size: 23px;
                         margin-top: -1px;
                     }
     
