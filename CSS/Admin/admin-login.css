@@ -16,6 +16,11 @@ body {
     justify-content: center;
     align-items: center;
 
+    h1 {
+        position: absolute;
+        left: 1000000px;
+    }
+
     .welcome-background {
         display: flex;
         flex-direction: column;
