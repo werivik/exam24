@@ -369,7 +369,7 @@ body::before, body::after {
     
                     .new-post {
 
-                        background-color: #f6fef2;
+                        background-color: #f6fcf3;
                         box-shadow: 5px 10px 10px 2px rgba(2, 101, 19, 0.154);
 
                         border-radius: 10px;
@@ -439,9 +439,7 @@ body::before, body::after {
         .all-posts-container {
 
             color: #162D06;
-            margin-top: 130px;
-
-            width: 1200px;
+            margin-top: 75px;
 
             h2 {
                 font-size: 55px;
@@ -485,7 +483,8 @@ body::before, body::after {
                 input {
                     border: hidden;
                     background-color: white;  
-                    width: 250px;              
+                    width: 250px;   
+                    margin-left: 10px;           
                 }
 
                 i {
@@ -509,16 +508,16 @@ body::before, body::after {
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
-                justify-content: flex-start;
-                gap: 2.5%;
+                justify-content: space-between;
+                width: 100%;
 
                 .all-post-blog {
-                    background-color: #f6fef2;
+                    background-color: #f6fcf3;
                     box-shadow: 5px 10px 10px 2px rgba(2, 101, 19, 0.154);
 
                     border-radius: 10px;
                     height: 425px;
-                    width: 250px;
+                    width: 285px;
                     margin-bottom: 2.5%;
     
                     a {
@@ -545,7 +544,7 @@ body::before, body::after {
                     }
     
                     img {
-                        width: 250px;
+                        width: 285px;
                         height: 280px;
                         object-fit: cover;
                         border-radius: 10px 10px 0px 0px;
