@@ -86,7 +86,7 @@ body::before, body::after {
         .progress-bar {
             position: absolute;
             z-index: 99px;
-            top: 90%;
+            top: 94%;
             width: 125px;
             background-color: white;
             height: 25px;
@@ -116,15 +116,11 @@ body::before, body::after {
 
         .homepage-slideshow {
 
-            transition: opacity 0.3s ease;
-
             position: relative;
             height: 100vh;
             min-width: 100%;
 
             .background-photo {
-
-                transition: opacity 0.3s ease;
 
                 position: relative;
                 height: 100vh;
