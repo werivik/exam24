@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const allPostsContainer = document.querySelector(".all-posts-index");
-    const searchInput = document.getElementById("searchInput");
+    const searchInput = document.getElementById("searchbarInput");
     const noPostsMessage = document.createElement("p");
     noPostsMessage.textContent = "Sorry, Could not Find Blog Post";
     noPostsMessage.style.display = "none";

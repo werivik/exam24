@@ -1,15 +1,21 @@
 footer {
-    background-color: #F39994;
-    bottom: 0px;
-    margin-bottom: -50px;
+    position: relative;
+    bottom: 0;
+    margin-bottom: -10px;
     margin-left: -8px;
-    height: 400px;
+    left: 0;
+    width: 100%;
+    background-color: #F39994;
+    color: #162D06;
+    z-index: 10;
 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
     color: #162D06;
+
+    z-index: 10;
 
     .footer-logo {
         margin-top: 0px;

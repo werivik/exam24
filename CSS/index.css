@@ -21,7 +21,11 @@ body::before, body::after {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    z-index: 1;
 
     .welcome-background {
 
@@ -223,6 +227,7 @@ body::before, body::after {
 .main-content {
 
     z-index: 2;
+    margin-top: 100vh;
     box-shadow: 10px 1px 50px 5px rgba(2, 101, 19, 0.154);
 
     background-color: #F2FFEA;
@@ -230,6 +235,9 @@ body::before, body::after {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    left: -8px;
+
+    position: relative;
 
     .un-scroll-content {
 
@@ -449,22 +457,50 @@ body::before, body::after {
                 }
             }
 
+            .searchbar-content {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
             .searchbar {
 
+                position: relative;
                 display: flex;
+                flex-direction: row;
                 justify-content: center;
                 align-items: center;
+                text-align: left;
 
-                margin-top: 25px;
                 margin-bottom: 50px;
+
+                box-shadow: 5px 1px 15px 5px rgba(2, 101, 19, 0.154);
+                border-radius: 25px;
+                width: 250px;
+                height: 25px;
+                background-color: white;                
+
     
                 input {
-                    border-radius: 25px;
-                    width: 250px;
-                    height: 25px;
                     border: hidden;
+                    background-color: white;  
+                    width: 250px;              
+                }
+
+                i {
                     background-color: white;
-                    box-shadow: 5px 1px 15px 5px rgba(2, 101, 19, 0.154);
+                    height: 25px;
+                    width: 35px;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+    
+                    border-radius: 0px 25px 25px 0px;
+                    z-index: 800;
+                    margin-left: -0.5px;
+                    color: #162D06;
                 }
             }
 
