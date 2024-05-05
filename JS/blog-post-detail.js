@@ -5,11 +5,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         if (!blogDetailContainer) {
             console.error("Element with Class 'blog-detail' not found, I am a blind computer...");
+            
             return;
         }
 
         if (!redirectLinkDiv) {
             console.error("Element with Class 'redirect-link' not found, I am a blind computer...");
+            
             return;
         }
 
@@ -21,8 +23,11 @@ document.addEventListener("DOMContentLoaded", async () => {
                 }
 
                 const data = await response.json();
+                
                 return data;
-            } catch (error) {
+            } 
+            
+            catch (error) {
                 console.error("Error fetching Data:", error);
             }
         };
@@ -64,10 +69,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         const getTagRedirectURL = (tag) => {
             const redirectURLs = {
-                'animal': '/HTML/animal.html',
-                'edible': '/HTML/edible.html',
-                'indoor': '/HTML/indoor.html',
-                'outdoor': '/HTML/outdoor.html'
+                'animal': 'animal.html',
+                'edible': 'edible.html',
+                'indoor': 'indoor.html',
+                'outdoor': 'outdoor.html'
             };
             return redirectURLs[tag];
         };
@@ -79,6 +84,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             const year = date.getFullYear();
             const formattedDay = day < 10 ? `0${day}` : day;
             const formattedMonth = month < 10 ? `0${month}` : month;
+            
             return `${formattedDay}.${formattedMonth}.${year}`;
         };
 
@@ -89,10 +95,15 @@ document.addEventListener("DOMContentLoaded", async () => {
             const blogData = await fetchBlogData(postId);
             renderRedirectLinks(blogData.data.tags);
             renderBlogPostDetail(blogData);
-        } else {
+        } 
+        
+        else {
             console.error("Blog post ID not provided in the URL");
         }
-    } catch (error) {
+
+    } 
+    
+    catch (error) {
         console.error(error);
     }
 });
