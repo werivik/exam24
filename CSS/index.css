@@ -187,12 +187,9 @@ body::before, body::after {
                         font-size: 35px;
                         color: #F39994;
         
-                        text-shadow:
-                        -1px -1px 0 #162D06,
-                        1px -1px 0 #162D06,
-                        -1px 1px 0 #162D06,
-                        1px 1px 0 #162D06;
-        
+                        -webkit-text-stroke: 1px #162D06;
+
+    
                         img {
                             width: 145px;
                             height: 60px;
