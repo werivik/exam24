@@ -206,11 +206,7 @@ body::before, body::after {
                             text-decoration: none;
                             color: #F39994;
                             
-                            text-shadow:
-                            -1px -1px 0 #162D06,
-                            1px -1px 0 #162D06,
-                            -1px 1px 0 #162D06,
-                            1px 1px 0 #162D06;
+                            -webkit-text-stroke: 1px #162D06;
                         }
 
                         &:hover {
@@ -345,11 +341,7 @@ body::before, body::after {
 
                 span {
                     color: #F39994;
-                    text-shadow:
-                    -1px -1px 0 #162D06,
-                    1px -1px 0 #162D06,
-                    -1px 1px 0 #162D06,
-                    1px 1px 0 #162D06;
+                    -webkit-text-stroke: 1px #162D06;
                 }
             }
 
@@ -447,11 +439,7 @@ body::before, body::after {
                 
                 span {
                     color: #F39994;
-                    text-shadow:
-                    -1px -1px 0 #162D06,
-                    1px -1px 0 #162D06,
-                    -1px 1px 0 #162D06,
-                    1px 1px 0 #162D06;
+                    -webkit-text-stroke: 1px #162D06;
                 }
             }
 
