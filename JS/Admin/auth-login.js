@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 localStorage.setItem("username", data.data.name);
                 localStorage.setItem("token", data.data.accessToken);
 
-                window.location.href = "/HTML/Admin/admin-page.html";
+                window.location.href = "admin-page.html";
                 
             } 
             

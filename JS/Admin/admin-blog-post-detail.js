@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             alert("Post deleted successfully");
-            window.location.href = "/HTML/Admin/admin-page.html";
+            window.location.href = "admin-page.html";
         } 
         
         catch (error) {

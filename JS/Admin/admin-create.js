@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (response.ok) {
                 alert("Blog Post Created Successfully <3");
 
-                window.location.href = "/HTML/Admin/admin-page.html";
+                window.location.href = "admin-page.html";
             } 
             
             else {

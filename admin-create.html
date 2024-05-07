@@ -41,29 +41,32 @@
 
                     <div class="logo-inside-frame">
 
-                        <a href="/Admin/admin-page.html" class="gobackbutton"><i class="fa-solid fa-arrow-left"></i>Go back to Admin Page</a>
-
                         <form id="newBlogForm" class="inside">
 
                             <div class="inside-left">
+
+                                <div class="gobackbutton">
+                                    <a href="javascript:window.history.back();"><i class="fa-solid fa-arrow-left"></i> Go Back</a>
+                                </div>
+
                                 <div class="main-title-box">
                                     <label for="mainTitle" class="main-title">Blog Title:</label>
-                                    <input type="text" id="mainTitle" name="mainTitle" required>
+                                    <input type="text" id="mainTitle" name="mainTitle" required placeholder="Title...">
                                 </div>
                                 
                                 <div class="blog-tags-box">
                                     <label for="tags" class="blog-tags">Tags (comma-separated):</label>
-                                    <input type="text" id="tags" name="tags">
+                                    <input type="text" id="tags" name="tags" placeholder="Tags...">
                                 </div>
                                 
                                 <div class="picture-upload-box">
                                     <label for="pictureUrl" class="picture-upload">Picture URL:</label>
-                                    <input type="text" id="pictureUrl" name="pictureUrl">
+                                    <input type="text" id="pictureUrl" name="pictureUrl" placeholder="Picture URL...">
                                 </div>
                                 
                                 <div class="picture-alt-box">
                                     <label for="pictureAlt" class="picture-alt">Picture Alt Text:</label>
-                                    <input type="text" id="pictureAlt" name="pictureAlt">
+                                    <input type="text" id="pictureAlt" name="pictureAlt" placeholder="Picture Alt...">
                                 </div>
                             </div>
 
@@ -71,7 +74,7 @@
 
                                 <div class="blog-p-box">
                                     <label for="blogText" class="blog-p">Blog Text:</label>
-                                    <textarea id="blogText" name="blogText" maxLenght="5000"></textarea>
+                                    <textarea id="blogText" name="blogText" maxLenght="2000" placeholder="Write your Blog Post Text Here..."></textarea>
                                     <p id="blogTextCounter">2000 characters remaining</p>
                                 </div>
                             

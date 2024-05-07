@@ -17,6 +17,20 @@ function showSlide() {
     });
 }
 
+dots.forEach((dot, index) => {
+
+    dot.addEventListener('mouseenter', () => {
+        dots[index].style.opacity = 1;
+    });
+
+    dot.addEventListener('mouseleave', () => {
+
+        if (index !== currentSlide) {
+            dots[index].style.opacity = 0.5;
+        }
+    });
+})
+
 showSlide();
 
 function moveToNextSlide() {

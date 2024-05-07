@@ -72,6 +72,7 @@ body::before, body::after {
                         font-weight: bold;
 
                         font-size: 14px;
+                        font-family: "Libre Bodoni", serif;
 
                         i {
                             display: none;
@@ -154,6 +155,8 @@ body::before, body::after {
         width: 100%;
         margin-top: 90px;
 
+        font-family: "Libre Bodoni", serif;
+
         h1 {
             font-size: 75px;
             margin-bottom: 25px;
@@ -185,11 +188,14 @@ body::before, body::after {
                     color: #162D06;
 
                     border: hidden;
+                    font-family: "Libre Bodoni", serif;
 
                     option {
                         background-color: #d5eac7;
                         border: hidden;
                         color: #162D06;
+                        font-family: "Libre Bodoni", serif;
+
                     }
 
                 }
@@ -203,6 +209,7 @@ body::before, body::after {
                 border: hidden;
                 width: 75px;
                 font-weight: bold;
+                font-family: "Libre Bodoni", serif;
 
                 cursor: pointer;
                 color: #162D06;
@@ -223,16 +230,50 @@ body::before, body::after {
         }
 
         .searchbar {
-
             margin-top: 25px;
+
+            width: 255px;
+            height: 27px;
+
+            background-color: white;
+            box-shadow: 5px 1px 15px 5px rgba(2, 101, 19, 0.154);
+            border-radius: 25px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
 
             input {
                 border-radius: 25px;
                 width: 250px;
                 height: 25px;
                 border: hidden;
-                background-color: white;
-                box-shadow: 5px 1px 15px 5px rgba(2, 101, 19, 0.154);
+                background-color: none;
+
+            }
+
+            #searchInput::placeholder {
+                padding-left: 5px;
+
+                font-family: "Libre Bodoni", serif;
+                font-weight: normal;
+            }
+
+            #searchInput {
+                height: 25px;
+
+                font-family: "Libre Bodoni", serif;
+                font-weight: normal;
+            }
+
+            i {
+                margin-right: 5px;
+                width: 30px;
+                height: 25px;
+
+                display: flex;
+
+                justify-content: center;
+                align-items: center;
             }
         }
 
@@ -246,6 +287,9 @@ body::before, body::after {
             flex-direction: row;
             flex-wrap: wrap;
             gap: 25px;
+
+            font-family: "Libre Bodoni", serif;
+            font-weight: normal;
     
             .blog-post {
                 background-color: #F1F8F3;
@@ -272,16 +316,18 @@ body::before, body::after {
     
                     .main-title {
                         font-weight: bold;
-                        font-size: 22px;
+                        font-size: 19px;
                         display: flex;
                         width: 260px;
+
                         justify-content: center;
                         align-items: center;
+                        text-align: center;
                     }
     
                     .published {
                         opacity: 75%;
-                        font-size: 14px;
+                        font-size: 10px;
                     }
                 }
             }
