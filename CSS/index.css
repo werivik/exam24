@@ -309,6 +309,8 @@ body::before, body::after {
 
     position: relative;
 
+    font-family: "Libre Bodoni", serif;
+
     .un-scroll-content {
 
         overflow-x: hidden;
