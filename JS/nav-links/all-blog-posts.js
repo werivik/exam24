@@ -4,10 +4,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     const noPostsMessage = document.createElement("p");
     noPostsMessage.textContent = "Sorry, Could not Find Blog Post";
     noPostsMessage.style.display = "none";
+    
     allBlogsContainer.parentNode.insertBefore(noPostsMessage, allBlogsContainer.nextSibling);
 
     if (!allBlogsContainer) {
         console.error("Element with class 'all-blogs' not found.");
+       
         return;
     }
 
@@ -39,7 +41,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                     if (selectedAlphabeticalFilter === "ascending") {
                         filteredPosts.sort((a, b) => a.title.localeCompare(b.title));
-                    } else if (selectedAlphabeticalFilter === "descending") {
+                    } 
+                    
+                    else if (selectedAlphabeticalFilter === "descending") {
                         filteredPosts.sort((a, b) => b.title.localeCompare(a.title));
                     }
 
@@ -50,7 +54,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                     
                     if (filteredPosts.length === 0) {
                         noPostsMessage.style.display = "block";
-                    } else {
+                    } 
+                    
+                    else {
                         noPostsMessage.style.display = "none";
                     }
                 };
@@ -60,10 +66,13 @@ document.addEventListener("DOMContentLoaded", async () => {
                 searchInput.addEventListener("input", renderFilteredPosts);
 
                 renderPosts(originalPosts);
-            } else {
+            } 
+            
+            else {
                 console.error("Invalid data Format received from API");
             }
         })
+
         .catch(error => {
             console.error("Failed to fetch Posts", error);
         });
@@ -71,6 +80,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     function renderPosts(posts) {
         allBlogsContainer.innerHTML = "";
         posts.forEach(post => {
+
             const blogElement = document.createElement("div");
             blogElement.classList.add("blog-post");
             blogElement.innerHTML = `
@@ -82,6 +92,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     </div>
                 </a>
             `;
+
             allBlogsContainer.appendChild(blogElement);
         });
     }

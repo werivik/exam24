@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
     const allBlogsContainer = document.querySelector(".all-blogs");
-    
+    const searchInput = document.getElementById("searchInput");
+
     if (!allBlogsContainer) {
         console.error("Element with class 'all-blogs' not found.");
-
+        
         return;
     }
 
@@ -16,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const data = await response.json();
 
             return data;
-
         } 
         
         catch (error) {
@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const updateInfo = async () => {
         const data = await fetchBlogData();
-
         if (data && data.data && Array.isArray(data.data)) {
             const totalPosts = data.data.length;
             const lastPosted = data.data[0].created;
@@ -46,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const formatDate = (dateString) => {
-
         const date = new Date(dateString);
         const day = date.getDate();
         const month = date.getMonth() + 1;
@@ -59,40 +57,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateInfo();
 
-    fetch("https://v2.api.noroff.dev/blog/posts/wervik")
-        .then((response) => response.json())
-        .then((data) => {
+    searchInput.addEventListener("input", () => {
 
-            if (data && Array.isArray(data.data)) {
+        renderFilteredPosts();
+    });
 
-                data.data.forEach((blog) => {
-                    const blogElement = document.createElement("div");
-                    blogElement.classList.add("blog-post");
-                    blogElement.innerHTML = `
-                        <a href="admin-blog-post.html?id=${blog.id}" class="blog-link">
-                            <img src="${blog.media.url}" alt="${blog.media.alt}">
-                            <div class="post-textbox">
-                                <h2 class="title"><span class="main-title">${blog.title}</span></h2>
-                                <p class="published">Published: ${formatDate(blog.created)}</p>
-                            </div>
-                        </a>
-                    `;
-                    if (allBlogsContainer) {
-                        allBlogsContainer.appendChild(blogElement);
-                    } 
-                    
-                    else {
-                        console.error("Element with class 'all-blogs' not found.");
-                    }
-                });
-            } 
-            
-            else {
-                console.error("Invalid data Format received from API");
-            }
-        })
+    const renderPosts = (posts) => {
+        allBlogsContainer.innerHTML = "";
+        posts.forEach(post => {
 
-        .catch((error) => {
-            console.error("Failed to fetch Blog Posts", error);
+            const blogElement = document.createElement("div");
+            blogElement.classList.add("blog-post");
+            blogElement.innerHTML = `
+                <a href="admin-blog-post.html?id=${post.id}" class="blog-link">
+                    <img src="${post.media.url}" alt="${post.media.alt}">
+                    <div class="post-textbox">
+                        <h2 class="title"><span class="main-title">${post.title}</span></h2>
+                        <p class="published">Published: ${formatDate(post.created)}</p>
+                    </div>
+                </a>
+            `;
+
+            allBlogsContainer.appendChild(blogElement);
         });
+    };
+
+    const renderFilteredPosts = () => {
+        fetchBlogData()
+
+            .then(data => {
+                if (data && Array.isArray(data.data)) {
+                    const originalPosts = data.data;
+                    const searchTerm = searchInput.value.toLowerCase();
+                    const filteredPosts = originalPosts.filter(post => post.title.toLowerCase().includes(searchTerm));
+                    renderPosts(filteredPosts);
+                } 
+                
+                else {
+                    console.error("Invalid data Format received from API");
+                }
+            })
+
+            .catch(error => {
+                console.error("Failed to fetch Posts", error);
+            });
+    };
+
+    renderFilteredPosts();
 });

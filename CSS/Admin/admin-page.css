@@ -51,6 +51,8 @@ body::before, body::after {
         width: 300px;
         margin-right: 0px;
         background-color: #d5eac7;
+
+        font-family: "libre Bodoni", serif;
     
         .right-s-content {
     
@@ -240,6 +242,7 @@ body::before, body::after {
 
             gap: 25px;
             margin-bottom: 100px;
+            font-family: "libre Bodoni", serif;
     
             .blog-post {
                 background-color: #F1F8F3;
