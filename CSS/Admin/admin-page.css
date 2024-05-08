@@ -112,8 +112,8 @@ body::before, body::after {
                             text-decoration: none;
                             color: #162D06;
                             font-weight: bold;
-                            width: 175px;
-                            box-shadow: 2px 2px 7px 2px rgba(2, 57, 11, 0.306);
+
+                            width: 155px;
                         }
 
                         #create-button {
@@ -174,11 +174,14 @@ body::before, body::after {
     }
 
     .scroll-content {
-        width: 100%;
 
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        width: 100%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
 
         .searchbar {
             margin-top: 75px;
@@ -230,29 +233,29 @@ body::before, body::after {
     
         .all-blogs {
 
-            width: 100%;
-            align-items: center;
-            justify-content: center;
-    
-            margin-top: 50px;
-
+            margin-top: 75px;
+            margin-left: 7%;
+            margin-right: 25px;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-
             gap: 25px;
-            margin-bottom: 100px;
-            font-family: "libre Bodoni", serif;
+
+            font-family: "Libre Bodoni", serif;
+            font-weight: normal;
     
             .blog-post {
+
                 background-color: #F1F8F3;
-                height: 590px;
+                height: 520px;
                 width: 350px;
                 border-radius: 10px;
                 box-shadow: 2px 2px 7px 2px rgba(2, 57, 11, 0.306);
+
+                margin-bottom: 2.5%;
     
                 img {
-                    height: 400px;
+                    height: 320px;
                     width: 350px;
                     object-fit: cover;
                     border-radius: 10px 10px 0px 0px;
@@ -285,7 +288,7 @@ body::before, body::after {
                 transition: 0.25s;
     
                 img {
-                    height: 475px;
+                    height: 400px;
                     transition: ease-in-out 0.25s;
                 }
     
