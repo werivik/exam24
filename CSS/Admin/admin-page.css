@@ -251,10 +251,11 @@ body::before, body::after {
     
             .blog-post {
                 background-color: #F1F8F3;
-                height: auto;
+                height: 500px;
                 
                 width: calc((100% - 50px) / 2);
                 max-width: 275px;
+                min-width: 250px;
 
                 border-radius: 10px;
                 box-shadow: 2px 2px 7px 2px rgba(2, 57, 11, 0.306);

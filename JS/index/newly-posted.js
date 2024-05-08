@@ -6,16 +6,26 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
 
+    let posts;
+    let slideshowInterval; 
+
     const fetchBlogData = async () => {
         try {
             const response = await fetch("https://v2.api.noroff.dev/blog/posts/wervik");
             if (!response.ok) {
                 throw new Error("Failed to Fetch Data from API");
             }
+
             const data = await response.json();
+
+            posts = data.data.slice(0, 10);
+
             return data;
-        } catch (error) {
+        } 
+        
+        catch (error) {
             console.error("Error fetching data:", error);
+
             return null;
         }
     };
@@ -27,13 +37,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         const year = date.getFullYear();
         const formattedDay = day < 10 ? `0${day}` : day;
         const formattedMonth = month < 10 ? `0${month}` : month;
+
         return `${formattedDay}.${formattedMonth}.${year}`;
     };
 
     const data = await fetchBlogData();
 
     if (data && data.data && Array.isArray(data.data)) {
-        const posts = data.data.slice(0, 5);
         posts.forEach((post) => {
             const postElement = document.createElement("div");
             postElement.classList.add("new-post");
@@ -46,9 +56,75 @@ document.addEventListener("DOMContentLoaded", async () => {
                     </div>
                 </a>
             `;
+
             newlyPostedContainer.appendChild(postElement);
         });
-    } else {
+
+        let currentIndex = 0;
+        const totalPosts = posts.length;
+
+        const showPost = (index) => {
+            const postElements = document.querySelectorAll('.new-post');
+            postElements.forEach((post, i) => {
+                if (i >= index && i < index + 3) {
+                    post.style.display = 'block';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        };
+
+        const startSlideshow = () => {
+            slideshowInterval = setInterval(nextSlide, 95000); 
+        };
+
+        const stopSlideshow = () => {
+            clearInterval(slideshowInterval);
+        };
+
+        const nextSlide = () => {
+            currentIndex = (currentIndex + 1) % (totalPosts - 2); 
+            showPost(currentIndex);
+        };
+
+        const prevSlide = () => {
+            currentIndex = (currentIndex - 1 + (totalPosts - 2)) % (totalPosts - 2);
+            showPost(currentIndex);
+        };
+
+        const pauseSlideshow = () => {
+            stopSlideshow();
+            setTimeout(startSlideshow, 30000); 
+        };
+
+        startSlideshow();
+
+        const nextLeftButton = document.querySelector('.next-left-newly');
+        const nextRightButton = document.querySelector('.next-right-newly');
+        const postElements = document.querySelectorAll('.new-post');
+
+        nextLeftButton.addEventListener('click', () => {
+            pauseSlideshow();
+            prevSlide();
+        });
+
+        nextRightButton.addEventListener('click', () => {
+            pauseSlideshow();
+            nextSlide();
+        });
+
+        postElements.forEach((post) => {
+            post.addEventListener('mouseenter', () => {
+                pauseSlideshow();
+            });
+
+            post.addEventListener('mouseleave', () => {
+                pauseSlideshow();
+            });
+        });
+    } 
+    
+    else {
         console.error("Invalid data format received from API");
     }
 });
