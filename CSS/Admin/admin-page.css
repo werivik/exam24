@@ -183,6 +183,8 @@ body::before, body::after {
         margin-left: 2.5%;
         margin-right: 2.5%;
 
+        font-family: "Libre Bodoni", serif;
+
         .searchbar {
             margin-top: 75px;
     
@@ -234,29 +236,32 @@ body::before, body::after {
         .all-blogs {
 
             margin-top: 75px;
+            margin-bottom: 150px;
             margin-left: 7%;
             margin-right: 25px;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            justify-content: center;
+
             gap: 25px;
 
             font-family: "Libre Bodoni", serif;
             font-weight: normal;
     
             .blog-post {
-
                 background-color: #F1F8F3;
-                height: 520px;
-                width: 350px;
+                height: auto;
+                
+                width: calc((100% - 50px) / 2);
+                max-width: 275px;
+
                 border-radius: 10px;
                 box-shadow: 2px 2px 7px 2px rgba(2, 57, 11, 0.306);
-
-                margin-bottom: 2.5%;
     
                 img {
-                    height: 320px;
-                    width: 350px;
+                    height: 300px;
+                    width: 100%;
                     object-fit: cover;
                     border-radius: 10px 10px 0px 0px;
                 }
@@ -266,19 +271,25 @@ body::before, body::after {
                     flex-direction: column;
                     justify-content: space-between;
                     align-items: center;
-                    text-align: center;
-                    height: 190px;
+
+                    height: 180px;
                     margin-left: 5px;
                     margin-right: 5px;
     
-    
-                    .title {
-                        font-size: 20px;
+                    .main-title {
+                        font-weight: bold;
+                        font-size: 19px;
+                        display: flex;
+                        width: 99%;
+
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
                     }
     
                     .published {
                         opacity: 75%;
-                        font-size: 14px;
+                        font-size: 10px;
                     }
                 }
             }
@@ -288,49 +299,74 @@ body::before, body::after {
                 transition: 0.25s;
     
                 img {
-                    height: 400px;
+                    height: 375px;
                     transition: ease-in-out 0.25s;
                 }
     
                 .post-textbox {
                     transition: 0.25s;
-    
-                    height: 115px;
+                    height: 100px;
+                    margin-top: 0px;
     
                     .title {
-                        font-size: 22px;
-                        margin-top: 0px;
+                        font-size: 23px;
+                        margin-top: -1px;
                     }
     
                     .published {
                         display: none;
                     }
                 }
+            }
     
+
+            .blog-post:hover {
+                background-color: white;
+                transition: 0.25s;
+            
+                img {
+                    height: 400px;
+                    transition: ease-in-out 0.25s;
+                }
+            
+                .post-textbox {
+                    transition: 0.25s;
+            
+                    height: 115px;
+            
+                    .title {
+                        font-size: 22px;
+                        margin-top: 0px;
+                    }
+            
+                    .published {
+                        display: none;
+                    }
+                }
+            
                 .title {
                     display: none;
                 }
             }
-    
+            
             
             .blog-post:hover::after {
                 content: "Edit Post";
                 font-size: 25px;
-                width: 350px;
-                margin-top: -85px;
+                width: 100%;
+                margin-top: -100px;
                 font-weight: bolder;
-    
+            
                 text-align: center;
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
-    
+            
             .blog-link {
                 text-decoration: none;
                 color: #162D06;
             }
-    
         }
     }
 
