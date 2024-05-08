@@ -132,6 +132,7 @@ nav {
         #searchInput::placeholder {
             padding-left: 5px;
             color: #162D06;
+            font-size: 12px;
         }
         
         #searchInput {

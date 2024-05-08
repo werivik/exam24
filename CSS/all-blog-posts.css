@@ -13,6 +13,19 @@ body::before, body::after {
     clear: both;
 }
 
+::-webkit-scrollbar {
+    background-color: #d5eac7;
+
+    border-radius: 0px 99px 10px 0px;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #162D06;
+
+    border-radius: 99px;
+}
+
 .main-content {
     
     background-color: #F2FFEA;
@@ -114,7 +127,16 @@ body::before, body::after {
                         align-items: center;
                         border-radius: 10px;
                         width: 250px;
-    
+
+                        font-family: "Libre Bodoni", serif;
+                        font-weight: normal;
+
+                        color: #162D06;
+
+                        h2 {
+                            font-size: 22px;
+                        }
+
                         img {
                             width: 129px;
                             height: 163px;
@@ -128,7 +150,7 @@ body::before, body::after {
                             margin-top: 10px;
                             margin-left: 10px;
                             margin-right: 10px;
-                            font-size: 14px;
+                            font-size: 13px;
                         }
     
                         .right-s-info {

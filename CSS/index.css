@@ -360,10 +360,10 @@ body::before, body::after {
                         font-family: "Libre Bodoni", serif;
                         font-weight: normal;
 
-                        h2 {
-                            font-size: 25px;
-                            color: #162D06;
+                        color: #162D06;
 
+                        h2 {
+                            font-size: 22px;
                         }
 
                         img {
@@ -379,7 +379,7 @@ body::before, body::after {
                             margin-top: 10px;
                             margin-left: 10px;
                             margin-right: 10px;
-                            font-size: 14px;
+                            font-size: 13px;
                         }
     
                         .right-s-info {
@@ -577,6 +577,23 @@ body::before, body::after {
                     margin-left: -0.5px;
                     color: #162D06;
                 }
+            }
+
+            #searchbarInput::placeholder {
+                color: #162D06;
+                font-size: 12px;
+                font-family: "libre Bodoni", serif;
+            }
+
+            #searchbarInput {
+                color: #162D06;
+                padding-left: 5px;
+    
+                font-family: "Libre Bodoni", serif;
+    
+                border: none;
+                outline: none;
+    
             }
 
             .all-posts-index {
