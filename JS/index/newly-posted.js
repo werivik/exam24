@@ -3,11 +3,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (!newlyPostedContainer) {
         console.error("Element with class 'newly-posted' not found.");
+        
         return;
     }
 
     let posts;
-    let slideshowInterval; 
+    let slideshowInterval;
 
     const fetchBlogData = async () => {
         try {
@@ -41,6 +42,39 @@ document.addEventListener("DOMContentLoaded", async () => {
         return `${formattedDay}.${formattedMonth}.${year}`;
     };
 
+    const updateDotOpacity = (startIndex, endIndex) => {
+        const dotElements = document.querySelectorAll('.dot-newly');
+
+        dotElements.forEach((dot, index) => {
+            if (index >= startIndex && index <= endIndex) {
+                dot.style.opacity = 1;
+            } 
+            
+            else {
+                dot.style.opacity = 0.5;
+            }
+        });
+    };
+
+    const showPost = (index) => {
+        const startIndex = index;
+        const endIndex = index + 2;
+
+        const postElements = document.querySelectorAll('.new-post');
+
+        postElements.forEach((post, i) => {
+            if (i >= startIndex && i <= endIndex) {
+                post.style.display = 'block';
+            } 
+            
+            else {
+                post.style.display = 'none';
+            }
+        });
+
+        updateDotOpacity(startIndex, endIndex);
+    };
+
     const data = await fetchBlogData();
 
     if (data && data.data && Array.isArray(data.data)) {
@@ -64,18 +98,24 @@ document.addEventListener("DOMContentLoaded", async () => {
         const totalPosts = posts.length;
 
         const showPost = (index) => {
+            const startIndex = index;
+            const endIndex = Math.min(index + 2, totalPosts - 1);
+        
             const postElements = document.querySelectorAll('.new-post');
+        
             postElements.forEach((post, i) => {
-                if (i >= index && i < index + 3) {
+                if (i >= startIndex && i <= endIndex) {
                     post.style.display = 'block';
                 } else {
                     post.style.display = 'none';
                 }
             });
+        
+            updateDotOpacity(startIndex, endIndex);
         };
 
         const startSlideshow = () => {
-            slideshowInterval = setInterval(nextSlide, 95000); 
+            slideshowInterval = setInterval(nextSlide, 95000);
         };
 
         const stopSlideshow = () => {
@@ -83,21 +123,22 @@ document.addEventListener("DOMContentLoaded", async () => {
         };
 
         const nextSlide = () => {
-            currentIndex = (currentIndex + 1) % (totalPosts - 2); 
+            currentIndex = (currentIndex + 1) % totalPosts;
             showPost(currentIndex);
         };
 
         const prevSlide = () => {
-            currentIndex = (currentIndex - 1 + (totalPosts - 2)) % (totalPosts - 2);
+            currentIndex = (currentIndex - 1 + totalPosts) % totalPosts;
             showPost(currentIndex);
         };
 
         const pauseSlideshow = () => {
             stopSlideshow();
-            setTimeout(startSlideshow, 30000); 
+            setTimeout(startSlideshow, 95000);
         };
 
         startSlideshow();
+
 
         const nextLeftButton = document.querySelector('.next-left-newly');
         const nextRightButton = document.querySelector('.next-right-newly');
