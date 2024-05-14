@@ -68,5 +68,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (!event.target.closest(".searchbar-header")) {
             searchResults.style.display = "none";
         }
+        
     });
+
 });
