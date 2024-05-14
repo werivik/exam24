@@ -12,7 +12,11 @@
       
        <link rel="stylesheet" href="/CSS/footer.css">
        <link rel="stylesheet" href="/CSS/header.css">
-       <link rel="stylesheet" href="/CSS/all-blog-posts.css">
+       <link rel="stylesheet" href="/CSS/error.css">
+
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
       
        <script src="https://kit.fontawesome.com/2ef99fbf3a.js" crossorigin="anonymous"></script>
       
@@ -20,8 +24,10 @@
 
 <body>
 
-    <script src="/JS/nav-links/all-blog-posts.js" defer></script>
+    <script src="/JS//index/newly-posted.js" defer></script>
     <script src="/JS/updated-post-info.js" defer></script>
+    <script src="/JS/index/all-posts-index.js" defer></script>
+    <script src="/JS/carousel-slides.js/slides-index.js" defer></script>
 
     <script src="/JS/header-searchbar.js" defer></script>
     <script src="/JS/header.js" defer></script>
@@ -31,7 +37,7 @@
         <nav>
 
             <a href="index.html" class="logo">
-                <img src="/MEDIA/logo/greenlogo.png" alt="">
+                <img src="/MEDIA/logo/greenlogo.png" alt="Crazy Plant Lady Logo, written in dark green letters spelling 'Crazy Plant, and all capital letters: LADY'">
             </a>
 
             <i class="fa-solid fa-bars menu-icon"></i>
@@ -40,7 +46,7 @@
 
                 <li class="searchbar-header">
                     <div class="searchbar-header-content">
-                        <input type="text" id="searchInput" placeholder="Dig Up Delightful Plant Post Here..."><i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="searchInput" placeholder="Dig Up Delightful Post Here..."><i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                     <div id="searchResults" class="search-results"></div>  
                 </li>
@@ -74,72 +80,27 @@
     
     <main>   
 
-        <section class="main-content">
+        <section class="error-section">
 
-            <div class="scroll-content">
+            <div class="error-message">
+                <h1>Oops! Looks like you've wandered into the garden of lost pages.</h1>
 
-                <h1><span>All Blog</span> Posts</h1>
-
-                <div class="filters">
-
-                    <div class="filter-abc">
-                        <select id="alphabeticalFilter" class="filter-abc-box">
-                            <option value="">Sort By:</option>
-                            <option value="ascending">A to Z</option>
-                            <option value="descending">Z to A</option>
-                        </select>
-                    </div>
-
-                    <button id="applyFiltersButton" class="applyfilters">Filter</button>
-
-                </div>
-
-                <div class="searchbar">
-                    <input type="text" id="searchInput" placeholder="Search post..."><i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-
-                <div class="all-blogs">
-
-                </div>
+                <p>The plant you're seeking seems to have sprouted legs and escaped. But fear not! Our green-thumbed team is diligently tending to the digital soil to bring it back.</p>
+                <p>In the meantime, why not explore some of our flourishing content? You might just stumble upon a new leafy obsession. Happy exploring!</p>
 
             </div>
 
-            <div class="un-scroll-content">
-
-                <div class="right-s-content">
-
-                    <div class="right-s-background">
-
-                        <div class="gobackbutton">
-                            <a href="javascript:window.history.back();"><i class="fa-solid fa-arrow-left"></i> Go Back</a>
-                        </div>
-
-                        <div class="right-s-box">
-
-                            <div class="right-s-text">
-                                <h2>About Me</h2>
-
-                                <a href="admin-login.html">
-                                    <img src="/MEDIA/logo/crazyplantladyprofile-left.png" alt="">
-                                </a>
-                                
-                                <p>Greetings fellow plant enthusiasts! I'm The Crazy Plant Lady, a soul who found her sanctuary amidst the bustling chaos of urban life through the tender embrace of plants.</p>
-                                <p>Join me on this journey of growth, resilience, and endless botanical wonders. Together, let's embrace the magic of plants and nurture our spirits as we cultivate a greener, more vibrant world. Whether you're a seasoned plant parent or a budding enthusiast, there's always room in my digital garden for you. So, grab your watering can and let's sow the seeds of joy and discovery together!</p>
-    
-                                <div class="right-s-info" id="rightSInfo">
-                                    <p><span>Total Posts:</span> <span id="totalPosts"></span></p>
-                                    <p><span>Last Posted:</span> <span id="lastPosted"></span></p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
+            <div class="re-links">
+                <li>
+                    <a href="index.html">Home</a>
+                    <a href="all-posts.html">All Posts</a>
+                    <a href="indoor.html">Indoor Plants</a>
+                    <a href="outdoor.html">Outdoor Plants</a>
+                    <a href="edible.html">Edible Plants</a>
+                    <a href="animal.html">Animal Friendly Plants</a>
+                </li>
             </div>
-    
+
         </section>
 
     </main>

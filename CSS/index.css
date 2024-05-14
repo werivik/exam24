@@ -279,7 +279,7 @@ body::before, body::after {
                     &:hover {
                         transform: scale(1.2);
 
-                        transition: ease-in-out 0.45s;
+                        transition: ease-in-out 0.35s;
 
                         height: 250px;
     
@@ -296,7 +296,6 @@ body::before, body::after {
 
 .main-content {
 
-    margin-left: -8px;
     z-index: 2;
     margin-top: 100vh;
     box-shadow: 10px 1px 50px 5px rgba(1, 56, 10, 0.396);
@@ -395,7 +394,7 @@ body::before, body::after {
                         .right-s-info {
                             width: 100%;
                             padding-bottom: 25px;
-                            margin-top: 25px;
+                            margin-top: 50px;
     
                             span {
                                 font-weight: bold;
@@ -596,8 +595,6 @@ body::before, body::after {
         .all-posts-container {
 
             width: 100%;
-            padding-top: 75px;
-
             color: #162D06;
             margin-top: 75px;
 
@@ -702,6 +699,7 @@ body::before, body::after {
     
                     border-radius: 10px;
                     box-shadow: 2px 2px 7px 2px rgba(2, 57, 11, 0.306);
+                    color: #162D06;
                     
     
                     a {
@@ -723,7 +721,7 @@ body::before, body::after {
 
                     .published {
                         opacity: 75%;
-                        font-size: 10px;
+                        font-size: 12px;
                     }
     
                     img {

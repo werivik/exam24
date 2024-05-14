@@ -45,24 +45,32 @@ body::before, body::after {
         flex-direction: column;
         top: 0;
         right: 0;
-        left: 100%;
-        min-width: 300px;
-        margin-right: 0px;
+
+        width: 300px;
         background-color: #d5eac7;
     
         .right-s-content {
     
+            width: 100%;
             height: 100vh;
             position: sticky;
             display: flex;
             flex-direction: column;
-            top: 0;
     
             .right-s-background {
+
                 background-image: linear-gradient(to bottom, rgba(228, 244, 217, 0.65), rgba(228, 244, 217, 0.65)),url(/MEDIA/background/backgroundleafes.png);
                 background-size: 40%;
                 padding-bottom: 70px;
-                width: 300px;
+                margin-top: -25px;
+                width: 100%;
+                height: 100%;
+
+                display: flex;
+                flex-direction: column;
+
+                justify-content: center;
+                align-items: center;
 
                 .gobackbutton {
                     margin-top: 100px;
@@ -70,7 +78,6 @@ body::before, body::after {
                     flex-direction: column;
                     align-items: center;
                     width: 250px;
-                    margin-left: 25px;
                     margin-bottom: 15px;
 
                     a {
@@ -114,19 +121,25 @@ body::before, body::after {
                 }
     
                 .right-s-box {
+
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
+                    width: 100%;
+
                     margin-top: 0px;
     
                     .right-s-text {
+
                         background-color: #F2FFEA;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
+                        justify-content: center;
+
                         border-radius: 10px;
-                        width: 250px;
+                        width: 225px;
 
                         font-family: "Libre Bodoni", serif;
                         font-weight: normal;
@@ -156,7 +169,7 @@ body::before, body::after {
                         .right-s-info {
                             width: 100%;
                             padding-bottom: 25px;
-                            margin-top: 25px;
+                            margin-top: 50px;
     
                             span {
                                 font-weight: bold;
