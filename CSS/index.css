@@ -531,7 +531,7 @@ body::before, body::after {
                         }
     
                         h2 {
-                            font-size: clamp(15px, calc(1vw + 0.9vh), 25px);                        }
+                            font-size: clamp(15px, calc(1vw + 0.9vh), 25px);                        
                         }
 
                         .published {
@@ -772,7 +772,6 @@ body::before, body::after {
         }
 
     }
-
 }
 
 @media (max-width: 1200px){
