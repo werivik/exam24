@@ -454,10 +454,9 @@ body::before, body::after {
                 justify-content: center;
                 align-items: center;
 
-                margin-top: -50px;
-
                 position: relative;
                 overflow: hidden;
+                margin-top: -50px;
                 height: 700px;
 
                 .newly-posted {
@@ -479,8 +478,12 @@ body::before, body::after {
                         box-shadow: 5px 10px 10px 2px rgba(2, 101, 19, 0.154);
 
                         border-radius: 10px;
-                        height: 600px;
-                        width: calc((100% - 50px) / 3);
+
+                        height: calc((100vw * 0.35) * 375 / 350);
+                        width: calc((100vw * 0.4) / 1.9);
+                        min-width: 200px;
+                        min-height: 300px;
+
                         max-width: 375px;
 
                         .blog-link {
@@ -503,37 +506,32 @@ body::before, body::after {
         
                         img {
                             width: 100%;
-                            height: 420px;
+                            height: 70%;
                             object-fit: cover;
                             border-radius: 10px 10px 0px 0px;
                         }
     
                         h2 {
-                            font-size: 20px;
-                        }
-
-                        .published {
-                            opacity: 65%;
-                            font-size: 12px;
+                            font-size: clamp(15px, calc(1vw + 0.7vh), 25px);                        
                         }
                     }
 
                     .new-post:hover {
                         background-color: white;
-                        transition: 0.45s;
+                        transition: 0.30s;
 
                         .post-textbox {
-                            margin-top: 5px;
+                            margin-top: 0px;
                             height: 150px;
                         }
         
                         img {
-                            height: 475px;
-                            transition: 0.35s;
+                            height: 77%;
+                            transition: 0.25s;
                         }
     
                         h2 {
-                            font-size: 22px;
+                            font-size: clamp(15px, calc(1vw + 0.9vh), 25px);                        }
                         }
 
                         .published {
@@ -701,11 +699,12 @@ body::before, body::after {
                 .all-post-blog {
 
                     background-color: #F1F8F3;
-                    height: 550px;
-                    
-                    width: calc((100% - 50px) / 2);
+
+                    width: calc(100vw * 0.4);
                     max-width: 285px;
-    
+                    height: calc((100vw * 0.4) * 450 / 285);
+                    max-height: 450px;
+
                     border-radius: 10px;
                     box-shadow: 2px 2px 7px 2px rgba(2, 57, 11, 0.306);
                     color: #162D06;
@@ -723,25 +722,27 @@ body::before, body::after {
                        justify-content: space-between;
                        align-items: center;
 
-                       height: 180px;
                        margin-left: 5px;
                        margin-right: 5px;
                     }
 
                     .published {
                         opacity: 75%;
-                        font-size: 12px;
+                        font-size: clamp(10px, calc(0.7vw + 0.4vh), 20px);
+
+                        margin-top: calc(0.25vh + px);
                     }
     
                     img {
-                        height: 350px;
+                        height: 60%;
                         width: 100%;
                         object-fit: cover;
                         border-radius: 10px 10px 0px 0px;
                     }
 
                     h2 {
-                        font-size: 20px;
+                        font-size: clamp(18px, calc(1.5vw + 1vh), 20px);
+                        margin: calc(0.5vh + 10px) 0;
                     }
                 }
 
@@ -755,12 +756,12 @@ body::before, body::after {
                     }
     
                     img {
-                        height: 420px;
+                        height: 70%;
                         transition: 0.35s;
                     }
 
                     h2 {
-                        font-size: 22px;
+                        font-size: clamp(18px, calc(1.7vw + 1.5vh), 22px);
                     }
 
                     .published {
@@ -812,193 +813,6 @@ body::before, body::after {
             }
         }
     
-        .scroll-content {
-            position: relative;
-    
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            margin-bottom: 100px;
-    
-            .newly-posted-container {
-    
-                h2 {
-                    font-size: 40px;
-                    margin-bottom: 50px;
-    
-                }
-    
-                .newly-posted-carousel {
-                    height: 500px;
-    
-                    .newly-posted {
-    
-                        height: 600px;
-        
-                        .new-post {
-
-                            height: 450px;
-    
-                            .blog-link {
-                                text-decoration: none;
-                                color: #162D06;
-                            }
-    
-                            .post-textbox {
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: space-between;
-                                align-items: center;
-                                text-align: center;
-    
-                                margin-top: 10px;
-                                height: 170px;
-                                margin-left: 5px;
-                                margin-right: 5px;
-                            }
-            
-                            img {
-                                height: 300px;
-                            }
-        
-                            h2 {
-                                font-size: 17px;
-                            }
-                        }
-    
-                        .new-post:hover {
-                            background-color: white;
-                            transition: 0.45s;
-    
-                            .post-textbox {
-                                margin-top: -5px;
-                            }
-            
-                            img {
-                                height: 330px;
-                            }
-        
-                            h2 {
-                                font-size: 19px;
-                            }
-                        }
-                    }
-                }
-    
-                .next-left-newly {
-                    position: absolute;
-                    background-color: white;
-                    height: 50px;
-                    width: 50px;
-                    border-radius: 99px;
-                    z-index: 998;
-    
-                    left: 3%;
-                    top: 350px;
-    
-        
-                    color: #162D06;
-                    border: solid #162D06 2px;
-        
-                    cursor: pointer;
-                    font-size: 17px;
-        
-                    &:hover {
-                        font-size: 30px;
-                        transition: 0.25s;
-        
-                        transform: scale(1.1);
-        
-                        background-color: pink;
-                    }
-                }
-        
-                .next-right-newly {
-                    position: absolute;
-                    background-color: white;
-                    height: 50px;
-                    width: 50px;
-                    border-radius: 99px;
-                    z-index: 998;
-    
-                    right: 3%;
-                    top: 350px;
-    
-        
-                    color: #162D06;
-                    border: solid #162D06 2px;
-        
-                    cursor: pointer;
-                    font-size: 17px;
-        
-                    &:hover {
-                        font-size: 30px;
-                        transition: 0.25s;
-        
-                        transform: scale(1.1);
-        
-                        background-color: pink;
-                    }
-                }
-    
-            }
-    
-            .all-posts-container {
-    
-                width: 100%;
-                color: #162D06;
-                margin-top: 75px;
-    
-                font-family: "Libre Bodoni", serif;
-                font-weight: normal;
-    
-                h2 {
-                    font-size: 40px;
-                    
-                }
-    
-                .all-posts-index {
-    
-                    .all-post-blog {
-    
-                        height: 450px;   
-    
-                        .post-textbox {
-    
-                           height: 170px;
-                        }
-    
-                        .published {
-                            opacity: 75%;
-                            font-size: 10px;
-                        }
-        
-                        img {
-                            height: 275px;
-                        }
-    
-                        h2 {
-                            font-size: 17px;
-                        }
-                    }
-    
-                    .all-post-blog:hover {
-        
-                        img {
-                            height: 325px;
-                        }
-    
-                        h2 {
-                            font-size: 19px;
-                        }
-                    }
-                }
-            }
-    
-        }
-    
     }
 }
 
@@ -1009,136 +823,6 @@ body::before, body::after {
             display: none;
         }
     
-        .scroll-content {
-    
-            .newly-posted-container {
-    
-                h2 {
-                    font-size: 35px;
-                    margin-bottom: 50px;
-    
-                }
-    
-                .newly-posted-carousel {
-                    height: 400px;
-    
-                    .newly-posted {
-    
-                        height: 500px;
-        
-                        .new-post {
-
-                            height: 350px;
-    
-                            .post-textbox {
-                                height: 170px;
-                            }
-            
-                            img {
-                                height: 200px;
-                            }
-        
-                            h2 {
-                                font-size: 15px;
-                            }
-                        }
-    
-                        .new-post:hover {
-            
-                            img {
-                                height: 230px;
-                            }
-        
-                            h2 {
-                                font-size: 17px;
-                            }
-                        }
-                    }
-                }
-    
-                .next-left-newly {
-                    height: 30px;
-                    width: 30px;
-
-                    top: 320px;
-
-                    font-size: 15px;
-        
-                    &:hover {
-                        font-size: 20px;
-                    }
-                }
-        
-                .next-right-newly {
-                    height: 30px;
-                    width: 30px;
-
-                    top: 320px;
-
-                    font-size: 15px;
-        
-                    &:hover {
-                        font-size: 20px;
-                    }
-                }
-    
-            }
-    
-            .all-posts-container {
-    
-                width: 100%;
-                color: #162D06;
-                margin-top: 75px;
-    
-                font-family: "Libre Bodoni", serif;
-                font-weight: normal;
-    
-                h2 {
-                    font-size: 40px;
-                    
-                }
-    
-                .all-posts-index {
-    
-                    .all-post-blog {
-
-                        width: calc((100% - 25px) / 3);
-    
-                        height: 350px;   
-    
-                        .post-textbox {
-    
-                           height: 140px;
-                        }
-    
-                        .published {
-                            opacity: 75%;
-                            font-size: 9px;
-                        }
-        
-                        img {
-                            height: 205px;
-                        }
-    
-                        h2 {
-                            font-size: 15px;
-                        }
-                    }
-    
-                    .all-post-blog:hover {
-        
-                        img {
-                            height: 250px;
-                        }
-    
-                        h2 {
-                            font-size: 18px;
-                        }
-                    }
-                }
-            }
-    
-        }
     
     }
 }
