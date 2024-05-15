@@ -315,6 +315,12 @@ body::before, body::after {
 
         .all-blogs {
 
+            width: 100%;
+            color: #162D06;
+
+            font-family: "Libre Bodoni", serif;
+            font-weight: normal;
+
             margin-top: 75px;
             margin-bottom: 150px;
             margin-left: 7%;
@@ -325,22 +331,22 @@ body::before, body::after {
             justify-content: center;
 
             gap: 25px;
-
-            font-family: "Libre Bodoni", serif;
-            font-weight: normal;
     
             .blog-post {
+
                 background-color: #F1F8F3;
-                height: auto;
-                
-                width: calc((100% - 50px) / 2);
-                max-width: 275px;
+
+                width: calc(100vw * 0.4);
+                max-width: 285px;
+                height: calc((100vw * 0.4) * 450 / 285);
+                max-height: 450px;
 
                 border-radius: 10px;
                 box-shadow: 2px 2px 7px 2px rgba(2, 57, 11, 0.306);
+                color: #162D06;
     
                 img {
-                    height: 300px;
+                    height: 60%;
                     width: 100%;
                     object-fit: cover;
                     border-radius: 10px 10px 0px 0px;
@@ -352,24 +358,25 @@ body::before, body::after {
                     justify-content: space-between;
                     align-items: center;
 
-                    height: 180px;
                     margin-left: 5px;
                     margin-right: 5px;
     
                     .main-title {
                         font-weight: bold;
-                        font-size: 19px;
                         display: flex;
-                        width: 99%;
 
                         justify-content: center;
                         align-items: center;
                         text-align: center;
+
+                        font-size: clamp(18px, calc(1.5vw + 1vh), 20px);
                     }
     
                     .published {
                         opacity: 75%;
-                        font-size: 10px;
+                        font-size: clamp(10px, calc(0.5vw + 0.4vh), 15px);
+
+                        margin-top: calc(0.25vh + 25px);
                     }
                 }
             }
@@ -379,18 +386,18 @@ body::before, body::after {
                 transition: 0.25s;
     
                 img {
-                    height: 375px;
+                    height: 70%;
                     transition: ease-in-out 0.25s;
                 }
     
                 .post-textbox {
                     transition: 0.25s;
-                    height: 100px;
-                    margin-top: 0px;
+                    margin-top: 10px;
+                    height: 100%;
     
-                    .title {
-                        font-size: 23px;
-                        margin-top: -1px;
+                    .main-title {
+                        font-size: clamp(18px, calc(1.7vw + 1.5vh), 22px);
+                        margin-top: calc(0.25vh - 20px);
                     }
     
                     .published {
