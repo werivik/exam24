@@ -147,10 +147,13 @@ body::before, body::after {
                 position: relative;
                 height: 100vh;
                 min-width: 100%;
+                width: 100%;
+                object-fit: contain;
     
                 img {
                     transition: opacity 0.3s ease;
                     min-width: 100%;
+                    width: 100%;
                     height: 100vh;
                     object-fit: cover;
                 }
@@ -456,12 +459,11 @@ body::before, body::after {
 
                 position: relative;
                 overflow: hidden;
-                margin-top: -50px;
-                height: 700px;
+                height: auto;
 
                 .newly-posted {
 
-                    height: 700px;
+                    height: auto;
                     display: flex;
                     flex-direction: row;
                     align-items: center;
@@ -471,6 +473,7 @@ body::before, body::after {
 
                     margin-left: 10%;
                     margin-right: 10%;
+                    padding-bottom: 20px;
     
                     .new-post {
 
@@ -816,6 +819,129 @@ body::before, body::after {
 }
 
 @media (max-width: 1000px){
+
+    .welcome-logo {
+
+        background-color: #E4F4D9;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+    
+        top: 0;
+        left: 0;
+        z-index: 1;
+    
+        .welcome-background {
+    
+            width: 101%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            position: absolute;
+            right: -8px;
+            left: -8px;
+    
+            .next-left {
+
+                height: 40px;
+                width: 40px;
+
+                left: 6.5%;
+    
+                font-size: 15px;
+    
+                &:hover {
+                    font-size: 20px;
+                }
+            }
+    
+            .next-right {
+
+                height: 40px;
+                width: 40px;
+
+                right: 6.5%;
+    
+                font-size: 15px;
+    
+                &:hover {
+                    font-size: 20px;
+                }
+            }
+    
+            .progress-bar {
+                width: 100px;
+                height: 15px;
+            }
+    
+            .dot {
+    
+                height: 7px;
+                width: 7px;
+            }
+    
+            .homepage-slideshow {
+        
+                .framed-logo {
+            
+                    .logo-inside-frame {
+                        width: 550px;
+                        height: 300px;
+                
+                        img {
+                            width: 300px;
+                            height: 250px;
+                        }
+            
+                        h2 {
+                            font-size: 20px;
+                            margin-bottom: -30px;
+                        }
+            
+                        h1 {
+                            font-size: 27px;
+                            margin-top: -20px;
+
+                            img {
+                                width: 125px;
+                                height: 50px;
+                            }
+                        }
+    
+                    }
+    
+                    .logo-inside-frame2 {
+                    
+                        width: 550px;
+                        height: 225px;                        
+            
+                        h2 {
+                            font-size: 20px;
+    
+                        }
+    
+                        h3 {
+                            font-size: 40px;
+                        }
+    
+                        &:hover {
+                            transform: scale(1.1);
+        
+                            h3 {
+                                font-size: 50px;
+                            }
+                        }
+                    }
+                }   
+            }
+        }
+    }
+
     .main-content {
 
         .un-scroll-content {
