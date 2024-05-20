@@ -324,7 +324,7 @@ body::before, body::after {
             margin-top: 75px;
             margin-bottom: 150px;
             margin-left: 7%;
-            margin-right: 25px;
+            margin-right: 7%;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -334,75 +334,75 @@ body::before, body::after {
     
             .blog-post {
 
-                background-color: #F1F8F3;
-
-                width: calc(100vw * 0.4);
-                max-width: 285px;
-                height: calc((100vw * 0.4) * 450 / 285);
-                max-height: 450px;
+                background-color: #f6fcf3;
+                box-shadow: 5px 10px 10px 2px rgba(2, 101, 19, 0.154);
 
                 border-radius: 10px;
-                box-shadow: 2px 2px 7px 2px rgba(2, 57, 11, 0.306);
-                color: #162D06;
-    
+
+                height: calc((100vw * 0.35) * 375 / 350);
+                width: calc((100vw * 0.4) / 1.9);
+                min-width: 200px;
+                min-height: 280px;
+
+                max-height: 525px;
+                max-width: 300px;
+
+                .post-textbox {
+                   display: flex;
+                   flex-direction: column;
+                   justify-content: space-between;
+                   align-items: center;
+
+                   margin-left: 5px;
+                   margin-right: 5px;
+                   margin-top: -10px;
+
+                   height: 100%;
+                   width: 100%;
+                }
+
+                .published {
+                    position: absolute;
+                    opacity: 75%;
+                    font-size: clamp(7px, calc(0.7vw + 0.4vh), 18px);
+
+                    margin-top: calc(12% + 10px);
+                    margin-bottom: 2.5px;
+                }
+
                 img {
-                    height: 60%;
                     width: 100%;
+                    height: 62%;
                     object-fit: cover;
                     border-radius: 10px 10px 0px 0px;
                 }
-    
-                .post-textbox {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    align-items: center;
 
-                    margin-left: 5px;
-                    margin-right: 5px;
-    
-                    .main-title {
-                        font-weight: bold;
-                        display: flex;
-
-                        justify-content: center;
-                        align-items: center;
-                        text-align: center;
-
-                        font-size: clamp(18px, calc(1.5vw + 1vh), 20px);
-                    }
-    
-                    .published {
-                        opacity: 75%;
-                        font-size: clamp(10px, calc(0.5vw + 0.4vh), 15px);
-
-                        margin-top: calc(0.25vh + 25px);
-                    }
+                h2 {
+                    font-size: clamp(10px, calc(1vw + 0.7vh), 22px);
+                    text-align: center;                        
                 }
             }
     
             .blog-post:hover {
                 background-color: white;
-                transition: 0.25s;
-    
-                img {
-                    height: 70%;
-                    transition: ease-in-out 0.25s;
-                }
-    
+                transition: 0.45s;
+
                 .post-textbox {
+                    margin-top: -5px;
+                    height: 50px;
+                }
+
+                img {
+                    height: 72%;
                     transition: 0.25s;
-                    margin-top: 10px;
-                    height: 100%;
-    
-                    .main-title {
-                        font-size: clamp(18px, calc(1.7vw + 1.5vh), 22px);
-                        margin-top: calc(0.25vh - 20px);
-                    }
-    
-                    .published {
-                        display: none;
-                    }
+                }
+
+                h2 {
+                    font-size: clamp(10px, calc(1vw + 0.7vh), 22px);                        
+                }
+
+                .published {
+                    display: none;
                 }
             }
     
@@ -414,4 +414,57 @@ body::before, body::after {
         }
     }
 
+}
+
+@media (max-width: 1300px){
+    .main-content {
+    
+        .un-scroll-content {
+    
+            width: 250px;
+
+            .right-s-content {
+        
+                .right-s-background {
+        
+                    .right-s-box {
+                        width: 225px;
+        
+                        .right-s-text {
+                            width: 180px;
+    
+                            h2 {
+                                font-size: 20px;
+                            }
+    
+                            img {
+                                width: 102px;
+                                height: 130px;
+                            }
+        
+                            p {
+                                margin-left: 5px;
+                                margin-right: 5px;
+                                font-size: 13px;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    
+    }
+}
+
+@media (max-width: 1100px){
+
+    .main-content {
+
+        .un-scroll-content {
+            display: none;
+        }
+
+    
+    }
 }
