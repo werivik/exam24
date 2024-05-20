@@ -165,21 +165,21 @@ body::before, body::after {
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    width: 700px;
-                    height: 400px;
+                    width: calc(100vw - 50%);
+                    height: calc(100vh - 99%);
                     border-radius: 10px;
 
                     background-color: #F2FFEA;
                     border-radius: 25px;
             
                     img {
-                        width: 350px;
-                        height: 250px;
+                        width: clamp(150px, 35vw, 350px);
+                        height: clamp(100px, 25vh, 250px);
                         object-fit: contain;
                     }
         
                     h2 {
-                        font-size: 25px;
+                        font-size: clamp(16px, 2vw, 25px);                       
                         margin-bottom: -10px;
 
                         font-family: "Libre Bodoni", serif;
@@ -193,7 +193,7 @@ body::before, body::after {
                         flex-direction: row;
                         justify-content: center;
                         align-items: center;
-                        font-size: 35px;
+                        font-size: clamp(24px, 3vw, 35px);                       
                         color: #F39994;
         
                         -webkit-text-stroke: 1px #162D06;
@@ -202,13 +202,14 @@ body::before, body::after {
                         font-weight: bold;
 
                         img {
-                            width: 145px;
-                            height: 60px;
+                            width: clamp(80px, 15vw, 145px);
+                            height: clamp(30px, 6vw, 60px);
+                            object-fit: contain;
                         }
                     }
 
                     h3 {
-                        font-size: 45px;
+                        font-size: clamp(30px, 4vw, 45px);                        
 
                         font-family: "Libre Bodoni", serif;
                         font-weight: normal;
@@ -246,7 +247,7 @@ body::before, body::after {
         
                     h2 {
                         margin-top: 50px;
-                        font-size: 25px;
+                        font-size: clamp(15px, 3vw, 25px);                       
 
                         font-family: "Libre Bodoni", serif;
                         font-weight: normal;
@@ -254,7 +255,7 @@ body::before, body::after {
                     }
 
                     h3 {
-                        font-size: 45px;
+                        font-size: clamp(20px, 5vw, 50px);                       
                         margin-top: -5px;
 
                         font-family: "Libre Bodoni", serif;
@@ -265,14 +266,11 @@ body::before, body::after {
                     }
 
                     &:hover {
-                        transform: scale(1.2);
+                        transform: scale(1.05);
 
                         transition: ease-in-out 0.35s;
-
-                        height: 250px;
     
                         h3 {
-                            font-size: 55px;
                             margin-top: 0px;
                         }
                     }
@@ -808,100 +806,6 @@ body::before, body::after {
 }
 
 @media (max-width: 1100px){
-
-    .welcome-logo {
-
-        background-color: #E4F4D9;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-    
-        top: 0;
-        left: 0;
-        z-index: 1;
-    
-        .welcome-background {
-    
-            width: 101%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-    
-            position: absolute;
-            right: -8px;
-            left: -8px;
-    
-            .progress-bar {
-                width: 100px;
-                height: 15px;
-            }
-    
-            .dot {
-    
-                height: 7px;
-                width: 7px;
-            }
-    
-            .homepage-slideshow {
-        
-                .framed-logo {
-            
-                    .logo-inside-frame {
-                        width: 550px;
-                        height: 300px;
-                
-                        img {
-                            width: 300px;
-                            height: 250px;
-                        }
-            
-                        h2 {
-                            font-size: 20px;
-                            margin-bottom: -30px;
-                        }
-            
-                        h1 {
-                            font-size: 27px;
-                            margin-top: -20px;
-
-                            img {
-                                width: 125px;
-                                height: 50px;
-                            }
-                        }
-    
-                    }
-    
-                    .logo-inside-frame2 {
-                    
-                        width: 550px;
-                        height: 225px;                        
-            
-                        h2 {
-                            font-size: 20px;
-    
-                        }
-    
-                        h3 {
-                            font-size: 40px;
-                        }
-    
-                        &:hover {
-                            transform: scale(1.1);
-        
-                            h3 {
-                                font-size: 50px;
-                            }
-                        }
-                    }
-                }   
-            }
-        }
-    }
 
     .main-content {
 
