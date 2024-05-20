@@ -194,7 +194,7 @@ body::before, body::after {
         font-family: "Libre Bodoni", serif;
 
         h1 {
-            font-size: 75px;
+            font-size: clamp(35px, 7vw, 75px);  
             margin-bottom: 25px;
 
             span {
