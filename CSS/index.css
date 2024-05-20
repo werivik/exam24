@@ -165,8 +165,9 @@ body::before, body::after {
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    width: calc(100vw - 50%);
-                    height: calc(100vh - 99%);
+                    width: calc(100vw - 55%);
+                    max-height: calc(100vw - 45%);
+                    aspect-ratio: 2 / 1;
                     border-radius: 10px;
 
                     background-color: #F2FFEA;
