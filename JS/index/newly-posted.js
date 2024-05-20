@@ -15,14 +15,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         try {
             const response = await fetch("https://v2.api.noroff.dev/blog/posts/wervik");
             if (!response.ok) {
-                throw new Error("Failed to Fetch Data from API");
+                throw new Error("Failed to fetch data from API");
             }
 
             const data = await response.json();
-
             posts = data.data.slice(0, 9);
             totalPosts = posts.length;
-
+            
             return data;
         } 
         
@@ -33,10 +32,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     };
 
+    const getPostsToShow = () => {
+        return window.innerWidth <= 800 ? 2 : 3;
+    };
+
     const showPosts = () => {
+        const postsToShow = getPostsToShow();
         newlyPostedContainer.innerHTML = '';
-       
-        for (let i = currentIndex; i < currentIndex + 3; i++) {
+
+        for (let i = currentIndex; i < currentIndex + postsToShow; i++) {
             const post = posts[i % totalPosts];
             const postElement = document.createElement("div");
             postElement.classList.add("new-post");
@@ -53,14 +57,22 @@ document.addEventListener("DOMContentLoaded", async () => {
     };
 
     const nextSlide = () => {
-        currentIndex = (currentIndex + 1) % totalPosts;
+        const postsToShow = getPostsToShow();
+        currentIndex = (currentIndex + postsToShow) % totalPosts;
         showPosts();
     };
 
     const prevSlide = () => {
-        currentIndex = (currentIndex - 1 + totalPosts) % totalPosts;
+        const postsToShow = getPostsToShow();
+        currentIndex = (currentIndex - postsToShow + totalPosts) % totalPosts;
         showPosts();
     };
+
+    const handleResize = () => {
+        showPosts();
+    };
+
+    window.addEventListener('resize', handleResize);
 
     const data = await fetchBlogData();
 
@@ -71,13 +83,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         const nextLeftButton = document.querySelector('.next-left-newly');
         const nextRightButton = document.querySelector('.next-right-newly');
 
-        nextLeftButton.addEventListener('click', () => {
-            prevSlide();
-        });
-
-        nextRightButton.addEventListener('click', () => {
-            nextSlide();
-        });
+        nextLeftButton.addEventListener('click', prevSlide);
+        nextRightButton.addEventListener('click', nextSlide);
     } 
     
     else {

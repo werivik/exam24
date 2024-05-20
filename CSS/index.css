@@ -53,15 +53,17 @@ body::before, body::after {
         right: -8px;
         left: -8px;
 
-        .next-left {
+        .next-left, .next-right {
             position: absolute;
             background-color: white;
-            height: 50px;
-            width: 50px;
+
+            height: calc(2vw + 2vh);
+            width: calc(2vw + 2vh);
+            font-size: clamp(10px, calc(1vw + 0.8vh), 18px);
+
             border-radius: 99px;
 
             z-index: 998;
-            left: 10%;
 
             color: #162D06;
             border: solid #162D06 2px;
@@ -80,29 +82,11 @@ body::before, body::after {
         }
 
         .next-right {
-            position: absolute;
-            background-color: white;
-            height: 50px;
-            width: 50px;
-            border-radius: 99px;
-            z-index: 998;
-
             right: 10%;
+        }
 
-            color: #162D06;
-            border: solid #162D06 2px;
-
-            cursor: pointer;
-            font-size: 17px;
-
-            &:hover {
-                font-size: 30px;
-                transition: 0.25s;
-
-                transform: scale(1.1);
-
-                background-color: pink;
-            }
+        .next-left {
+            left: 10%;
         }
 
         .progress-bar {
@@ -501,40 +485,39 @@ body::before, body::after {
                             align-items: center;
                             text-align: center;
 
-                            margin-top: 10px;
-                            height: 170px;
+                            height: 100%;
                             margin-left: 5px;
                             margin-right: 5px;
                         }
         
                         img {
                             width: 100%;
-                            height: 70%;
+                            height: 65%;
                             object-fit: cover;
                             border-radius: 10px 10px 0px 0px;
                         }
     
                         h2 {
-                            font-size: clamp(15px, calc(1vw + 0.7vh), 25px);                        
+                            font-size: clamp(10px, calc(1vw + 0.7vh), 25px);                        
                         }
                     }
 
                     .new-post:hover {
                         background-color: white;
                         transition: 0.30s;
-
-                        .post-textbox {
-                            margin-top: 0px;
-                            height: 150px;
-                        }
         
                         img {
-                            height: 77%;
+                            height: 72%;
                             transition: 0.25s;
+                        }
+
+                        .post-textbox {
+                            margin-top: -5px;
                         }
     
                         h2 {
-                            font-size: clamp(15px, calc(1vw + 0.9vh), 25px);                        
+                            margin-top: 5px;
+                            font-size: clamp(10px, calc(1vw + 0.9vh), 25px);                        
                         }
 
                         .published {
@@ -547,8 +530,9 @@ body::before, body::after {
             .next-left-newly, .next-right-newly {
                 position: absolute;
                 background-color: white;
-                height: 45px;
-                width: 45px;
+                height: calc(2vw + 2vh);
+                width: calc(2vw + 2vh);
+                font-size: clamp(10px, calc(1vw + 0.8vh), 18px);                        
 
                 border-radius: 99px;
                 z-index: 998;
@@ -557,16 +541,11 @@ body::before, body::after {
                 border: solid #162D06 2px;
                 cursor: pointer;
 
-                font-size: 16px;
-
                 top: 45%;
                 transform: translateY(-50%);
     
                 &:hover {
-                    font-size: 25px;
                     transition: 0.25s;
-    
-                    transform: scale(1.1);
     
                     background-color: pink;
                 }
@@ -587,6 +566,9 @@ body::before, body::after {
             width: 100%;
             color: #162D06;
             margin-top: 75px;
+
+            margin-left: 7%;
+            margin-right: 7%;
 
             font-family: "Libre Bodoni", serif;
             font-weight: normal;
@@ -667,7 +649,6 @@ body::before, body::after {
             }
 
             .all-posts-index {
-
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
@@ -681,22 +662,23 @@ body::before, body::after {
 
                 .all-post-blog {
 
-                    background-color: #F1F8F3;
-
-                    width: calc(100vw * 0.4);
-                    max-width: 285px;
-                    height: calc((100vw * 0.4) * 450 / 285);
-                    max-height: 450px;
+                    background-color: #f6fcf3;
+                    box-shadow: 5px 10px 10px 2px rgba(2, 101, 19, 0.154);
 
                     border-radius: 10px;
-                    box-shadow: 2px 2px 7px 2px rgba(2, 57, 11, 0.306);
-                    color: #162D06;
+
+                    height: calc((100vw * 0.35) * 375 / 350);
+                    width: calc((100vw * 0.4) / 1.9);
+                    min-width: 200px;
+                    min-height: 280px;
+
+                    max-height: 525px;
+                    max-width: 300px;
                     
     
                     a {
                         text-decoration: none;
                         color: #162D06;
-                        
                     }
 
                     .post-textbox {
@@ -707,25 +689,30 @@ body::before, body::after {
 
                        margin-left: 5px;
                        margin-right: 5px;
+                       margin-top: -10px;
+
+                       height: 100%;
+                       width: 100%;
                     }
 
                     .published {
+                        position: absolute;
                         opacity: 75%;
-                        font-size: clamp(10px, calc(0.7vw + 0.4vh), 20px);
+                        font-size: clamp(7px, calc(0.7vw + 0.4vh), 18px);
 
-                        margin-top: calc(0.25vh + px);
+                        margin-top: calc(12% + 10px);
+                        margin-bottom: 2.5px;
                     }
     
                     img {
-                        height: 60%;
                         width: 100%;
+                        height: 62%;
                         object-fit: cover;
                         border-radius: 10px 10px 0px 0px;
                     }
 
                     h2 {
-                        font-size: clamp(18px, calc(1.5vw + 1vh), 20px);
-                        margin: calc(0.5vh + 10px) 0;
+                        font-size: clamp(10px, calc(1vw + 0.7vh), 22px);                        
                     }
                 }
 
@@ -739,12 +726,12 @@ body::before, body::after {
                     }
     
                     img {
-                        height: 70%;
-                        transition: 0.35s;
+                        height: 72%;
+                        transition: 0.25s;
                     }
 
                     h2 {
-                        font-size: clamp(18px, calc(1.7vw + 1.5vh), 22px);
+                        font-size: clamp(10px, calc(1vw + 0.7vh), 22px);                        
                     }
 
                     .published {
@@ -757,7 +744,7 @@ body::before, body::after {
     }
 }
 
-@media (max-width: 1200px){
+@media (max-width: 1300px){
     .main-content {
     
         .un-scroll-content {
@@ -798,7 +785,29 @@ body::before, body::after {
     }
 }
 
-@media (max-width: 1000px){
+@media (max-width: 1500px) {
+
+    .main-content {
+        .scroll-content {
+    
+            .newly-posted-container {
+        
+                .next-right-newly {
+                    right: 1%;
+                }
+        
+                .next-left-newly {
+                    left: 1%;
+                }
+        
+            }
+        
+        }
+    
+    }
+}
+
+@media (max-width: 1100px){
 
     .welcome-logo {
 
@@ -825,34 +834,6 @@ body::before, body::after {
             position: absolute;
             right: -8px;
             left: -8px;
-    
-            .next-left {
-
-                height: 40px;
-                width: 40px;
-
-                left: 6.5%;
-    
-                font-size: 15px;
-    
-                &:hover {
-                    font-size: 20px;
-                }
-            }
-    
-            .next-right {
-
-                height: 40px;
-                width: 40px;
-
-                right: 6.5%;
-    
-                font-size: 15px;
-    
-                &:hover {
-                    font-size: 20px;
-                }
-            }
     
             .progress-bar {
                 width: 100px;
