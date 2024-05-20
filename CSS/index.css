@@ -451,7 +451,7 @@ body::before, body::after {
 
                 width: 100%;
 
-                position: absolute;
+                position: relative;
                 display: flex;
 
                 justify-content: center;
@@ -544,26 +544,26 @@ body::before, body::after {
                 }
             }
 
-            .next-left-newly {
+            .next-left-newly, .next-right-newly {
                 position: absolute;
                 background-color: white;
-                height: 50px;
-                width: 50px;
+                height: 45px;
+                width: 45px;
+
                 border-radius: 99px;
                 z-index: 998;
 
-                left: 3%;
-                top: 500px;
-
-    
                 color: #162D06;
                 border: solid #162D06 2px;
-    
                 cursor: pointer;
-                font-size: 17px;
+
+                font-size: 16px;
+
+                top: 45%;
+                transform: translateY(-50%);
     
                 &:hover {
-                    font-size: 30px;
+                    font-size: 25px;
                     transition: 0.25s;
     
                     transform: scale(1.1);
@@ -573,31 +573,11 @@ body::before, body::after {
             }
     
             .next-right-newly {
-                position: absolute;
-                background-color: white;
-                height: 50px;
-                width: 50px;
-                border-radius: 99px;
-                z-index: 998;
+                right: 2%;
+            }
 
-                right: 3%;
-                top: 500px;
-
-    
-                color: #162D06;
-                border: solid #162D06 2px;
-    
-                cursor: pointer;
-                font-size: 17px;
-    
-                &:hover {
-                    font-size: 30px;
-                    transition: 0.25s;
-    
-                    transform: scale(1.1);
-    
-                    background-color: pink;
-                }
+            .next-left-newly {
+                left: 2%;
             }
 
         }
