@@ -176,12 +176,16 @@ body::before, body::after {
                     img {
                         width: clamp(150px, 35vw, 350px);
                         height: clamp(100px, 25vh, 250px);
+                        padding: 0px;
+                        margin: 0px;
+
                         object-fit: contain;
                     }
         
                     h2 {
                         font-size: clamp(16px, 2vw, 25px);                       
-                        margin-bottom: -10px;
+                        margin-bottom: clamp(-10px, -5vw, 0px);
+                        margin-top: clamp(25px, 5vw, 0px);
 
                         font-family: "Libre Bodoni", serif;
                         font-weight: normal;
