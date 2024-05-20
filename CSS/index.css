@@ -909,6 +909,43 @@ body::before, body::after {
             display: none;
         }
     
+        .scroll-content {
+    
+            .newly-posted-container {
+        
+                .next-right-newly {
+                    right: 5%;
+                }
+    
+                .next-left-newly {
+                    left: 5%;
+                }
+    
+            }
+
+        }
     
     }
+}
+
+@media (max-width: 900px){
+    .main-content {
+    
+        .scroll-content {
+    
+            .newly-posted-container {
+        
+                .next-right-newly {
+                    right: 2%;
+                }
+    
+                .next-left-newly {
+                    left: 2%;
+                }
+    
+            }
+
+        }
+    
+    }  
 }

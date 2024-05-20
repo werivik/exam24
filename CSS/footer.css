@@ -13,8 +13,7 @@ footer {
     justify-content: space-between;
 
     color: #162D06;
-
-    z-index: 10;
+    margin-left: -8px;
 
     .footer-logo {
         margin-top: 0px;
@@ -40,7 +39,7 @@ footer {
             width: 300px;
 
             h2 {
-                font-size: 27px;
+                font-size: clamp(19px, calc(1vw + 0.7vh), 27px);                        
             }
 
             a {
@@ -48,7 +47,7 @@ footer {
                 color: #162D06;
 
                 h3 {
-                    font-size: 19px;
+                    font-size: clamp(12px, calc(1vw + 0.7vh), 19px); 
                     font-weight: 400;
                 }
 
@@ -68,7 +67,7 @@ footer {
             margin-right: 0px;
 
             h2 {
-                font-size: 27px;
+                font-size: clamp(19px, calc(1vw + 0.7vh), 27px);
             }
 
             a {
@@ -76,7 +75,7 @@ footer {
                 color: #162D06;
 
                 h3 {
-                    font-size: 19px;
+                    font-size: clamp(12px, calc(1vw + 0.7vh), 19px); 
                     font-weight: 400;
                 }
 
@@ -91,4 +90,92 @@ footer {
             }
         }
     }
+}
+
+
+@media (max-width: 1200px) {
+    footer {
+
+        .footer-logo {
+            width: 320px;
+            height: 320px;
+            margin-left: 5%;
+    
+            img {
+                width: 320px;
+                height: 320px;
+            }
+        }
+
+        .footer-content {
+            margin-right: 5%;
+    
+            .footer-blogs {
+                width: 250px;
+            }
+    
+            .footer-info {
+                width: 250px;
+            }
+        }
+    }   
+}
+
+@media (max-width: 1000px) {
+    footer {
+
+        .footer-logo {
+            width: 250px;
+            height: 250px;
+            margin-left: 5%;
+    
+            img {
+                width: 250px;
+                height: 250px;
+            }
+        }
+
+        .footer-content {
+            margin-right: 10%;
+    
+            .footer-blogs {
+                width: 150px;
+            }
+    
+            .footer-info {
+                width: 150px;
+            }
+        }
+    }   
+}
+
+@media (max-width: 750px) {
+    footer {
+
+        .footer-logo {
+            width: 200px;
+            height: 200px;
+            margin-left: 5%;
+            margin-top: 45px;
+
+            transform: rotate(-90deg);
+    
+            img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        .footer-content {
+            margin-right: 5%;
+    
+            .footer-blogs {
+                width: 150px;
+            }
+    
+            .footer-info {
+                width: 150px;
+            }
+        }
+    }   
 }
