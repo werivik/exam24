@@ -295,7 +295,6 @@ body::before, body::after {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    margin-left: -8px;
 
     position: relative;
 
@@ -317,7 +316,7 @@ body::before, body::after {
         width: 300px;
 
         background-color: #d5eac7;
-        transition: transform 0.3s ease;
+        transition: right 0.3s ease;
 
         .right-s-content {
             width: 100%;
@@ -402,16 +401,18 @@ body::before, body::after {
                     }
                 }
                 
-                .toggle-icon {
-                    display: none; 
-                }
             }
         }
         
     }
 
+    .toggle-icon {
+        display: none; 
+    }
+
     .un-scroll-content-active {
         transform: translateX(0);
+        transition: right 0.3s ease;
     }
 
     .scroll-content {
@@ -833,6 +834,7 @@ body::before, body::after {
 
         .un-scroll-content-active {
             transform: translateX(0);
+            transition: right 0.3s ease;
         }
 
         .toggle-icon {
