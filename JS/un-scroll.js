@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             unScrollContent.classList.add('active');
             toggleIcon.classList.remove('fa-chevron-left');
             toggleIcon.classList.add('fa-chevron-right');
-            toggleIcon.style.right = '200px';
+            toggleIcon.style.right = '202px';
         }
     });
 });

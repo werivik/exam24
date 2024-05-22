@@ -846,10 +846,9 @@ body::before, body::after {
             background-color: #d5eac7;
             border-radius: 50% 0% 0% 50%;
             cursor: pointer;
-            z-index: 1000;
 
-            height: 30px;
-            width: 30px;
+            height: 25px;
+            width: 25px;
 
             display: flex;
             justify-content: center;
