@@ -43,15 +43,13 @@ body::before, body::after {
 
     .welcome-background {
 
-        width: 101%;
+        width: 100%;
         height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
 
         position: absolute;
-        right: -8px;
-        left: -8px;
 
         .next-left, .next-right {
             position: absolute;
