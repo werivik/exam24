@@ -844,7 +844,7 @@ body::before, body::after {
             top: 50%;
             transform: translateY(-50%);
             background-color: #d5eac7;
-            border-radius: 50%;
+            border-radius: 50% 0% 0% 50%;
             cursor: pointer;
             z-index: 1000;
 
@@ -855,7 +855,6 @@ body::before, body::after {
             justify-content: center;
             align-items: center;
 
-            margin-right: 10px;
         }
     
         .scroll-content {

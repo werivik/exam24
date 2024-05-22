@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
             unScrollContent.classList.remove('active');
             toggleIcon.classList.remove('fa-chevron-right');
             toggleIcon.classList.add('fa-chevron-left');
+            toggleIcon.style.right = '0'; 
         } 
         
         else {
@@ -16,8 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             unScrollContent.classList.add('active');
             toggleIcon.classList.remove('fa-chevron-left');
             toggleIcon.classList.add('fa-chevron-right');
+            toggleIcon.style.right = '200px';
         }
-
     });
-
 });
