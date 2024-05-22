@@ -319,7 +319,7 @@ body::before, body::after {
         width: 300px;
 
         background-color: #d5eac7;
-        transition: right 0.3s ease;
+        transition: transform 0.5s ease;
 
         .right-s-content {
             width: 100%;
@@ -412,20 +412,29 @@ body::before, body::after {
     .toggle-icon {
         position: fixed;
         right: 0;
-        top: 50%;
 
+        top: 50%;
         transform: translateY(-50%);
+        transition: transform 0.3s ease;
 
         background-color: #d5eac7;
         color: #162D06;
         border-radius: 50% 0% 0% 50%;
         cursor: pointer;
 
-        height: 25px;
-        width: 25px;
+        height: 30px;
+        padding-right: 7px;
+        padding-left: 10px;
 
         display: none;
         z-index: 2;
+        font-size: 20px;
+
+        &:hover {
+            transition: 0.2s ease;
+
+            padding-right: 15px;
+        }
     }
 
     .un-scroll-content-active {
@@ -856,18 +865,20 @@ body::before, body::after {
 
         .un-scroll-content {
             transform: translateX(100%); 
-            transition: right 0.3s ease;
+            transition: transform 0.4s ease;
         }
 
         .un-scroll-content-active {
             transform: translateX(0);
-            transition: right 0.3s ease;
+            transition: transform 0.4s ease;
         }
 
         .toggle-icon {
             display: flex;
             justify-content: center;
             align-items: center;
+
+            transition: transform 0.5s ease;
         }
     
         .scroll-content {
