@@ -41,13 +41,14 @@ document.addEventListener("DOMContentLoaded", async () => {
             blogPostElement.classList.add("blog-post-detail");
 
             let mediaHTML = '';
+           
             if (media && media.url && media.alt) {
                 mediaHTML = `<img src="${media.url}" alt="${media.alt}">`;
             }
 
             blogPostElement.innerHTML += `
                 ${mediaHTML}
-                <h2 class="title">${title}</h2>
+                <h1 class="title">${title}</h1>
                 <p class="content">${body}</p>
                 <span class="published">Published: ${formattedDate}</span>
             `;
@@ -74,6 +75,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 'indoor': 'indoor.html',
                 'outdoor': 'outdoor.html'
             };
+            
             return redirectURLs[tag];
         };
 
