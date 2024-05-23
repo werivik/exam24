@@ -327,7 +327,6 @@ body::before, body::after {
         right: 0;
         width: 250px;
         min-width: 250px;
-        max-width: 250px;
 
         background-color: #d5eac7;
         transition: transform 0.5s ease;
@@ -347,7 +346,6 @@ body::before, body::after {
             background-image: linear-gradient(to bottom, rgba(228, 244, 217, 0.65), rgba(228, 244, 217, 0.65)),url(/MEDIA/background/backgroundleafes.png);
             background-size: 40%;
             padding-bottom: 70px;
-            margin-top: -25px;
     
             width: 100%;
             height: 100%;
@@ -421,7 +419,7 @@ body::before, body::after {
     }
 
     .toggle-icon {
-        position: fixed;
+        position: sticky;
         right: 0;
 
         top: 50%;
@@ -435,6 +433,7 @@ body::before, body::after {
         height: 50px;
         padding-right: 7px;
         padding-left: 10px;
+        margin-top: 25px;
 
         display: none;
         z-index: 2;
@@ -462,10 +461,13 @@ body::before, body::after {
         justify-content: center;
         align-items: center;
 
+        width: 100%;
+
         top: 0;
         right: 0;
 
         margin-bottom: 150px;
+        transition: width 0.5s ease;
 
         .newly-posted-container {
 
@@ -833,14 +835,13 @@ body::before, body::after {
     
             width: 205px;
             min-width: 205px;
-            max-width: 205px;
 
             .right-s-content {
         
                 .right-s-background {
         
                     .right-s-box {
-                        width: 225px;
+                        width: 195px;
         
                         .right-s-text {
                             width: 180px;
@@ -876,8 +877,14 @@ body::before, body::after {
         .un-scroll-content {
             transform: translateX(100%); 
             transition: transform 0.4s ease;
-            width: 250px;
+
+            width: 205px;
+            min-width: 205px;
+
             z-index: 998;
+
+            margin-top: 0px;
+
         }
 
         .un-scroll-content-active {
@@ -896,6 +903,11 @@ body::before, body::after {
         }
     
         .scroll-content {
+
+            margin-left: 11%;
+
+            max-width: 1100px;
+            width: 100%;
     
             .newly-posted-container {
         
