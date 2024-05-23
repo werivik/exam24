@@ -1,8 +1,8 @@
 body {
     background-color: #F2FFEA;
-    width: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
+    width: 100%;
 
     color: #162D06;
 }
@@ -289,6 +289,8 @@ body::before, body::after {
     z-index: 2;
     margin-top: 100vh;
     width: 100%;
+    height: 100%;
+    left: 0;
 
     box-shadow: 10px 1px 50px 5px rgba(1, 56, 10, 0.396);
 
@@ -419,10 +421,10 @@ body::before, body::after {
 
         background-color: #d5eac7;
         color: #162D06;
-        border-radius: 50% 0% 0% 50%;
+        border-radius: 35% 0% 0% 35%;
         cursor: pointer;
 
-        height: 30px;
+        height: 50px;
         padding-right: 7px;
         padding-left: 10px;
 
@@ -433,7 +435,8 @@ body::before, body::after {
         &:hover {
             transition: 0.2s ease;
 
-            padding-right: 15px;
+            padding-right: 12px;
+            background-color: #F39994;
         }
     }
 
@@ -444,8 +447,8 @@ body::before, body::after {
     }
 
     .scroll-content {
-        position: relative;
         z-index: 2;
+        position: relative;
 
         display: flex;
         flex-direction: column;
@@ -457,7 +460,6 @@ body::before, body::after {
         width: 100%;
 
         margin-bottom: 150px;
-        margin: 0 auto;
 
         .newly-posted-container {
 
@@ -862,38 +864,39 @@ body::before, body::after {
 @media (max-width: 1100px){
 
     .main-content {
-
+        
         .un-scroll-content {
             transform: translateX(100%); 
             transition: transform 0.4s ease;
+            width: 250px;
+            z-index: 998;
         }
 
         .un-scroll-content-active {
-            transform: translateX(0);
+            transform: translateX(0%); 
             transition: transform 0.4s ease;
+            width: 205px;
         }
 
         .toggle-icon {
             display: flex;
             justify-content: center;
             align-items: center;
+            right: 0px;
 
-            transition: transform 0.5s ease;
+            transition: right 0.1s ease;
         }
     
         .scroll-content {
-
-            width: 100%;
-
     
             .newly-posted-container {
         
                 .next-right-newly {
-                    right: 5%;
+                    right: 2.5%;
                 }
     
                 .next-left-newly {
-                    left: 5%;
+                    left: 2.5%;
                 }
     
             }
