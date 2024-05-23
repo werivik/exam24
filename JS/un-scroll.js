@@ -19,18 +19,17 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', toggleIconVisibility);
 
     toggleIcon.addEventListener('click', function() {
-        console.log("Toggle icon clicked");
+        console.log("Arrow icon clicked");
 
         if (unScrollContent.classList.contains('active')) {
-            
             unScrollContent.style.transform = 'translateX(100%)';
             unScrollContent.classList.remove('active');
             toggleIcon.classList.remove('fa-chevron-right');
             toggleIcon.classList.add('fa-chevron-left');
             toggleIcon.classList.remove('active');
-            console.log("Left icon active");
+            console.log("Left Arrow active");
             toggleIcon.style.right = '0px'; 
-            scrollContent.style.width = '200000%';
+            scrollContent.style.width = `calc(100% - ${unScrollContent.offsetWidth}px)`;
         } 
         
         else {
@@ -40,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleIcon.classList.add('fa-chevron-right');
             toggleIcon.classList.add('active');
             toggleIcon.style.right = '202px';
-            console.log("Right icon active");
+            console.log("Right Arrow active");
             scrollContent.style.width = '100%';
         }
     });

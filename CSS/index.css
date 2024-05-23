@@ -464,7 +464,6 @@ body::before, body::after {
 
         top: 0;
         right: 0;
-        width: 100%;
 
         margin-bottom: 150px;
 
@@ -897,8 +896,6 @@ body::before, body::after {
         }
     
         .scroll-content {
-
-            width: 100%;
     
             .newly-posted-container {
         
