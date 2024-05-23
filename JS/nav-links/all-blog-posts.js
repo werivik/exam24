@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 console.error("Invalid data Format received from API");
             }
         })
+        
         .catch(error => {
             console.error("Failed to fetch Posts", error);
         });

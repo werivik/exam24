@@ -1,11 +1,14 @@
 body {
     background-color: #F2FFEA;
+    overflow-x: hidden;
+    overflow-y: scroll;
     width: 100%;
-    overflow: hidden;
-
-    color: #162D06;
+    margin: 0;
+    padding: 0;
 
     font-family: "Libre Bodoni", serif;
+
+    color: #162D06;
 }
 
 .welcome-logo {

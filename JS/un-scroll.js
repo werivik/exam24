@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleIcon.classList.add('fa-chevron-left');
             toggleIcon.classList.remove('active');
             console.log("Left icon active");
-            toggleIcon.style.right = '0'; 
-            scrollContent.style.width = '20000%';
+            toggleIcon.style.right = '0px'; 
+            scrollContent.style.width = '200000%';
         } 
         
         else {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleIcon.classList.remove('fa-chevron-left');
             toggleIcon.classList.add('fa-chevron-right');
             toggleIcon.classList.add('active');
-            toggleIcon.style.right = '195px';
+            toggleIcon.style.right = '202px';
             console.log("Right icon active");
             scrollContent.style.width = '100%';
         }
