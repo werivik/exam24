@@ -26,7 +26,7 @@ body::before, body::after {
 }
 
 .main-content {
-
+    
     background-color: #F2FFEA;
     display: flex;
     flex-direction: row;
@@ -37,24 +37,29 @@ body::before, body::after {
 
         overflow-x: hidden;
         overflow-y: hidden;
-    
         height: 100vh;
         position: sticky;
+
+        z-index: 3;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
         top: 0;
         right: 0;
-
         width: 300px;
+        max-width: 300px;
+
         background-color: #d5eac7;
+        transition: transform 0.5s ease;
     
         .right-s-content {
     
             width: 100%;
             height: 100vh;
-            position: sticky;
+            
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -62,7 +67,7 @@ body::before, body::after {
     
             .right-s-background {
                 background-image: linear-gradient(to bottom, rgba(228, 244, 217, 0.65), rgba(228, 244, 217, 0.65)),url(/MEDIA/background/backgroundleafes.png);
-                background-size: 70%;
+                background-size: 40%;
                 padding-bottom: 70px;
                 width: 100%;
                 height: 100%;
@@ -79,7 +84,7 @@ body::before, body::after {
                     align-items: center;
                     width: 250px;
                     margin-bottom: 10px;
-                    margin-top: 0px;
+                    margin-top: 55px;
 
                     a {
                         padding: 7px;
@@ -126,7 +131,8 @@ body::before, body::after {
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    width: 225px;
+                    width: 210px;
+                    max-width: 210px;
 
                     margin-top: 0px;
     
@@ -138,7 +144,7 @@ body::before, body::after {
                         justify-content: center;
 
                         border-radius: 10px;
-                        width: 225px;
+                        width: 100%;
 
                         font-family: "Libre Bodoni", serif;
                         font-weight: normal;
@@ -187,7 +193,7 @@ body::before, body::after {
                                 box-shadow: 2px 2px 7px 2px rgba(2, 57, 11, 0.306);
 
                                 &:hover {
-                                    transform: scale(1.2);
+                                    transform: scale(1.1);
                                     transition: 0.25s;
         
                                     background-color: #a5eb77;
@@ -204,7 +210,7 @@ body::before, body::after {
                         .right-s-info {
                             width: 100%;
                             padding-bottom: 25px;
-                            margin-top: 50px;
+                            margin-top: 150px;
     
                             span {
                                 font-weight: bold;
@@ -252,9 +258,24 @@ body::before, body::after {
     }
 
     .scroll-content {
-        width: 80%;
-        margin-left: -8px;
-        top: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        font-family: "Libre Bodoni", serif;
+
+        h1 {
+            font-size: clamp(35px, 7vw, 75px);  
+            margin-bottom: 25px;
+
+            span {
+                color: #F39994;
+                -webkit-text-stroke: 1px #162D06;
+            }
+        }
 
         .blog-detail {
 
@@ -266,8 +287,8 @@ body::before, body::after {
                 width: 100%;
                 margin-top: -8px;
                 img {
-                    width: 1400px;
-                    height: 555px;
+                    width: 100%;
+                    height: 645px;
                     object-fit: cover;
                 }
 
@@ -291,6 +312,26 @@ body::before, body::after {
                     opacity: 75%;
                 }
             }
+        }
+
+        /*CSS .loader comes from: "https://css-loaders.com/dots/", number #5*/
+        .loader {
+            margin-top: 50px;
+            width: 60px;
+            aspect-ratio: 4;
+            --_g: no-repeat radial-gradient(circle closest-side, #000 90%, #0000);
+            background: 
+                var(--_g) 0% 50%,
+                var(--_g) 50% 50%,
+                var(--_g) 100% 50%;
+            background-size: calc(100% / 3) 100%;
+            animation: l7 1s infinite linear;
+        }
+        
+        @keyframes l7 {
+            33% { background-size: calc(100% / 3) 0%, calc(100% / 3) 100%, calc(100% / 3) 100%; }
+            50% { background-size: calc(100% / 3) 100%, calc(100% / 3) 0%, calc(100% / 3) 100%; }
+            66% { background-size: calc(100% / 3) 100%, calc(100% / 3) 100%, calc(100% / 3) 0%; }
         }
     }
 
@@ -326,6 +367,14 @@ body::before, body::after {
                                 margin-left: 5px;
                                 margin-right: 5px;
                                 font-size: 13px;
+                            }
+
+                            .redirect-link {
+    
+                                a {
+                                    width: 120px;
+    
+                                }
                             }
 
                         }

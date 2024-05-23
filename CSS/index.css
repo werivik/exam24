@@ -319,6 +319,7 @@ body::before, body::after {
         top: 0;
         right: 0;
         width: 300px;
+        max-width: 300px;
 
         background-color: #d5eac7;
         transition: transform 0.5s ease;
