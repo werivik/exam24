@@ -33,29 +33,43 @@ body::before, body::after {
 
 .main-content {
     
+    position: relative;
+
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+
     background-color: #F2FFEA;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
+
+    font-family: "Libre Bodoni", serif;
+
 
     .un-scroll-content {
-
         overflow-x: hidden;
         overflow-y: hidden;
-    
         height: 100vh;
         position: sticky;
+
+        z-index: 3;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
         top: 0;
         right: 0;
+        width: 250px;
+        min-width: 250px;
 
-        width: 300px;
         background-color: #d5eac7;
-    
+        transition: transform 0.5s ease;
+
         .right-s-content {
     
             width: 100%;
@@ -80,48 +94,48 @@ body::before, body::after {
                 flex-direction: column;
 
                 .gobackbutton {
-                    margin-top: 100px;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    width: 250px;
-                    margin-bottom: 10px;
-                    margin-top: 115px;
 
+                    width: 250px;
+                    margin-bottom: -110px;
+                    margin-top: 120px;
+    
                     a {
                         padding: 7px;
                         padding-right: 10px; 
                         padding-left: 10px;
                         background-color: #F39994;
                         border-radius: 25px;
-
+    
                         color: #162D06;
                         text-decoration: none;
                         font-weight: bold;
-
+    
                         font-size: 14px;
                         font-family: "Libre Bodoni", serif;
-
+    
                         i {
                             display: none;
                             margin-right: 7px;
                             font-size: 13px;
                         }
                     }
-
+    
                     &:hover {
                         a {
                             transform: scale(1.2);
                             transition: 0.25s;
-
+    
                             background-color: #a5eb77;
-
+    
                             background-image: linear-gradient(to bottom, rgba(75, 106, 55, 0.65), rgba(75, 106, 55, 0.65)),url(/MEDIA/background/backgroundleafes.png);
                             background-size: 200%;
-
+    
                             color: white;
                         } 
-
+    
                         i {
                             display: inline;
                         }
@@ -185,6 +199,81 @@ body::before, body::after {
                 }
             }
         }
+        
+        .right-s-background {
+            background-image: linear-gradient(to bottom, rgba(228, 244, 217, 0.65), rgba(228, 244, 217, 0.65)),url(/MEDIA/background/backgroundleafes.png);
+            background-size: 40%;
+            padding-bottom: 70px;
+    
+            width: 100%;
+            height: 100%;
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .right-s-box {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+        
+                width: 225px;
+                margin-top: 0px;
+    
+                .right-s-text {
+                    margin-top: 125px;
+                    background-color: #F2FFEA;
+            
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+            
+                    border-radius: 10px;
+                    width: 225px;
+            
+                    font-family: "Libre Bodoni", serif;
+                    font-weight: normal;
+            
+                    color: #162D06;
+
+                    h2 {
+                        font-size: 22px;
+                    }
+                    
+                    img {
+                        width: 129px;
+                        height: 163px;
+                        object-fit: contain;
+                        background-color: white;
+                
+                        border-radius: 99px;
+                    }
+                    
+                    p {
+                        margin-bottom: 0px;
+                        margin-top: 10px;
+                        margin-left: 10px;
+                        margin-right: 10px;
+                
+                        font-size: 13px;
+                    }
+                }
+                
+                .right-s-info {
+                    width: 100%;
+                    padding-bottom: 25px;
+                    margin-top: 50px;
+
+                    span {
+                        font-weight: bold;
+                    }
+                }
+                
+            }
+        }
+        
     }
 
     .toggle-icon {
@@ -193,7 +282,6 @@ body::before, body::after {
 
         top: 50%;
         transform: translateY(-50%);
-        transition: transform 0.3s ease;
 
         background-color: #d5eac7;
         color: #162D06;
@@ -203,6 +291,7 @@ body::before, body::after {
         height: 50px;
         padding-right: 7px;
         padding-left: 10px;
+        margin-top: 25px;
 
         display: none;
         z-index: 2;
@@ -218,20 +307,26 @@ body::before, body::after {
 
     .un-scroll-content-active {
         transform: translateX(0);
-        transition: right 0.3s ease;
         z-index: 3;
     }
 
     .scroll-content {
+        z-index: 2;
+        position: relative;
 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 100%;
-        margin-top: 90px;
 
-        font-family: "Libre Bodoni", serif;
+        width: 100%;
+
+        top: 0;
+        right: 0;
+
+        margin-bottom: 150px;
+        margin-top: 100px;
+        transition: width 0.5s ease;
 
         h1 {
             font-size: clamp(35px, 7vw, 75px);  
@@ -453,26 +548,6 @@ body::before, body::after {
     
         }
 
-
-        /*CSS .loader comes from: "https://css-loaders.com/dots/", number #5*/
-        .loader {
-            margin-top: 50px;
-            width: 60px;
-            aspect-ratio: 4;
-            --_g: no-repeat radial-gradient(circle closest-side, #000 90%, #0000);
-            background: 
-                var(--_g) 0% 50%,
-                var(--_g) 50% 50%,
-                var(--_g) 100% 50%;
-            background-size: calc(100% / 3) 100%;
-            animation: l7 1s infinite linear;
-        }
-        
-        @keyframes l7 {
-            33% { background-size: calc(100% / 3) 0%, calc(100% / 3) 100%, calc(100% / 3) 100%; }
-            50% { background-size: calc(100% / 3) 100%, calc(100% / 3) 0%, calc(100% / 3) 100%; }
-            66% { background-size: calc(100% / 3) 100%, calc(100% / 3) 100%, calc(100% / 3) 0%; }
-        }
     }
 
 }
@@ -482,7 +557,8 @@ body::before, body::after {
     
         .un-scroll-content {
     
-            width: 250px;
+            width: 205px;
+            min-width: 205px;
 
             .right-s-content {
         
@@ -514,25 +590,33 @@ body::before, body::after {
                 }
             }
         }
-    
     }
 }
 
 @media (max-width: 1100px){
 
     .main-content {
+
+        width: 100%;
         
         .un-scroll-content {
             transform: translateX(100%); 
             transition: transform 0.4s ease;
-            width: 250px;
+
+            width: 205px;
+            min-width: 205px;
+
             z-index: 998;
+
+            margin-top: 0px;
+
         }
 
         .un-scroll-content-active {
             transform: translateX(0%); 
             transition: transform 0.4s ease;
             width: 205px;
+            min-width: 205px;
         }
 
         .toggle-icon {
@@ -545,18 +629,78 @@ body::before, body::after {
         }
     
         .scroll-content {
+
+            width: 100%;
+            min-width: 800px;
+
+            margin-left: 7%;
+
+            .all-blogs {
+                margin-left: 2.5%;
+                margin-right: 0%;
     
-            .newly-posted-container {
+                gap: 15px;
         
-                .next-right-newly {
-                    right: 2.5%;
-                }
-    
-                .next-left-newly {
-                    left: 2.5%;
-                }
-    
             }
+
+
+        }
+    
+    }
+}
+
+@media (max-width: 900px){
+
+    .main-content {
+    
+        .scroll-content {
+
+            width: 100%;
+            min-width: 700px;
+        }
+    
+    }
+}
+
+@media (max-width: 800px){
+
+    .main-content {
+    
+        .scroll-content {
+
+            min-width: 600px;
+
+            margin-left: 4.5%;
+
+        }
+    
+    }
+}
+
+@media (max-width: 700px){
+
+    .main-content {
+    
+        .scroll-content {
+
+            min-width: 500px;
+
+            margin-left: 5%;
+
+        }
+    
+    }
+}
+
+@media (max-width: 650px){
+
+    .main-content {
+    
+        .scroll-content {
+
+            min-width: 100%;
+
+            margin-left: 5%;
 
         }
     
