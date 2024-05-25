@@ -453,6 +453,11 @@ body::before, body::after {
         z-index: 3;
     }
 
+    .blur {
+        filter: blur(5px);
+        transition: filter 0.3s ease;;
+    }
+
     .scroll-content {
         z-index: 2;
         position: relative;
@@ -482,8 +487,13 @@ body::before, body::after {
             font-family: "Libre Bodoni", serif;
             font-weight: normal;
 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
             h2 {
-                font-size: 55px;
+                font-size: clamp(35px, calc(2.5vw + 0.9vh), 55px);          
                 text-align: center;
 
                 span {
@@ -635,8 +645,13 @@ body::before, body::after {
             font-weight: normal;
             margin-bottom: 150px;
 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
             h2 {
-                font-size: 55px;
+                font-size: clamp(35px, calc(2.5vw + 0.9vh), 55px);          
                 text-align: center;
                 
                 span {
@@ -753,17 +768,15 @@ body::before, body::after {
                        margin-right: 5px;
                        margin-top: -10px;
 
-                       height: 100%;
+                       height: 38%;
                        width: 100%;
                     }
 
                     .published {
-                        position: absolute;
                         opacity: 75%;
                         font-size: clamp(7px, calc(0.7vw + 0.4vh), 18px);
 
-                        margin-top: calc(12% + 10px);
-                        margin-bottom: 2.5px;
+                        margin-top: 20%;
                     }
     
                     img {
@@ -774,7 +787,11 @@ body::before, body::after {
                     }
 
                     h2 {
-                        font-size: clamp(10px, calc(1vw + 0.7vh), 22px);                        
+                        font-size: clamp(10px, calc(1vw + 0.7vh), 22px);          
+                        
+                        height: 100%;
+                        margin-bottom: 0px;
+                        width: 95%;
                     }
                 }
 
@@ -905,21 +922,74 @@ body::before, body::after {
     
         .scroll-content {
 
-            margin-left: 11%;
+            margin-left: 7%;
+            margin-right: 7%;
 
-            max-width: 1100px;
-            width: 100%;
-    
             .newly-posted-container {
+
+                h2 {
+                    width: 115%;
+                }
+
+                .newly-posted-carousel {
+
+                    width: 115%;
+    
+                    .newly-posted {
+    
+                        gap: 10px;
+    
+                        margin-left: 25%;
+                        margin-right: 25%;
+                        padding-bottom: 20px;
+        
+                        .new-post {
+        
+                            h2 {
+                                width: 90%;
+                                font-size: clamp(10px, calc(1vw + 0.7vh), 25px);                        
+                            }
+                        }
+    
+                    }
+                }
         
                 .next-right-newly {
-                    right: 2.5%;
+                    right: 0.5%;
+                    margin-right: -3.5px;
                 }
     
                 .next-left-newly {
-                    left: 2.5%;
+                    left: 0.5%;
+                    margin-left: -3.5px;
                 }
     
+            }
+
+            .all-posts-container {
+                width: 115%;
+
+                h2 {
+                    width: 115%;
+                }
+
+                .searchbar-content {
+                    width: 115%;
+                }
+
+                .all-posts-index {
+                    width: 115%;
+
+                    .all-post-blog {
+
+                        .published {
+                            margin-top: 15%;
+                        }
+
+                    }
+
+                }
+
             }
 
         }
@@ -931,18 +1001,46 @@ body::before, body::after {
     .main-content {
     
         .scroll-content {
+            width: 120%;
     
             .newly-posted-container {
+                margin-left: 0px;
+
+                width: 110%;
+
+                h2 {
+                    width: 110%;
+                }
+
+                .newly-posted-carousel {
+
+                    width: 105%;
+
+                    gap: 7px;
+
+                }
         
                 .next-right-newly {
-                    right: 2%;
+                    margin-right: -1px;
                 }
     
                 .next-left-newly {
-                    left: 2%;
+                    margin-left: -1px;
                 }
     
             }
+
+        }
+    
+    }  
+}
+
+@media (max-width: 800px){
+    .main-content {
+    
+        .scroll-content {
+            margin-left: 20%;
+            margin-right: 20%;
 
         }
     

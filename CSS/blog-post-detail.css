@@ -266,6 +266,11 @@ body::before, body::after {
         z-index: 3;
     }
 
+    .blur {
+        filter: blur(5px);
+        transition: filter 0.3s ease;;
+    }
+
     .scroll-content {
 
         z-index: 2;

@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const unScrollContent = document.querySelector('.un-scroll-content');
     const toggleIcon = document.getElementById('toggleIcon');
+    const scrollContent = document.querySelector('.scroll-content');
 
     function toggleIconVisibility() {
         if (window.scrollY >= window.innerHeight) {
@@ -29,6 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleIcon.classList.remove('active');
             console.log("Left icon active");
             toggleIcon.style.right = '0px'; 
+
+            scrollContent.classList.remove('blur');
         } 
         
         else {
@@ -39,6 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleIcon.classList.add('active');
             toggleIcon.style.right = '202px';
             console.log("Right icon active");
+
+            scrollContent.classList.add('blur');
         }
     });
 
