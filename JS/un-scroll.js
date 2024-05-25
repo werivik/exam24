@@ -41,4 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("Right icon active");
         }
     });
+
+    window.addEventListener('resize', resetUnScrollContent);
+    resetUnScrollContent();
 });
