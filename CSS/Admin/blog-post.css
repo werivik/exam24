@@ -415,9 +415,11 @@ body::before, body::after {
                     margin-right: 3.5%;
 
                     height: 450px;
+                    padding-bottom: 15px;
+                    padding-top: 5px;
                     width: 85%;
 
-                    border-radius: 25px;
+                    border-radius: 15px 5px 5px 15px;
                     border: solid 1px #162D06;
                 }
 
