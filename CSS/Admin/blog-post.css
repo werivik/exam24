@@ -334,8 +334,8 @@ body::before, body::after {
                     margin-left: 9%;
                     margin-right: 3.5%;
 
-                    font-size: 30px;
-                    font-family: "Libre Bodoni", serif;
+                    font-size: clamp(20px, 2vw, 30px);                       
+                    font-family: "Libre Bodoni", serif;                    
                 }
 
                 input {
@@ -348,6 +348,8 @@ body::before, body::after {
 
                     padding: 5px;
                     font-family: "Libre Bodoni", serif;
+
+                    font-size: clamp(10px, 2vw, 15px); 
                 }
             }
 
@@ -368,7 +370,7 @@ body::before, body::after {
                     margin-left: 9%;
                     margin-right: 3.5%;
 
-                    font-size: 25px;
+                    font-size: clamp(15px, 2vw, 25px);                       
                     font-family: "Libre Bodoni", serif;
                 }
 
@@ -383,6 +385,7 @@ body::before, body::after {
 
                     padding: 5px;
                     font-family: "Libre Bodoni", serif;
+                    font-size: clamp(10px, 2vw, 15px); 
                 }
 
                 .image-preview {
@@ -424,6 +427,9 @@ body::before, body::after {
 
                     border-radius: 15px 5px 5px 15px;
                     border: solid 1px #162D06;
+                    
+                    font-size: clamp(10px, 2vw, 15px); 
+
                 }
 
                 textarea {
@@ -538,7 +544,7 @@ body::before, body::after {
                 .media-container {
     
                     .image-preview {
-                        width: 130%;
+                        width: 140%;
                     }
                 }
 

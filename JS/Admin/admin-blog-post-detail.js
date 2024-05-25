@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         url: mediaURLInput.value,
                         alt: mediaAltInput.value
                     },
+                    
                     title: titleInput.value,
                     body: bodyTextArea.value,
                     tags: tagsInput.value.split(',')
