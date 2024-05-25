@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+
     const blogDetailContainer = document.querySelector(".admin-blog-detail");
 
     if (!blogDetailContainer) {
@@ -11,13 +12,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const fetchBlogData = async (id) => {
         try {
             const response = await fetch(`https://v2.api.noroff.dev/blog/posts/wervik/${id}`);
+            
             if (!response.ok) {
                 throw new Error("Failed to Fetch Data from API, try again, loser");
             }
 
             const data = await response.json();
+            
             return data;
-        } catch (error) {
+        } 
+        
+        catch (error) {
             console.error("Error fetching Data:", error);
         }
     };
@@ -60,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         deleteButton.addEventListener("click", () => {
             const confirmDelete = confirm("Are you sure you want to delete this post?");
+            
             if (confirmDelete) {
                 const token = localStorage.getItem("token");
                 deletePost(id, token);
@@ -67,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         saveButton.addEventListener("click", async () => {
+            
             try {
                 const token = localStorage.getItem("token");
                 const updatedData = {
@@ -119,6 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
         input.type = type;
         input.value = value;
         input.classList.add("edit-input");
+        
         return input;
     };
 
@@ -126,6 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const textarea = document.createElement("textarea");
         textarea.value = value;
         textarea.classList.add("edit-textarea");
+       
         return textarea;
     };
 
@@ -140,12 +149,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const createHeaderElement = (text) => {
         const header = document.createElement("h3");
         header.textContent = text;
+        
         return header;
     };
 
     const createDivElement = (className) => {
         const div = document.createElement("div");
         div.classList.add(className);
+       
         return div;
     };
 
@@ -156,6 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const year = date.getFullYear();
         const formattedDay = day < 10 ? `0${day}` : day;
         const formattedMonth = month < 10 ? `0${month}` : month;
+        
         return `${formattedDay}.${formattedMonth}.${year}`;
     };
 
