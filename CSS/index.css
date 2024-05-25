@@ -172,7 +172,6 @@ body::before, body::after {
                     border-radius: 10px;
 
                     background-color: #F2FFEA;
-                    border-radius: 25px;
             
                     img {
                         width: clamp(150px, 35vw, 350px);
@@ -407,6 +406,8 @@ body::before, body::after {
                     width: 100%;
                     padding-bottom: 25px;
                     margin-top: 50px;
+
+                    font-size: 15px;
 
                     span {
                         font-weight: bold;
