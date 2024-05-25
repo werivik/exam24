@@ -326,7 +326,7 @@ body::before, body::after {
         .admin-blog-detail {
             position: relative;
             width: 100%;
-            margin-bottom: 150px;
+            margin-bottom: 100px;
 
             .title-container, .body-container, .tags-container {
 
@@ -352,7 +352,8 @@ body::before, body::after {
             }
 
             .title-container input, .tags-container input {
-                width: 700px;
+                width: 65%;
+                min-width: 450px;
             }
 
             .media-container {
@@ -374,7 +375,8 @@ body::before, body::after {
                 input {
                     margin-left: 9%;
                     margin-right: 3.5%;
-                    width: 700px;
+                    width: 65%;
+                    min-width: 450px;
 
                     border-radius: 25px;
                     border: solid 1px #162D06;
@@ -415,9 +417,10 @@ body::before, body::after {
                     margin-right: 3.5%;
 
                     height: 450px;
-                    padding-bottom: 15px;
-                    padding-top: 5px;
+                    padding-bottom: 35px;
+                    padding-top: 15px;
                     width: 85%;
+                    min-width: 450px;
 
                     border-radius: 15px 5px 5px 15px;
                     border: solid 1px #162D06;
