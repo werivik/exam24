@@ -144,6 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
         button.textContent = text;
         button.classList.add("save-delete-button");
         button.classList.add(className);
+
         return button;
     };
 
@@ -212,7 +213,6 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch((error) => {
                 console.error("Failed to fetch blog post:", error);
             });
-
     } 
     
     else {

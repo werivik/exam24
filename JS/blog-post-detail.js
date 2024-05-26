@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         if (!blogDetailContainer) {
             console.error("Element with Class 'blog-detail' not found, I am a blind computer...");
-            
             return;
         }
 
@@ -23,7 +22,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                 }
 
                 const data = await response.json();
-                
                 return data;
             } 
             
@@ -58,6 +56,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         const renderRedirectLinks = (tags) => {
             tags.forEach(tag => {
+               
                 if (tag === 'animal' || tag === 'edible' || tag === 'indoor' || tag === 'outdoor') {
                     const tagLink = document.createElement("a");
                     tagLink.href = getTagRedirectURL(tag);

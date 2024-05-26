@@ -6,7 +6,9 @@ const fetchBlogData = async () => {
         }
         const data = await response.json();
         return data;
-    } catch (error) {
+    } 
+    
+    catch (error) {
         console.error("Error fetching data:", error);
     }
 };
