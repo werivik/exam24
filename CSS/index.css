@@ -30,6 +30,10 @@ body::before, body::after {
     clear: both;
 }
 
+/*
+For the carousel, I used w3schools.com for some help and inspiration, link: https://www.w3schools.com/howto/howto_js_slideshow.asp
+*/
+
 .welcome-logo {
 
     background-color: #E4F4D9;
