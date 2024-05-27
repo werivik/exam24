@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         .then((data) => {
             if (data && Array.isArray(data.data)) {
                 data.data.forEach((blog) => {
+                    
                     if (blog.tags.includes("animal")) {
                         const blogElement = document.createElement("div");
                         blogElement.classList.add("blog-post");

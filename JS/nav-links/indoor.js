@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const year = date.getFullYear();
         const formattedDay = day < 10 ? `0${day}` : day;
         const formattedMonth = month < 10 ? `0${month}` : month;
+
         return `${formattedDay}.${formattedMonth}.${year}`;
     };
 
@@ -70,6 +71,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         .then((data) => {
             if (data && Array.isArray(data.data)) {
                 data.data.forEach((blog) => {
+                    
                     if (blog.tags.includes("indoor")) {
                         const blogElement = document.createElement("div");
                         blogElement.classList.add("blog-post");

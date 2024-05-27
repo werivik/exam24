@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!response.ok) {
                 throw new Error("Failed to Fetch Data from API, try again, loser");
             }
+            
             const data = await response.json();
-
             return data;
         } 
         

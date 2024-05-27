@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const fetchBlogData = async () => {
         try {
             const response = await fetch("https://v2.api.noroff.dev/blog/posts/wervik");
+            
             if (!response.ok) {
                 throw new Error("Failed to fetch data from API");
             }
