@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.getElementById("blogText").addEventListener("input", function() {
-        const maxLength = 5000;
+        const maxLength = 2000;
         const currentLength = this.value.length;
         const remaining = maxLength - currentLength;
     
