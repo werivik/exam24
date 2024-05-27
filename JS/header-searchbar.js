@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    const searchInput = document.getElementById("searchInput");
+    const searchInput = document.getElementById("searchInputHeader");
     const searchResults = document.getElementById("searchResults");
 
     searchResults.style.display = "none";

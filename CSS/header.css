@@ -136,13 +136,13 @@ nav {
 
         }
         
-        #searchInput::placeholder {
+        #searchInputHeader::placeholder {
             padding-left: 5px;
             color: #162D06;
             font-size: 13px;
         }
         
-        #searchInput {
+        #searchInputHeader {
             color: #162D06;
             padding-left: 5px;
 

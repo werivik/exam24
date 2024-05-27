@@ -520,7 +520,8 @@ body::before, body::after {
 
                 h2 {
                     font-size: clamp(10px, calc(1vw + 0.7vh), 22px);
-                    text-align: center;                        
+                    text-align: center;     
+                    width: 95%;                   
                 }
             }
     
