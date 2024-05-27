@@ -4,7 +4,6 @@ let dots = document.querySelectorAll('.dot');
 
 function showSlide() {
     slides.forEach((slide, index) => {
-
         if (index === currentSlide) {
             slide.style.display = 'block';
             dots[index].style.opacity = 1;
@@ -18,8 +17,8 @@ function showSlide() {
 }
 
 dots.forEach((dot, index) => {
-
     dot.addEventListener('mouseenter', () => {
+
         dots[index].style.opacity = 1;
     });
 
@@ -29,7 +28,7 @@ dots.forEach((dot, index) => {
             dots[index].style.opacity = 0.5;
         }
     });
-})
+});
 
 showSlide();
 
