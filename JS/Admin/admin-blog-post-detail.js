@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     },
                     
                     title: titleInput.value,
-                    body: bodyTextArea.value,
+                    body: bodyTextArea.value.replace(/\n/g, '<br>'),
                     tags: tagsInput.value.split(',')
                 };
 
@@ -133,9 +133,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const createTextAreaElement = (value) => {
         const textarea = document.createElement("textarea");
-        textarea.value = value;
+        textarea.value = value.replace(/<br>/g, '\n');
         textarea.classList.add("edit-textarea");
        
+        textarea.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                const start = textarea.selectionStart;
+                const end = textarea.selectionEnd;
+                textarea.value = textarea.value.substring(0, start) + '\n' + textarea.value.substring(end);
+                textarea.selectionStart = textarea.selectionEnd = start + 1;
+            }
+        });
+
         return textarea;
     };
 

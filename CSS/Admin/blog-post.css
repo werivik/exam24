@@ -208,6 +208,7 @@ body::before, body::after {
                                 border: none;
 
                                 height: 35px;
+                                width: 100%;
                                 font-size: 15px;
 
                                 cursor: pointer;
@@ -215,7 +216,6 @@ body::before, body::after {
                                 font-weight: bold;
                                 font-family: "Libre Bodoni", serif;
 
-                                font-size: 14px;
                                 text-align: center;
         
                                 &:hover {
@@ -237,6 +237,7 @@ body::before, body::after {
                                 border: none;
 
                                 height: 35px;
+                                width: 100%;
 
                                 cursor: pointer;
 
