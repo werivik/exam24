@@ -735,7 +735,7 @@ For the carousel, I used w3schools.com for some help and inspiration, link: http
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: center;
-                width: 100%;
+                width: 95%;
     
                 gap: 25px;
     
