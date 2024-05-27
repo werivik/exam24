@@ -307,7 +307,7 @@ body::before, body::after {
                     object-fit: cover;
                 }
 
-                .title, .content, .published {
+                .title, .content, .published, .author {
                     margin-left: 9%;
                     margin-right: 10%;
 
@@ -327,6 +327,11 @@ body::before, body::after {
 
                 .published {
                     font-size: clamp(8px, 2vw, 17px);  
+                    opacity: 75%;
+                }
+
+                .author {
+                    font-size: clamp(10px, 2vw, 19px);  
                     opacity: 75%;
                 }
             }

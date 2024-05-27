@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <h1 class="title">${title}</h1>
                 <p class="content">${body}</p>
                 <span class="published">Published: ${formattedDate}</span>
+                <p class="author">- Crazy Plant Lady</p>
             `;
 
             blogDetailContainer.appendChild(blogPostElement);
