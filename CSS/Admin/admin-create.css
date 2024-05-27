@@ -63,6 +63,11 @@ body {
 
                     width: 45%;
 
+                    h1 {
+                        position: absolute;
+                        left: 1500%;
+                    }
+
                     .gobackbutton {
                         width: 250px;
     
