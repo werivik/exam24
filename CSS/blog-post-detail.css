@@ -170,6 +170,7 @@ body::before, body::after {
                             object-fit: contain;
                             background-color: white;
                             border-radius: 99px;
+                            cursor: default;
                         }
     
                         p {

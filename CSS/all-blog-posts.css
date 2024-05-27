@@ -249,6 +249,7 @@ body::before, body::after {
                         background-color: white;
                 
                         border-radius: 99px;
+                        cursor: default;
                     }
                     
                     p {
