@@ -2,6 +2,8 @@
 
 ## Description
 
+This is my Exam Assignment for summer 2024.
+
 This is a blogg website with focus on plants. The users can read all the blogg posts on the website, but only the admin can delete-, add new- and change posts. The admin login page can be accessed through clicking on the Crazy Plant Lady female face profile picture and login in using a email and password assigned to the admin. 
 
 The design inspiration comes from the word play "Crazy Cat Lady", whcih could be associated with: 
